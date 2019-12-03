@@ -1,27 +1,39 @@
-int x, y, r;
 
 // setup se ruleaza o singura data
 void setup(){
-  size(600, 800, P2D);// al trilea argument adica render-ul
-  background(20);
+  size(800, 800, P2D);// al trilea argument adica render-ul
+  background(color(76, 175, 80));
 
-  x = 100;
-  y = width / 2;
-  r = 50;
+  rectMode(CENTER);
 }
 
 
 // iar draw la fiecare frame
 void draw(){
-  background(20);
+  background(color(76, 175, 80));
+  drawTable();
 
-  fill(255); // aka fill(255, 255, 255) // r g b
-  rect(x, y, 100, 100, r);
-  
-  if(r > 0 && frameCount % 2 == 0) // adica la fiecare 2 frame-uri scad din r
-    r--;
 
-  if(x < width - 100)
-    x++;
-  
+}
+
+void drawTable(){
+  noFill();
+  strokeWeight(2);
+  stroke(255);
+  rect(width / 2, height / 2, width - 50, height - 50, 40);
+
+
+  fill(color(56, 142, 60));
+  noStroke();
+  int distBetweenCircles = (width + 100) / 6;
+
+  for(int i = 1; i <= 5; i++){
+    for(int j = 1; j <= 5; j++){
+      int x = distBetweenCircles * j - 50;
+      int y = distBetweenCircles * i - 50;
+      circle(x, y, 90);
+    }
+  }
+
+  //circle(distBetweenCircles, 0, 60);
 }

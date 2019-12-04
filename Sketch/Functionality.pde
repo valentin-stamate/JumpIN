@@ -1,0 +1,3 @@
+void funct(){
+  // lorem ipsum
+}

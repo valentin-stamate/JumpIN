@@ -5,6 +5,7 @@ void setup(){
   background(color(76, 175, 80));
 
   rectMode(CENTER);
+
 }
 
 
@@ -35,5 +36,4 @@ void drawTable(){
     }
   }
 
-  //circle(distBetweenCircles, 0, 60);
 }

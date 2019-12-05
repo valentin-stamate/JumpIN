@@ -1,12 +1,9 @@
-
 PShape rabbitGrey, rabbitOrange, rabbitWhite;
 PShape fox, mushroom;
 
 boolean gameStart = false, mouseOver = false;
 String buttonFlag;
 int gameMenuSize = 50;
-
-ControlP5 buttons;
 
 void setup(){
   size(800, 850, P2D);
@@ -40,4 +37,4 @@ void draw(){
     drawStartMenu();
   }
 
-  
+}

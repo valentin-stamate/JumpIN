@@ -28,6 +28,23 @@ void drawRabbits(){
 
 }
 
+ 
+void mousePressed(){
+  float boxsize = width/5;
+  float randomcolourRED = random(100,200);
+  float randomcolourGREEN = random(50,150);
+  float randomcolourBLUE = random(0, 155);
+    for (int i=0; i<5; i++) {
+    for (int j=0; j<5; j++) {
+         float x = i*boxsize;
+         float y = j*boxsize;
+      if (mouseX > x && mouseX < (x + boxsize) && mouseY > y && mouseY < (y + boxsize)) {
+          fill(color(255,0,0));
+       }
+    }
+   }
+} 
+
 void drawFoxes(){
 
 }

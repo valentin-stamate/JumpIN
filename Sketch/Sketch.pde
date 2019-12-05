@@ -1,7 +1,7 @@
 
 
 void setup(){
-  size(800, 800, P2D);
+  size(1000, 1000, P3D);
   frameRate(60);
   background(color(76, 175, 80));
 

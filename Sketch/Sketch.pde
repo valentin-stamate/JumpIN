@@ -14,16 +14,12 @@ void setup(){
   frameRate(60);
   background(startMenuBkgCol);
 
-<<<<<<< HEAD
   loadAssets();
 
   rectMode(CENTER);
   textAlign(CENTER);
   textMode(SHAPE);
-=======
-  rectMode(CENTER);
-  // some code in graphics branch
->>>>>>> 0195df4571d5e1edccc47219206cb7c8a90633ed
+
 }
 
 

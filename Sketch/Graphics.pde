@@ -15,10 +15,11 @@ void drawTable(){
   fill(tableBkgCol);
   strokeWeight(2);
   stroke(255);
+  
   rect(width / 2, height / 2 + gameMenuSize / 2, width - 50, height - gameMenuSize - 50, 40);
 
-
   noStroke();
+
   int distBetweenCirclesX = (width + 100) / 6;
   int distBetweenCirclesY = (height + 100 - gameMenuSize) / 6;
 
@@ -42,6 +43,13 @@ void drawTable(){
       circle(x, y + gameMenuSize, 90);
     }
   }
+} 
+
+void drawMenu(){
+    
+    rectMode(CENTER);
+    background(color(0, 0, 0));
+    drawButtonJoc();
 }
 
 
@@ -50,6 +58,7 @@ void drawTable(){
 void drawRabbits(){
 
 }
+
 void drawFoxes(){
 
 }

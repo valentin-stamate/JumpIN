@@ -1,4 +1,3 @@
-import controlP5.*;
 
 PShape rabbitGrey, rabbitOrange, rabbitWhite;
 PShape fox, mushroom;
@@ -41,4 +40,4 @@ void draw(){
     drawStartMenu();
   }
 
-}
+  

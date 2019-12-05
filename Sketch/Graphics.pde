@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // incarca imaginile svg
 void loadAssets(){
   rabbitOrange = loadShape("rabbitWhite.svg");
@@ -6,6 +7,10 @@ void loadAssets(){
   mushroom = loadShape("mushroom.svg");
   fox = loadShape("fox.svg");
 
+=======
+void f(){
+  // graphics
+>>>>>>> 0195df4571d5e1edccc47219206cb7c8a90633ed
 }
 
 

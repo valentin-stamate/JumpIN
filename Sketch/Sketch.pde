@@ -2,7 +2,7 @@ PShape rabbitGrey, rabbitOrange, rabbitWhite;
 PShape fox, mushroom;
 
 boolean gameStart = false, mouseOver = false;
-String buttonFlag;
+String MouseFlag;
 int gameMenuSize = 50;
 
 void setup(){
@@ -15,6 +15,7 @@ void setup(){
   rectMode(CENTER);
   textAlign(CENTER);
   textMode(SHAPE);
+  shapeMode(CENTER);
 
 }
 

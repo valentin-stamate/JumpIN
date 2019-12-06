@@ -69,22 +69,52 @@ void drawTable(){
 
 
 // deseneza animalele
-int rOneI = 2, rOneJ = 3;
+int rOneI = 1, rOneJ = 2;
+int rTwoI = 1, rTwoJ = 3;
+int rThreeI = 1, rThreeJ = 4;
+
 void drawRabbits(){
-  shape(rabbitOrange, cellDistX * rOneJ - 99, cellDistY * rOneI - 115 + gameMenuSize, 76, 110);
+  drawRabbit(rOneJ, rOneI, rabbitOrange, flagROne);
+  drawRabbit(rTwoJ, rTwoI, rabbitGrey, flagRTwo);
+  //drawRabbit(rThreeJ, rThreeI, rabbitWhite);
 }
 
 int fOneJ = 4, fOneI = 3;
+
 void drawFoxes(){
-  drawSupportHor(fOneJ, fOneI);
-  shape(fox, cellDistX * fOneJ - 280, cellDistY * fOneI - 97 + gameMenuSize, 260, 80);
+  drawFox(fOneJ, fOneI, flagFOne);
 }
 
 int mOneJ = 2, mOneI = 2;
+
 void drawMushrooms(){
-  drawSupportOneCell(mOneJ, mOneI);
-  shape(mushroom, cellDistX * mOneJ - 100, cellDistY * mOneI - 100 + gameMenuSize, 100, 100);
+  drawMushroom(mOneJ, mOneI);
 }
+
+void drawRabbit(int j, int i, PShape p, String flag){
+  int x = cellDistX * j - 50 - 11;
+  int y = cellDistY * i - 50 + gameMenuSize - 10;
+  shape(p, x, y, 76, 110);
+  checkMouseOver(x, y, 80, 120 ,flag);
+}
+
+void drawFox(int j, int i, String flag){
+  int x = cellDistX * fOneJ - 50 - 80;
+  int y = cellDistY * fOneI - 50 - 6 + gameMenuSize;
+
+  drawSupportHor(fOneJ, fOneI);
+  shape(fox, x, y, 260, 80);
+  checkMouseOver(x, y, 260, 80 ,flag);
+}
+
+void drawMushroom(int j, int i){
+  int x = cellDistX * mOneJ - 50;
+  int y = cellDistY * mOneI - 50 + gameMenuSize;
+
+  drawSupportOneCell(mOneJ, mOneI);
+  shape(mushroom, x, y, 100, 100);
+}
+
 
 
 
@@ -187,11 +217,11 @@ void checkMouseOver(int x, int y, int bWidth, int bHeight, String s){
   // daca mouse-ul este pozitionat pe buton pune flag = s pentru a sti ce buton este apasat
   if(mouseX >= x && mouseY >= y && mouseX <= x + bWidth && mouseY <= y + bHeight){
     mouseOver = true;
-    buttonFlag = s;
+    MouseFlag = s;
     return;
   }
   // daca ultimul flag este egal cu textul butonului atunci setez flag la false
-  if(buttonFlag == s){
+  if(MouseFlag == s){
     mouseOver = false;
   }
 }
@@ -199,12 +229,18 @@ void checkMouseOver(int x, int y, int bWidth, int bHeight, String s){
 void mousePressed(){
   if(mouseOver){
 
-    if( egal(buttonFlag, startString) == true ){
+    if( egal(MouseFlag, startString) == true ){
       startButton();
-    } else if( egal(buttonFlag, exitString) == true ){
+    } else if( egal(MouseFlag, exitString) == true ){
       exitButton();
+    } else if( egal(MouseFlag, flagROne) == true ){
+      println("rabit one selected");
+    } else if( egal(MouseFlag, flagRTwo) == true ){
+      println("rabbit two selectd");
+    } else if( egal(MouseFlag, flagFOne) == true ){
+      println("fox one selectd");
     }
-    buttonFlag = "";
+    MouseFlag = "";
   }
 }
 

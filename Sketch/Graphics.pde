@@ -229,6 +229,14 @@ void selectRabbitThree(int newX, int newY){
 
 }
 
+//cronometrul
+void drawTimer(){
+    text("Timer : ", 400,gameMenuSize/2+10);
+    text(second %60 ,450, gameMenuSize/2+10);
+    text(":", 475, gameMenuSize/2+10);
+    text(min,500, gameMenuSize/2+10);
+}
+
 
 
 // interactiunea cu mouseul

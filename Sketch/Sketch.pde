@@ -1,7 +1,7 @@
 PShape rabbitGrey, rabbitOrange, rabbitWhite;
 PShape fox, mushroom;
 
-boolean gameStart = false, mouseOver = false;
+boolean gameStart = false, mouseOver = false, options = false, quit = false, locked = false;
 String MouseFlag;
 int gameMenuSize = 50;
 
@@ -32,10 +32,15 @@ void draw(){
     drawGameMenu();
     drawGamewButtons();
 
-  } else {
+  } else if (options == true){
+    background(gameBkgColor);
+    text("Pagina pentru optiuni", 400, 425);
+    drawButtonIesireOption();
+  }else if(quit == true){
+    exit();
+  }else{
     background(startMenuBkgCol);
-
     drawStartMenu();
-  }
+    }
 
 }

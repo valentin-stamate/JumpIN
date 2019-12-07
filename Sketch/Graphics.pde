@@ -1,8 +1,8 @@
 // variabile
 int cellDistX;
 int cellDistY;
-
-
+int coordonateFoxI =0, coordonateFoxJ =0;
+int xOffset, yOffset;
 
 // incarca imaginile svg
 void loadAssets(){
@@ -81,8 +81,13 @@ void drawRabbits(){
 
 int fOneJ = 4, fOneI = 3;
 
+
 void drawFoxes(){
-  drawFox(fOneJ, fOneI, flagFOne);
+  if((coordonateFoxI == 0) && (coordonateFoxJ == 0)){
+   coordonateFoxI = cellDistY * fOneI - 50 - 6 + gameMenuSize;
+   coordonateFoxJ =  cellDistX * fOneJ - 50 - 80;
+  }
+  drawFox(coordonateFoxJ, coordonateFoxI, flagFOne);
 }
 
 int mOneJ = 2, mOneI = 2;
@@ -99,10 +104,11 @@ void drawRabbit(int j, int i, PShape p, String flag){
 }
 
 void drawFox(int j, int i, String flag){
-  int x = cellDistX * fOneJ - 50 - 80;
-  int y = cellDistY * fOneI - 50 - 6 + gameMenuSize;
+  int x = j;
+  int y = i;
 
-  drawSupportHor(fOneJ, fOneI);
+  //drawSupportHor(fOneJ, fOneI);
+  println(x + " " + y);
   shape(fox, x, y, 260, 80);
   checkMouseOver(x, y, 260, 80 ,flag);
 }
@@ -122,6 +128,8 @@ void drawMushroom(int j, int i){
 void drawStartMenu(){
 
   drawButtonStart();
+  drawButtonOption();
+  drawQuitButton();
 }
 
 void drawGameMenu(){
@@ -138,11 +146,23 @@ void drawGamewButtons(){
 }
 
 void drawButtonStart(){
-  drawButton(width / 2 , height / 2 + gameMenuSize, 90, 50, normalBtnCol, startString);
+  drawButton(width / 2 , height / 2 + gameMenuSize-150, 90, 50, normalBtnCol, startString);
 }
 
 void drawButtonIesire(){
   drawButton(40, gameMenuSize / 2, 60, 30, normalBtnCol, exitString);
+}
+
+void drawButtonOption(){
+   drawButton(width/2, height /2+ gameMenuSize , 90,50, normalBtnCol, optionsString); 
+}
+
+void drawQuitButton(){
+   drawButton(width/2, height /2  + gameMenuSize+ 150, 90,50, normalBtnCol, quitString); 
+}
+
+void drawButtonIesireOption(){
+  drawButton(40, gameMenuSize / 2, 60, 30, normalBtnCol, optionsExitString);
 }
 
 void drawButton(int x, int y, int bWidth, int bHeight, color col, String s){
@@ -176,6 +196,8 @@ void drawSupportHor(int j, int i){
   stroke(255);
   rect(cellDistX * j - 50 - cellDistX / 2, cellDistY * i, cellDistX + 150, cellDistY / 2 + 75, 8);
 }
+
+
 
 
 
@@ -233,12 +255,20 @@ void mousePressed(){
       startButton();
     } else if( egal(MouseFlag, exitString) == true ){
       exitButton();
+    }else if( egal(MouseFlag, optionsString) == true ){
+     enterOptionButton();
+    }else if(egal(MouseFlag, optionsExitString) == true){
+      exitOptionButton();
+    }else if(egal(MouseFlag, quitString) == true){
+       quitButton(); 
     } else if( egal(MouseFlag, flagROne) == true ){
       println("rabit one selected");
     } else if( egal(MouseFlag, flagRTwo) == true ){
       println("rabbit two selectd");
     } else if( egal(MouseFlag, flagFOne) == true ){
-      println("fox one selectd");
+      locked = true;
+      xOffset = mouseX - coordonateFoxJ;
+      yOffset = mouseX - coordonateFoxI;
     }
     MouseFlag = "";
   }

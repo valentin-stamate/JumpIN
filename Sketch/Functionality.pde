@@ -1,3 +1,7 @@
-void funct(){
-  // lorem ipsum
+void startButton(){
+  gameStart = true;
+}
+
+void exitButton(){
+  gameStart = false;
 }

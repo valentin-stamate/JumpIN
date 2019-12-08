@@ -10,24 +10,22 @@ String MouseFlag;
 int gameMenuSize = 50;
 int startTime = 14;
 int min, second;
- 
+
 
 void setup(){
   size(800, 850, P2D);
-  file = new SoundFile(this, "Muzica.mp3");
-  file.play();
   frameRate(60);
   background(startMenuBkgCol);
-  
+
   loadAssets();
 
   rectMode(CENTER);
   textAlign(CENTER);
   textMode(SHAPE);
   shapeMode(CENTER);
-  
-  
 
+  file = new SoundFile(this, "./Music/bckMusic2.wav");
+  file.loop();
 }
 
 
@@ -36,27 +34,26 @@ void draw(){
     background(gameBkgColor);
 
     drawTable();
-    drawRabbits();
-    drawFoxes();
-    drawMushrooms();
+
+    drawPositions();
+
     drawGameMenu();
     drawGamewButtons();
     //create timer
-    second = (millis()/1000 )- startTime;
-    if(second % 60 == 0){
-      min = second /60;
-    }
+
     drawTimer();
+
   } else if (options == true){
     background(gameBkgColor);
-    text("Pagina pentru optiuni", 400, 425);
+
     drawButtonIesireOption();
+
   }else if(quit == true){
     exit();
   }else{
     background(startMenuBkgCol);
+
     drawStartMenu();
-    startTime = (millis()/1000 );
     }
 
 }

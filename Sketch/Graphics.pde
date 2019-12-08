@@ -65,6 +65,7 @@ void drawTable(){
       circle(x, y + gameMenuSize, 90);
     }
   }
+
 }
 
 
@@ -96,10 +97,22 @@ int rOneI = 1, rOneJ = 2;
 int rTwoI = 1, rTwoJ = 3;
 int rThreeI = 1, rThreeJ = 4;
 
-int fOneJ = 4, fOneI = 3;
-
+int fOneJ = 0, fOneI = 0;
 void drawFoxes(){
   if((coordonateFoxI == 0) && (coordonateFoxJ == 0)){
+    int i = 0, j = 0;
+    while(((fOneI == 0) || (fOneJ == 0)) &&(i < 5)){
+      if( j ==4){
+        j = 0;
+        i++;
+      }
+      if((tableArray[i][j] =="0") && (tableArray[i][j+1] == "0")){
+        fOneJ = j+2;
+        fOneI = i+1;
+      }
+      j++;
+     
+    }
    coordonateFoxI = cellDistY * fOneI - 50 - 6 + gameMenuSize;
    coordonateFoxJ =  cellDistX * fOneJ - 50 - 80;
   }
@@ -119,7 +132,6 @@ void drawFox(int j, int i, String flag){
   int y = i;
 
   //drawSupportHor(fOneJ, fOneI);
-  println(x + " " + y);
 
   shape(fox, x, y, 260, 80);
   checkMouseOver(x, y, 260, 80 ,flag);

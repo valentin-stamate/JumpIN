@@ -8,4 +8,3 @@ String flagFTwo = "f2";
 String quitString = "Quit";
 String optionsString = "Optiuni";
 String optionsExitString = "Menu";
-

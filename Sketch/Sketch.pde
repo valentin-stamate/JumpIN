@@ -36,12 +36,12 @@ void draw(){
     drawTable();
 
     drawPositions();
-
     drawGameMenu();
     drawGamewButtons();
     //create timer
 
     drawTimer();
+    drawFoxes();
 
   } else if (options == true){
     background(gameBkgColor);

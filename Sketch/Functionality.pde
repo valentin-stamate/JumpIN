@@ -20,8 +20,10 @@ void quitButton(){
 //muta vulpile
 void mouseDragged(){
  if(locked){
+   if((mouseX - xOffset > 150) &&(mouseX - xOffset < height -200)){
     coordonateFoxJ = mouseX - xOffset;
-    coordonateFoxI = mouseY - yOffset;
+    //coordonateFoxI = mouseY - yOffset;
+   }
  }
 }
 

@@ -1,6 +1,7 @@
 // variabile
 int cellDistX;
 int cellDistY;
+
 int coordonateFoxI =0, coordonateFoxJ =0;
 int xOffset, yOffset;
 
@@ -81,7 +82,6 @@ void drawRabbits(){
 
 int fOneJ = 4, fOneI = 3;
 
-
 void drawFoxes(){
   if((coordonateFoxI == 0) && (coordonateFoxJ == 0)){
    coordonateFoxI = cellDistY * fOneI - 50 - 6 + gameMenuSize;
@@ -104,11 +104,13 @@ void drawRabbit(int j, int i, PShape p, String flag){
 }
 
 void drawFox(int j, int i, String flag){
+
   int x = j;
   int y = i;
 
   //drawSupportHor(fOneJ, fOneI);
   println(x + " " + y);
+
   shape(fox, x, y, 260, 80);
   checkMouseOver(x, y, 260, 80 ,flag);
 }
@@ -130,6 +132,7 @@ void drawStartMenu(){
   drawButtonStart();
   drawButtonOption();
   drawQuitButton();
+
 }
 
 void drawGameMenu(){
@@ -196,7 +199,6 @@ void drawSupportHor(int j, int i){
   stroke(255);
   rect(cellDistX * j - 50 - cellDistX / 2, cellDistY * i, cellDistX + 150, cellDistY / 2 + 75, 8);
 }
-
 
 
 
@@ -269,6 +271,7 @@ void mousePressed(){
       exitOptionButton();
     }else if(egal(MouseFlag, quitString) == true){
        quitButton(); 
+
     } else if( egal(MouseFlag, flagROne) == true ){
       println("rabit one selected");
     } else if( egal(MouseFlag, flagRTwo) == true ){
@@ -277,6 +280,7 @@ void mousePressed(){
       locked = true;
       xOffset = mouseX - coordonateFoxJ;
       yOffset = mouseX - coordonateFoxI;
+
     }
     MouseFlag = "";
   }

@@ -70,15 +70,31 @@ void drawTable(){
 
 
 // deseneza animalele
+
+void drawPositions(){
+
+  for(int i = 0; i < 5; i++){
+    for(int j = 0; j < 5; j++){
+      if( tableArray[i][j] == "R1" ){
+        drawRabbit(j, i, rabbitOrange, flagROne);
+      }
+      else if( tableArray[i][j] == "R2" ){
+        drawRabbit(j, i, rabbitGrey, flagROne);
+      }
+      else if( tableArray[i][j] == "R3" ){
+        drawRabbit(j, i, rabbitWhite, flagROne);
+      }
+      else if( tableArray[i][j] == "M" ){
+        drawMushroom(j, i);
+      }
+    }
+  }
+
+}
+
 int rOneI = 1, rOneJ = 2;
 int rTwoI = 1, rTwoJ = 3;
 int rThreeI = 1, rThreeJ = 4;
-
-void drawRabbits(){
-  drawRabbit(rOneJ, rOneI, rabbitOrange, flagROne);
-  drawRabbit(rTwoJ, rTwoI, rabbitGrey, flagRTwo);
-  //drawRabbit(rThreeJ, rThreeI, rabbitWhite);
-}
 
 int fOneJ = 4, fOneI = 3;
 
@@ -90,15 +106,9 @@ void drawFoxes(){
   drawFox(coordonateFoxJ, coordonateFoxI, flagFOne);
 }
 
-int mOneJ = 2, mOneI = 2;
-
-void drawMushrooms(){
-  drawMushroom(mOneJ, mOneI);
-}
-
 void drawRabbit(int j, int i, PShape p, String flag){
-  int x = cellDistX * j - 50 - 11;
-  int y = cellDistY * i - 50 + gameMenuSize - 10;
+  int x = cellDistX * (j + 1) - 50 - 11;
+  int y = cellDistY * (i + 1) - 50 + gameMenuSize - 10;
   shape(p, x, y, 76, 110);
   checkMouseOver(x, y, 80, 120 ,flag);
 }
@@ -116,10 +126,10 @@ void drawFox(int j, int i, String flag){
 }
 
 void drawMushroom(int j, int i){
-  int x = cellDistX * mOneJ - 50;
-  int y = cellDistY * mOneI - 50 + gameMenuSize;
+  int x = cellDistX * (j + 1) - 50;
+  int y = cellDistY * (i + 1) - 50 + gameMenuSize;
 
-  drawSupportOneCell(mOneJ, mOneI);
+  drawSupportOneCell(j, i);
   shape(mushroom, x, y, 100, 100);
 }
 
@@ -133,6 +143,7 @@ void drawStartMenu(){
   drawButtonOption();
   drawQuitButton();
 
+  startTime = (millis()/1000 );
 }
 
 void drawGameMenu(){
@@ -157,14 +168,16 @@ void drawButtonIesire(){
 }
 
 void drawButtonOption(){
-   drawButton(width/2, height /2+ gameMenuSize , 90,50, normalBtnCol, optionsString); 
+   drawButton(width/2, height /2+ gameMenuSize , 90,50, normalBtnCol, optionsString);
 }
 
 void drawQuitButton(){
-   drawButton(width/2, height /2  + gameMenuSize+ 150, 90,50, normalBtnCol, quitString); 
+   drawButton(width/2, height /2  + gameMenuSize+ 150, 90,50, normalBtnCol, quitString);
 }
 
 void drawButtonIesireOption(){
+  text("Pagina pentru optiuni", 400, 425);
+
   drawButton(40, gameMenuSize / 2, 60, 30, normalBtnCol, optionsExitString);
 }
 
@@ -183,7 +196,7 @@ void drawSupportOneCell(int j, int i){
   fill(color(255, 255, 255, 30));
   strokeWeight(2);
   stroke(255);
-  rect(cellDistX * j - 50, cellDistY * i, cellDistX / 2 + 75, cellDistY / 2 + 75, 8);
+  rect(cellDistX * (j + 1) - 50, cellDistY * (i + 1), cellDistX / 2 + 75, cellDistY / 2 + 75, 8);
 }
 
 void drawSupportVer(int j, int i){
@@ -233,10 +246,15 @@ void selectRabbitThree(int newX, int newY){
 
 //cronometrul
 void drawTimer(){
-    text("Timer : ", 400,gameMenuSize/2+10);
-    text(second %60 ,450, gameMenuSize/2+10);
-    text(":", 475, gameMenuSize/2+10);
-    text(min,500, gameMenuSize/2+10);
+    second = (millis()/1000 ) - startTime;
+    if(second % 60 == 0){
+        min = second /60;
+    }
+    int offset = 270;
+    text("Timer : ", 400 + offset, gameMenuSize / 2 + 6);
+    text(second %60 ,450 + offset, gameMenuSize / 2 + 6);
+    text(":", 475 + offset, gameMenuSize / 2 + 6);
+    text(min, 500 + offset, gameMenuSize / 2 + 6);
 }
 
 
@@ -270,7 +288,7 @@ void mousePressed(){
     }else if(egal(MouseFlag, optionsExitString) == true){
       exitOptionButton();
     }else if(egal(MouseFlag, quitString) == true){
-       quitButton(); 
+       quitButton();
 
     } else if( egal(MouseFlag, flagROne) == true ){
       println("rabit one selected");

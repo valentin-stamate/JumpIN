@@ -113,6 +113,8 @@ void drawFoxes(){
       j++;
      
     }
+    determinaObstacolDreapta();
+    determinaObstacolStanga();
    coordonateFoxI = cellDistY * fOneI - 50 - 6 + gameMenuSize;
    coordonateFoxJ =  cellDistX * fOneJ - 50 - 80;
   }

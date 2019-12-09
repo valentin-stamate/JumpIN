@@ -10,6 +10,7 @@ String MouseFlag;
 int gameMenuSize = 50;
 int startTime = 14;
 int min, second;
+int obstacolStanga = 5, obstacolDreapta = 0;
 
 
 void setup(){

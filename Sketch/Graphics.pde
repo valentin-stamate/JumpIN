@@ -3,6 +3,7 @@ int cellDistX;
 int cellDistY;
 
 int coordonateFoxI =0, coordonateFoxJ =0;
+int iFirstRabbit = 0, jFirstRabbit = 0, iSecondRabbit = 0, jSecondRabbit = 0,iThirdRabbit = 0, jThirdRabbit = 0;
 int xOffset, yOffset;
 
 // incarca imaginile svg
@@ -65,6 +66,7 @@ void drawTable(){
       circle(x, y + gameMenuSize, 90);
     }
   }
+
 }
 
 
@@ -76,13 +78,25 @@ void drawPositions(){
   for(int i = 0; i < 5; i++){
     for(int j = 0; j < 5; j++){
       if( tableArray[i][j] == "R1" ){
-        drawRabbit(j, i, rabbitOrange, flagROne);
+        if(iFirstRabbit == 0 && jFirstRabbit == 0){
+         iFirstRabbit = cellDistY * (i + 1) - 50 + gameMenuSize - 10;
+         jFirstRabbit = cellDistX * (j + 1) - 50 - 11;
+        }
+        drawRabbit(jFirstRabbit, iFirstRabbit, rabbitOrange, flagROne);
       }
       else if( tableArray[i][j] == "R2" ){
-        drawRabbit(j, i, rabbitGrey, flagROne);
+       if(iSecondRabbit == 0 && jSecondRabbit == 0){
+           iSecondRabbit = cellDistY * (i + 1) - 50 + gameMenuSize - 10;
+           jSecondRabbit = cellDistX * (j + 1) - 50 - 11;
+        }
+        drawRabbit(jSecondRabbit, iSecondRabbit, rabbitGrey, flagRTwo);
       }
       else if( tableArray[i][j] == "R3" ){
-        drawRabbit(j, i, rabbitWhite, flagROne);
+        if(iThirdRabbit == 0 && jThirdRabbit == 0){
+           iThirdRabbit = cellDistY * (i + 1) - 50 + gameMenuSize - 10;
+           jThirdRabbit = cellDistX * (j + 1) - 50 - 11;
+        }
+        drawRabbit(jThirdRabbit,iThirdRabbit, rabbitWhite, flagRThree);
       }
       else if( tableArray[i][j] == "M" ){
         drawMushroom(j, i);
@@ -96,10 +110,26 @@ int rOneI = 1, rOneJ = 2;
 int rTwoI = 1, rTwoJ = 3;
 int rThreeI = 1, rThreeJ = 4;
 
-int fOneJ = 4, fOneI = 3;
-
+int fOneJ = 0, fOneI = 0;
 void drawFoxes(){
   if((coordonateFoxI == 0) && (coordonateFoxJ == 0)){
+    int i = 0, j = 0;
+    while(((fOneI == 0) || (fOneJ == 0)) &&(i < 5)){
+      if( j ==4){
+        j = 0;
+        i++;
+      }
+      if((tableArray[i][j] =="0") && (tableArray[i][j+1] == "0")){
+        fOneJ = j+2;
+        fOneI = i+1;
+      }
+      j++;
+     
+    }
+    determinaObstacolDreapta();
+    determinaObstacolStanga();
+    tableArray[fOneI-1][fOneJ -2] = "F";
+    tableArray[fOneI-1][fOneJ -1] = "F";
    coordonateFoxI = cellDistY * fOneI - 50 - 6 + gameMenuSize;
    coordonateFoxJ =  cellDistX * fOneJ - 50 - 80;
   }
@@ -107,8 +137,8 @@ void drawFoxes(){
 }
 
 void drawRabbit(int j, int i, PShape p, String flag){
-  int x = cellDistX * (j + 1) - 50 - 11;
-  int y = cellDistY * (i + 1) - 50 + gameMenuSize - 10;
+  int x = j;
+  int y = i;
   shape(p, x, y, 76, 110);
   checkMouseOver(x, y, 80, 120 ,flag);
 }
@@ -117,9 +147,6 @@ void drawFox(int j, int i, String flag){
 
   int x = j;
   int y = i;
-
-  //drawSupportHor(fOneJ, fOneI);
-  println(x + " " + y);
 
   shape(fox, x, y, 260, 80);
   checkMouseOver(x, y, 260, 80 ,flag);
@@ -292,12 +319,24 @@ void mousePressed(){
 
     } else if( egal(MouseFlag, flagROne) == true ){
       println("rabit one selected");
-    } else if( egal(MouseFlag, flagRTwo) == true ){
+      lockedFirstRabbit = true;
+      xOffset = mouseX - jFirstRabbit;
+      yOffset = mouseY - iFirstRabbit;
+    } else if( egal(MouseFlag, flagRTwo) ==true ){
       println("rabbit two selectd");
+      lockedSecondRabbit = true;
+      xOffset = mouseX - jSecondRabbit;
+      yOffset = mouseY - iSecondRabbit;
+    } else if( egal(MouseFlag, flagRThree) == true ){
+      println("rabbit three  selectd");
+      lockedThirdRabbit = true;
+      xOffset = mouseX - jThirdRabbit;
+      yOffset = mouseY - iThirdRabbit;
+
     } else if( egal(MouseFlag, flagFOne) == true ){
-      locked = true;
+      lockedFox = true;
       xOffset = mouseX - coordonateFoxJ;
-      yOffset = mouseX - coordonateFoxI;
+      yOffset = mouseY - coordonateFoxI;
 
     }
     MouseFlag = "";

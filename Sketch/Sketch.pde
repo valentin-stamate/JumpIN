@@ -5,7 +5,8 @@ SoundFile file;
 PShape rabbitGrey, rabbitOrange, rabbitWhite;
 PShape fox, mushroom;
 
-boolean gameStart = false, mouseOver = false, options = false, quit = false, locked = false;
+boolean gameStart = false, mouseOver = false, options = false, quit = false, lockedFox = false;
+boolean lockedFirstRabbit = false, lockedSecondRabbit = false, lockedThirdRabbit = false;
 String MouseFlag;
 int gameMenuSize = 50;
 int startTime = 14;

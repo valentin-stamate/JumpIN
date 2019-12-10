@@ -6,7 +6,7 @@ PShape rabbitGrey, rabbitOrange, rabbitWhite;
 PShape fox, mushroom;
 
 boolean gameStart = false, mouseOver = false, options = false, quit = false, lockedFox = false;
-boolean lockedFirstRabbit = false, lockedSecondRabbit = false, lockedThirdRabbit = false;
+boolean lockedFirstRabbit = false, lockedSecondRabbit = false, lockedThirdRabbit = false, rabbitMoveUp =false, rabbitMoveLeft = false ;
 String MouseFlag;
 int gameMenuSize = 50;
 int startTime = 14;

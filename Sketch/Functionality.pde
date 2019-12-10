@@ -27,18 +27,45 @@ void mouseDragged(){
      updateFoxPositions(tmp);
    }
  }else if(lockedFirstRabbit){
-   if((mouseX - xOffset > 75 ) &&(mouseX - xOffset < height -cellDistX )){
-     jFirstRabbit = mouseX - xOffset;
+   if((mouseX - xOffset > 75 ) &&(mouseX - xOffset < height -cellDistX ) && (mouseY - yOffset > 130) && (mouseY - yOffset < width -60)){
+      if(rabbitMoveUp){
+        iFirstRabbit = mouseY - yOffset;
+      }else if(rabbitMoveLeft){
+         jFirstRabbit = mouseX - xOffset;
+      }else{
+        determinareDirectie();
+      }
    }
  }else if(lockedSecondRabbit){
-   if((mouseX - xOffset > 75 ) &&(mouseX - xOffset < height -cellDistX )){
-     jSecondRabbit = mouseX - xOffset;
+   if((mouseX - xOffset > 75 ) &&(mouseX - xOffset < height -cellDistX ) && (mouseY - yOffset > 130) && (mouseY - yOffset < width -60)){
+      if(rabbitMoveUp){
+        iSecondRabbit = mouseY - yOffset;
+      }else if(rabbitMoveLeft){
+         jSecondRabbit = mouseX - xOffset;
+      }else{
+        determinareDirectie();
+      }
    }
  }else if(lockedThirdRabbit){
-   if((mouseX - xOffset > 75 ) &&(mouseX - xOffset < height -cellDistX )){
-     jThirdRabbit = mouseX - xOffset;
+   if((mouseX - xOffset > 75 ) &&(mouseX - xOffset < height -cellDistX ) && (mouseY - yOffset > 130) && (mouseY - yOffset < width -60)){
+      if(rabbitMoveUp){
+        iThirdRabbit = mouseY - yOffset;
+      }else if(rabbitMoveLeft){
+         jThirdRabbit = mouseX - xOffset;
+      }else{
+        determinareDirectie();
+      }
    }
  } 
+}
+
+void determinareDirectie(){
+   float directie = directieMouse();
+   if((directie < 0) || (directie == 90)){
+       rabbitMoveUp = true;
+   }else{
+      rabbitMoveLeft = true; 
+   }
 }
 
 void printArray(){
@@ -81,6 +108,8 @@ void mouseReleased(){
  lockedFirstRabbit = false;
  lockedSecondRabbit = false;
  lockedThirdRabbit = false;
+ rabbitMoveUp = false;
+ rabbitMoveLeft = false;
 }
 
 
@@ -107,4 +136,10 @@ void determinaObstacolStanga(){
    if(obstacolStanga == 5){
       obstacolStanga = 0; 
    }
+}
+
+float directieMouse(){
+   float angle = atan2(mouseY - pmouseY,mouseX - pmouseX);
+    println(degrees(angle));
+   return degrees(angle);
 }

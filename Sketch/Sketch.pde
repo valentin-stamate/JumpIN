@@ -35,15 +35,19 @@ void draw(){
   if(gameStart == true){
     background(gameBkgColor);
 
+
     drawTable();
 
     drawPositions();
     drawGameMenu();
     drawGamewButtons();
-    //create timer
 
+    //create timer
     drawTimer();
+
+    checkSelected();
     drawFoxes();
+
 
   } else if (options == true){
     background(gameBkgColor);

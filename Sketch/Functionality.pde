@@ -15,7 +15,7 @@ void exitOptionButton(){
 }
 
 void quitButton(){
-   quit = true; 
+   quit = true;
 }
 //muta vulpile
 void mouseDragged(){
@@ -56,7 +56,7 @@ void mouseDragged(){
         determinareDirectie();
       }
    }
- } 
+ }
 }
 
 void determinareDirectie(){
@@ -64,7 +64,7 @@ void determinareDirectie(){
    if((directie < 0) || (directie == 90)){
        rabbitMoveUp = true;
    }else{
-      rabbitMoveLeft = true; 
+      rabbitMoveLeft = true;
    }
 }
 
@@ -98,7 +98,7 @@ void updateFoxPositions(int tmp){
          tableArray[fOneI -1][i-1] = "F";
          tableArray[fOneI -1][i] = "F";
        }
-       
+
      }
      printArray();
 }
@@ -118,7 +118,7 @@ void determinaObstacolDreapta(){
    int i =  fOneI -1;
    while(j <= 4){
     if(tableArray[i][j] != "0"){
-     obstacolDreapta = 5-(j); 
+     obstacolDreapta = 5-(j);
     }
     j++;
    }
@@ -129,12 +129,12 @@ void determinaObstacolStanga(){
    int i =  fOneI -1;
    while(j >=0 && obstacolStanga == 5 ){
     if(tableArray[i][j] != "0"){
-     obstacolStanga = j+1; 
+     obstacolStanga = j+1;
     }
     j--;
    }
    if(obstacolStanga == 5){
-      obstacolStanga = 0; 
+      obstacolStanga = 0;
    }
 }
 
@@ -142,4 +142,66 @@ float directieMouse(){
    float angle = atan2(mouseY - pmouseY,mouseX - pmouseX);
     println(degrees(angle));
    return degrees(angle);
+}
+
+// verifica ce animal e selectat si deseneaza pozittile pe care se poate muta
+void checkSelected(){
+  if(ROraneSelected){
+    drawPossibleMoves(rOneI, rOneJ);
+  }
+}
+
+void drawPossibleMoves(int i, int j){
+
+
+    int iN = i, jN = j;
+
+    // verifica pe toate directiile cand e posibile o nutare
+
+    // sus
+    while(iN > 0 && tableArray[iN][jN] != "0"){
+      iN--;
+    }
+    if(iN != i && iN != i - 1 && (tableArray[iN][jN] == "0" || tableArray[iN][jN] == "5") ){
+      drawPossibleMoveSquare(iN, jN);
+    }
+
+    // jos
+    iN = i; jN = j;
+    while(iN < 4 && tableArray[iN][jN] != "0"){
+      iN++;
+    }
+    if(iN != i && iN != i + 1 && (tableArray[iN][jN] == "0" || tableArray[iN][jN] == "5") ){
+      drawPossibleMoveSquare(iN, jN);
+    }
+
+    // stanga
+    iN = i; jN = j;
+    while(jN > 0 && tableArray[iN][jN] != "0"){
+      jN--;
+    }
+    if(jN != j && jN != j - 1 &&  (tableArray[iN][jN] == "0" || tableArray[iN][jN] == "5") ){
+      drawPossibleMoveSquare(iN, jN);
+    }
+
+    // dreapta
+    iN = i; jN = j;
+    while(jN < 4 && tableArray[iN][jN] != "0"){
+      jN++;
+    }
+    if(jN != j && jN != j + 1 && (tableArray[iN][jN] == "0" || tableArray[iN][jN] == "5") ){
+      drawPossibleMoveSquare(iN, jN);
+    }
+
+
+
+}
+
+void drawPossibleMoveSquare(int i, int j){
+  fill( color(57,73,171, 60) );
+  if(tableArray[i][j] == "5")
+    fill(color(142,36,170, 60));
+
+  noStroke();
+  rect(cellDistX * (j + 1) - 50, cellDistY * (i + 1), cellDistX / 2 + 75, cellDistY / 2 + 75, 8);
 }

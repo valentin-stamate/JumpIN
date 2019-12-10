@@ -6,6 +6,8 @@ int coordonateFoxI =0, coordonateFoxJ =0;
 int iFirstRabbit = 0, jFirstRabbit = 0, iSecondRabbit = 0, jSecondRabbit = 0,iThirdRabbit = 0, jThirdRabbit = 0;
 int xOffset, yOffset;
 
+boolean ROraneSelected = false;
+
 // incarca imaginile svg
 void loadAssets(){
   rabbitOrange = loadShape("rabbitOrange.svg");
@@ -81,7 +83,12 @@ void drawPositions(){
         if(iFirstRabbit == 0 && jFirstRabbit == 0){
          iFirstRabbit = cellDistY * (i + 1) - 50 + gameMenuSize - 10;
          jFirstRabbit = cellDistX * (j + 1) - 50 - 11;
+
+         rOneI = i;
+         rOneJ = j;
         }
+
+
         drawRabbit(jFirstRabbit, iFirstRabbit, rabbitOrange, flagROne);
       }
       else if( tableArray[i][j] == "R2" ){
@@ -124,7 +131,7 @@ void drawFoxes(){
         fOneI = i+1;
       }
       j++;
-     
+
     }
     determinaObstacolDreapta();
     determinaObstacolStanga();
@@ -195,11 +202,11 @@ void drawButtonIesire(){
 }
 
 void drawButtonOption(){
-   drawButton(width/2, height /2+ gameMenuSize , 90,50, normalBtnCol, optionsString);
+   drawButton(width / 2, height / 2+ gameMenuSize , 90,50, normalBtnCol, optionsString);
 }
 
 void drawQuitButton(){
-   drawButton(width/2, height /2  + gameMenuSize+ 150, 90,50, normalBtnCol, quitString);
+   drawButton(width / 2, height / 2  + gameMenuSize+ 150, 90,50, normalBtnCol, quitString);
 }
 
 void drawButtonIesireOption(){
@@ -275,7 +282,7 @@ void selectRabbitThree(int newX, int newY){
 void drawTimer(){
     second = (millis()/1000 ) - startTime;
     if(second % 60 == 0){
-        min = second /60;
+        min = second / 60;
     }
     int offset = 270;
     text("Timer : ", 400 + offset, gameMenuSize / 2 + 6);
@@ -319,6 +326,9 @@ void mousePressed(){
 
     } else if( egal(MouseFlag, flagROne) == true ){
       println("rabit one selected");
+
+      ROraneSelected = !ROraneSelected;
+
       lockedFirstRabbit = true;
       xOffset = mouseX - jFirstRabbit;
       yOffset = mouseY - iFirstRabbit;

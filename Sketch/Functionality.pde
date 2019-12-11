@@ -27,7 +27,7 @@ void mouseDragged(){
      updateFoxPositions(tmp);
    }
  }else if(lockedFirstRabbit){
-   if((mouseX - xOffset > 75 ) &&(mouseX - xOffset < height -cellDistX ) && (mouseY - yOffset > 130) && (mouseY - yOffset < width -60)){
+   if((mouseX - xOffset > 75 ) &&(mouseX - xOffset < height -25 ) && (mouseY - yOffset > 130) && (mouseY - yOffset < width-10)){
       if(rabbitMoveUp){
         iFirstRabbit = mouseY - yOffset;
       }else if(rabbitMoveLeft){
@@ -37,7 +37,7 @@ void mouseDragged(){
       }
    }
  }else if(lockedSecondRabbit){
-   if((mouseX - xOffset > 75 ) &&(mouseX - xOffset < height -cellDistX ) && (mouseY - yOffset > 130) && (mouseY - yOffset < width -60)){
+   if((mouseX - xOffset > 75 ) &&(mouseX - xOffset < height -25 ) && (mouseY - yOffset > 130) && (mouseY - yOffset < width-10)){
       if(rabbitMoveUp){
         iSecondRabbit = mouseY - yOffset;
       }else if(rabbitMoveLeft){
@@ -47,7 +47,7 @@ void mouseDragged(){
       }
    }
  }else if(lockedThirdRabbit){
-   if((mouseX - xOffset > 75 ) &&(mouseX - xOffset < height -cellDistX ) && (mouseY - yOffset > 130) && (mouseY - yOffset < width -60)){
+   if((mouseX - xOffset > 75 ) &&(mouseX - xOffset < height -25 ) && (mouseY - yOffset > 130) && (mouseY - yOffset < width-10)){
       if(rabbitMoveUp){
         iThirdRabbit = mouseY - yOffset;
       }else if(rabbitMoveLeft){
@@ -104,6 +104,29 @@ void updateFoxPositions(int tmp){
 }
 
 void mouseReleased(){
+ int i = 0, j = 0;
+  if(lockedFirstRabbit){
+      i = (iFirstRabbit - 25) / cellDistX;
+      j = (jFirstRabbit - 25) / cellDistY;
+  }else if(lockedSecondRabbit){
+      i = (iSecondRabbit - 25) / cellDistX;
+      j = (jSecondRabbit - 25) / cellDistY;
+
+  }else if(lockedThirdRabbit){
+      i = (iThirdRabbit - 25) / cellDistX;
+      j = (jThirdRabbit - 25) / cellDistY;
+  }else if(lockedFox){
+    j = (coordonateFoxJ - 25) / cellDistY;
+  }
+  
+  if((lockedFirstRabbit) || (lockedSecondRabbit) ||(lockedThirdRabbit)){
+     println(i + " " + j);
+     
+     moveRabbit(i,j);
+  }else if(lockedFox){
+    moveFox(j);
+  }
+  
  lockedFox = false;
  lockedFirstRabbit = false;
  lockedSecondRabbit = false;
@@ -111,12 +134,39 @@ void mouseReleased(){
  rabbitMoveUp = false;
  rabbitMoveLeft = false;
 
- int i = (mouseY - gameMenuSize - 25) / cellDistX;
- int j = (mouseX - 25) / cellDistY;
-
- println(i + " " + j);
+ 
 }
 
+//muta iepurii in casutele in care ar trebui sa fie atunci cand se elibereaza mouse-ul
+void moveRabbit(int i, int j){
+  if( i == 5){
+     i--; 
+  }else if( j== 5){
+     j--; 
+  }
+  int pozitieI = cellDistX * (i+1) -10;
+  int pozitieJ = cellDistX * (j+1) -60;
+  if(lockedFirstRabbit){
+      iFirstRabbit = pozitieI;
+      jFirstRabbit = pozitieJ;
+  }else if(lockedSecondRabbit){
+      iSecondRabbit = pozitieI;
+      jSecondRabbit = pozitieJ;
+  }else if(lockedThirdRabbit){
+     iThirdRabbit = pozitieI;
+     jThirdRabbit = pozitieJ;
+  }
+}
+
+//muta vulpea in casutele in care ar trebui sa fie atunci cand se elibereaza mouse-ul
+void moveFox( int j){
+  println(j);
+  if(j == obstacolStanga){
+     j ++;
+  }
+  int pozitieJ = cellDistX * (j) + 30;
+  coordonateFoxJ = pozitieJ;
+}
 
 void determinaObstacolDreapta(){
    int j =  fOneJ -2;

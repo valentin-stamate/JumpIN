@@ -328,6 +328,9 @@ void mousePressed(){
       println("rabit one selected");
 
       ROraneSelected = !ROraneSelected;
+      if(!ROraneSelected){
+        resetNextMoveArray();
+      }
 
       lockedFirstRabbit = true;
       xOffset = mouseX - jFirstRabbit;
@@ -368,6 +371,25 @@ boolean egal(String a, String b){
   }
 
   return true;
+}
+
+void drawNextMoves(){
+  for(int i = 0; i < 5; i++){
+    for(int j = 0; j < 5; j++){
+      if(nextMoveArray[i][j] == "P"){
+        drawPossibleMoveSquare(i, j);
+      }
+    }
+  }
+}
+
+void drawPossibleMoveSquare(int i, int j){
+  fill( color(57,73,171, 60) );
+  if(tableArray[i][j] == "5")
+    fill(color(142,36,170, 60));
+
+  noStroke();
+  rect(cellDistX * (j + 1) - 50, cellDistY * (i + 1), cellDistX / 2 + 75, cellDistY / 2 + 75, 8);
 }
 
 

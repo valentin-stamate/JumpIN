@@ -47,6 +47,7 @@ void draw(){
 
     checkSelected();
     drawFoxes();
+    drawNextMoves();
 
 
   } else if (options == true){

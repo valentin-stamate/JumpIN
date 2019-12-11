@@ -110,6 +110,11 @@ void mouseReleased(){
  lockedThirdRabbit = false;
  rabbitMoveUp = false;
  rabbitMoveLeft = false;
+
+ int i = (mouseY - gameMenuSize - 25) / cellDistX;
+ int j = (mouseX - 25) / cellDistY;
+
+ println(i + " " + j);
 }
 
 
@@ -151,19 +156,18 @@ void checkSelected(){
   }
 }
 
+
+// verifica pe toate directiile cand e posibile o nutare
 void drawPossibleMoves(int i, int j){
 
-
-    int iN = i, jN = j;
-
-    // verifica pe toate directiile cand e posibile o nutare
-
     // sus
+    int iN = i, jN = j;
     while(iN > 0 && tableArray[iN][jN] != "0"){
       iN--;
     }
     if(iN != i && iN != i - 1 && (tableArray[iN][jN] == "0" || tableArray[iN][jN] == "5") ){
       drawPossibleMoveSquare(iN, jN);
+      nextMoveArray[iN][jN] = "P";
     }
 
     // jos
@@ -172,7 +176,7 @@ void drawPossibleMoves(int i, int j){
       iN++;
     }
     if(iN != i && iN != i + 1 && (tableArray[iN][jN] == "0" || tableArray[iN][jN] == "5") ){
-      drawPossibleMoveSquare(iN, jN);
+      nextMoveArray[iN][jN] = "P";
     }
 
     // stanga
@@ -181,7 +185,7 @@ void drawPossibleMoves(int i, int j){
       jN--;
     }
     if(jN != j && jN != j - 1 &&  (tableArray[iN][jN] == "0" || tableArray[iN][jN] == "5") ){
-      drawPossibleMoveSquare(iN, jN);
+      nextMoveArray[iN][jN] = "P";
     }
 
     // dreapta
@@ -190,18 +194,15 @@ void drawPossibleMoves(int i, int j){
       jN++;
     }
     if(jN != j && jN != j + 1 && (tableArray[iN][jN] == "0" || tableArray[iN][jN] == "5") ){
-      drawPossibleMoveSquare(iN, jN);
+      nextMoveArray[iN][jN] = "P";
     }
-
-
 
 }
 
-void drawPossibleMoveSquare(int i, int j){
-  fill( color(57,73,171, 60) );
-  if(tableArray[i][j] == "5")
-    fill(color(142,36,170, 60));
-
-  noStroke();
-  rect(cellDistX * (j + 1) - 50, cellDistY * (i + 1), cellDistX / 2 + 75, cellDistY / 2 + 75, 8);
+void resetNextMoveArray(){
+  for(int i = 0; i < 5; i++){
+    for(int j = 0; j < 5; j++){
+      nextMoveArray[i][j] = "0";
+    }
+  }
 }

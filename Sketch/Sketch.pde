@@ -1,18 +1,5 @@
 import processing.sound.*;
-
 SoundFile file;
-
-PShape rabbitGrey, rabbitOrange, rabbitWhite;
-PShape fox, mushroom;
-
-boolean gameStart = false, mouseOver = false, options = false, quit = false, lockedFox = false;
-boolean lockedFirstRabbit = false, lockedSecondRabbit = false, lockedThirdRabbit = false, rabbitMoveUp =false, rabbitMoveLeft = false ;
-String MouseFlag;
-int gameMenuSize = 50;
-int startTime = 14;
-int min, second;
-int obstacolStanga = 5, obstacolDreapta = 0;
-
 
 void setup(){
   size(800, 850, P2D);

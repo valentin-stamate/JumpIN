@@ -28,31 +28,52 @@ void mouseDragged(){
    }
  }else if(lockedFirstRabbit){
    if((mouseX - xOffset > 75 ) &&(mouseX - xOffset < height -25 ) && (mouseY - yOffset > 130) && (mouseY - yOffset < width-10)){
-      if(rabbitMoveUp){
+     //determina directiile in care merg iepurasii si verifica daca pozitia urmatoare este un obstacol, altfel nu poate sa sara
+     int i = (iFirstRabbit - 25) / cellDistX;
+     int j = (jFirstRabbit - 25) / cellDistY; 
+     if(rabbitMoveUp && i > 0 &&  tableArray[i-1][j] != "0"){
         iFirstRabbit = mouseY - yOffset;
-      }else if(rabbitMoveLeft){
+      }else if(rabbitMoveDown &&  i < 4   && tableArray[i+1][j] != "0"){
+         iFirstRabbit = mouseY - yOffset;
+      }else if(rabbitMoveLeft &&  j > 0 && tableArray[i][j-1] != "0"){
          jFirstRabbit = mouseX - xOffset;
-      }else{
+      }else if(rabbitMoveRight && j < 4 && tableArray[i][j+1] != "0"){
+         jFirstRabbit = mouseX - xOffset;
+      }else {
         determinareDirectie();
       }
    }
  }else if(lockedSecondRabbit){
    if((mouseX - xOffset > 75 ) &&(mouseX - xOffset < height -25 ) && (mouseY - yOffset > 130) && (mouseY - yOffset < width-10)){
-      if(rabbitMoveUp){
+     int i = (iSecondRabbit - 25) / cellDistX;
+     int j = (jSecondRabbit - 25) / cellDistY; 
+    if(rabbitMoveUp && i > 0 &&  tableArray[i-1][j] != "0"){
         iSecondRabbit = mouseY - yOffset;
-      }else if(rabbitMoveLeft){
+      }else if(rabbitMoveDown &&  i < 4   && tableArray[i+1][j] != "0"){
+         iSecondRabbit = mouseY - yOffset;
+      }else if(rabbitMoveLeft &&  j > 0 && tableArray[i][j-1] != "0"){
          jSecondRabbit = mouseX - xOffset;
-      }else{
+      }else if(rabbitMoveRight  && j < 4 && tableArray[i][j+1] != "0"){
+         jSecondRabbit = mouseX - xOffset;
+      }else {
         determinareDirectie();
       }
+    
    }
  }else if(lockedThirdRabbit){
    if((mouseX - xOffset > 75 ) &&(mouseX - xOffset < height -25 ) && (mouseY - yOffset > 130) && (mouseY - yOffset < width-10)){
-      if(rabbitMoveUp){
+     int i = (iThirdRabbit - 25) / cellDistX ;
+     int j = (jThirdRabbit - 25) / cellDistY;
+     println(i + "  " + j + "_________________");
+      if((rabbitMoveUp) && i > 0 &&  tableArray[i-1][j] != "0"){
         iThirdRabbit = mouseY - yOffset;
-      }else if(rabbitMoveLeft){
+      }else if(rabbitMoveDown &&  i < 4   && tableArray[i+1][j] != "0"){
+         iThirdRabbit = mouseY - yOffset;
+      }else if(rabbitMoveLeft &&  j > 0 && tableArray[i][j-1] != "0"){
          jThirdRabbit = mouseX - xOffset;
-      }else{
+      }else if(rabbitMoveRight && j < 4 && tableArray[i][j+1] != "0"){
+         jThirdRabbit = mouseX - xOffset;
+      }else {
         determinareDirectie();
       }
    }
@@ -61,10 +82,14 @@ void mouseDragged(){
 
 void determinareDirectie(){
    float directie = directieMouse();
-   if((directie < 0) || (directie == 90)){
+   if((directie < 0)){
        rabbitMoveUp = true;
-   }else{
+   }else if(directie == 0){
+      rabbitMoveRight = true;
+   }else if(directie == 180){
       rabbitMoveLeft = true;
+   }else{
+     rabbitMoveDown = true;
    }
 }
 
@@ -133,8 +158,8 @@ void mouseReleased(){
  lockedThirdRabbit = false;
  rabbitMoveUp = false;
  rabbitMoveLeft = false;
-
- 
+ rabbitMoveDown = false;
+ rabbitMoveRight = false;
 }
 
 //muta iepurii in casutele in care ar trebui sa fie atunci cand se elibereaza mouse-ul

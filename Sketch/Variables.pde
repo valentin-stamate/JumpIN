@@ -14,7 +14,9 @@ boolean lockedSecondRabbit = false;
 boolean lockedThirdRabbit = false;
 
 boolean rabbitMoveUp = false;
+boolean rabbitMoveRight = false;
 boolean rabbitMoveLeft = false;
+boolean rabbitMoveDown = false;
 
 boolean lockedFox = false;
 

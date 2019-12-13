@@ -34,6 +34,8 @@ int obstacolDreapta = 0;
 int cellDistX;
 int cellDistY;
 
+int score  = 0;
+
 // --== POZITII ANIMALE ==--
 int coordonateFoxI = 0, coordonateFoxJ = 0;
 
@@ -41,6 +43,11 @@ int iFirstRabbit = 0, jFirstRabbit = 0;
 int iSecondRabbit = 0, jSecondRabbit = 0;
 int iThirdRabbit = 0, jThirdRabbit = 0;
 int xOffset, yOffset;
+int iInitialFirstRabbit = 0, jInitialFirstRabbit = 0;
+int iInitialSecondRabbit = 0, jInitialSecondRabbit = 0;
+int iInitialThirdRabbit = 0, jInitialThirdRabbit = 0;
+
+int count = 0;
 
 // TODO
 int rOneI = 1, rOneJ = 2;

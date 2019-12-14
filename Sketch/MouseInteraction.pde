@@ -49,7 +49,6 @@ void mousePressed(){
       yOffset = mouseY - iSecondRabbit;
       iInitialSecondRabbit = (iSecondRabbit - 25) / cellDistX;
       jInitialSecondRabbit = (jSecondRabbit - 25) / cellDistY;
-      
       println(iInitialFirstRabbit + " _____" + jInitialFirstRabbit);
     } else if( egal(MouseFlag, flagRThree) == true ){
       println("rabbit three  selectd");
@@ -58,8 +57,6 @@ void mousePressed(){
       yOffset = mouseY - iThirdRabbit;
       iInitialThirdRabbit = (iThirdRabbit - 25) / cellDistX;
       jInitialThirdRabbit = (jThirdRabbit - 25) / cellDistY;
-
-
     } else if( egal(MouseFlag, flagFOne) == true ){
       lockedFox = true;
       xOffset = mouseX - coordonateFoxHJ;

@@ -32,25 +32,31 @@ void mousePressed(){
     } else if( egal(MouseFlag, flagROne) == true ){
       println("rabit one selected");
 
-      ROraneSelected = !ROraneSelected;
-      if(!ROraneSelected){
-        resetNextMoveArray();
-      }
-
+      //ROraneSelected = !ROraneSelected;
+      //if(!ROraneSelected){
+      //  resetNextMoveArray();
+      //}
       lockedFirstRabbit = true;
       xOffset = mouseX - jFirstRabbit;
       yOffset = mouseY - iFirstRabbit;
+      iInitialFirstRabbit = (iFirstRabbit - 25) / cellDistX;
+      jInitialFirstRabbit = (jFirstRabbit - 25) / cellDistY; 
+      
     } else if( egal(MouseFlag, flagRTwo) ==true ){
       println("rabbit two selectd");
       lockedSecondRabbit = true;
       xOffset = mouseX - jSecondRabbit;
       yOffset = mouseY - iSecondRabbit;
+      iInitialSecondRabbit = (iSecondRabbit - 25) / cellDistX;
+      jInitialSecondRabbit = (jSecondRabbit - 25) / cellDistY; 
+      println(iInitialFirstRabbit + " _____" + jInitialFirstRabbit);
     } else if( egal(MouseFlag, flagRThree) == true ){
       println("rabbit three  selectd");
       lockedThirdRabbit = true;
       xOffset = mouseX - jThirdRabbit;
       yOffset = mouseY - iThirdRabbit;
-
+      iInitialThirdRabbit = (iThirdRabbit - 25) / cellDistX;
+      jInitialThirdRabbit = (jThirdRabbit - 25) / cellDistY; 
     } else if( egal(MouseFlag, flagFOne) == true ){
       lockedFox = true;
       xOffset = mouseX - coordonateFoxJ;

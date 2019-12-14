@@ -56,26 +56,26 @@ void drawPositions(){
     for(int j = 0; j < 5; j++){
       if( tableArray[i][j] == "R1" ){
         if(iFirstRabbit == 0 && jFirstRabbit == 0){
-         iFirstRabbit = cellDistY * (i + 1) - 50 + gameMenuSize - 10;
-         jFirstRabbit = cellDistX * (j + 1) - 50 - 11;
+         iFirstRabbit = convertCoordToY(i);
+         jFirstRabbit = convertCoordToX(j);
 
-         rOneI = i;
-         rOneJ = j;
+         //rOneI = i;
+         //rOneJ = j;
         }
 
         drawRabbit(jFirstRabbit, iFirstRabbit, rabbitOrange, flagROne);
       }
       else if( tableArray[i][j] == "R2" ){
        if(iSecondRabbit == 0 && jSecondRabbit == 0){
-           iSecondRabbit = cellDistY * (i + 1) - 50 + gameMenuSize - 10;
-           jSecondRabbit = cellDistX * (j + 1) - 50 - 11;
+           iSecondRabbit = convertCoordToY(i);
+           jSecondRabbit = convertCoordToX(j);
         }
         drawRabbit(jSecondRabbit, iSecondRabbit, rabbitGrey, flagRTwo);
       }
       else if( tableArray[i][j] == "R3" ){
         if(iThirdRabbit == 0 && jThirdRabbit == 0){
-           iThirdRabbit = cellDistY * (i + 1) - 50 + gameMenuSize - 10;
-           jThirdRabbit = cellDistX * (j + 1) - 50 - 11;
+           iThirdRabbit = convertCoordToY(i);
+           jThirdRabbit = convertCoordToX(j);
         }
         drawRabbit(jThirdRabbit,iThirdRabbit, rabbitWhite, flagRThree);
       }
@@ -88,7 +88,7 @@ void drawPositions(){
 }
 
 void drawFoxes(){
-  if((coordonateFoxI == 0) && (coordonateFoxJ == 0)){
+  if((coordonateFoxHI == 0) && (coordonateFoxHJ == 0)){
     int i = 0, j = 0;
     while(((fOneI == 0) || (fOneJ == 0)) &&(i < 5)){
       if( j ==4){
@@ -106,26 +106,31 @@ void drawFoxes(){
     determinaObstacolStanga();
     tableArray[fOneI-1][fOneJ -2] = "F";
     tableArray[fOneI-1][fOneJ -1] = "F";
-   coordonateFoxI = cellDistY * fOneI - 50 - 6 + gameMenuSize;
-   coordonateFoxJ =  cellDistX * fOneJ - 50 - 80;
+   coordonateFoxHI = convertCoordToY(fOneI - 1) + 8;
+   coordonateFoxHJ =  convertCoordToX(fOneJ - 1) - 80;
   }
-  drawFox(coordonateFoxJ, coordonateFoxI, flagFOne);
+  drawFox(coordonateFoxHJ, coordonateFoxHI, 260, 80,flagFOne, foxH);
+
+
+  // TODO
+  // just a demo position
+  drawFox(convertCoordToX(3), convertCoordToY(4) - 72, 80, 260, flagFTwo, foxV);
 }
 
 void drawRabbit(int j, int i, PShape p, String flag){
   int x = j;
   int y = i;
-  shape(p, x, y, 76, 110);
+  shape(p, x, y, 100, 100);
   checkMouseOver(x, y, 80, 120 ,flag);
 }
 
-void drawFox(int j, int i, String flag){
+void drawFox(int j, int i, int w, int h, String flag, PShape f){
 
   int x = j;
   int y = i;
 
-  shape(fox, x, y, 260, 80);
-  checkMouseOver(x, y, 260, 80 ,flag);
+  shape(f, x, y, w, h);
+  checkMouseOver(x, y, w, h , flag);
 }
 
 void drawMushroom(int j, int i){

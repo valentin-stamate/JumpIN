@@ -21,19 +21,20 @@ void drawGamewButtons(){
 }
 
 void drawButtonStart(){
-  drawButton(width / 2 , height / 2 + gameMenuSize-150, 90, 50, normalBtnCol, startString);
+  drawButton(width / 4 , height / 2 + 150, 90, 50, normalBtnCol_2, startString);
+}
+
+
+void drawButtonOption(){
+   drawButton(width / 2, height / 2 + 150, 90,50, normalBtnCol_2, optionsString);
+}
+
+void drawQuitButton(){
+   drawButton(width * 3 / 4, height / 2 + 150, 90,50, normalBtnCol_2, quitString);
 }
 
 void drawButtonIesire(){
   drawButton(40, gameMenuSize / 2, 60, 30, normalBtnCol, exitString);
-}
-
-void drawButtonOption(){
-   drawButton(width / 2, height / 2+ gameMenuSize , 90,50, normalBtnCol, optionsString);
-}
-
-void drawQuitButton(){
-   drawButton(width / 2, height / 2  + gameMenuSize+ 150, 90,50, normalBtnCol, quitString);
 }
 
 void drawButtonIesireOption(){

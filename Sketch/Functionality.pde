@@ -86,6 +86,7 @@ void moveFirstRabbit(){
            tableArray[iInitialFirstRabbit][ jInitialFirstRabbit]= "0";
            score+=100;
         }else if(determinareCasutaGoala(i, j) && count>0){
+
             tableArray[i][j] = "R1";
             tableArray[iInitialFirstRabbit][ jInitialFirstRabbit]= "0";
         }
@@ -93,6 +94,7 @@ void moveFirstRabbit(){
         determinareDirectie();
       }
    }
+
 }
 // muta iepurele si modifica pozita sa
 void moveSecondRabbit(){
@@ -133,11 +135,7 @@ void moveSecondRabbit(){
            tableArray[iInitialSecondRabbit ][ jInitialSecondRabbit]= "0";
            score+=100;
         }else if(determinareCasutaGoala(i, j) && count>0){
-           tableArray[i][j] = "R2"; 
-           tableArray[iInitialSecondRabbit ][ jInitialSecondRabbit]= "0";
-           score+=100;
-        }else if(determinareCasutaGoala(i, j) && count>0){
-           
+
             tableArray[iInitialSecondRabbit ][ jInitialSecondRabbit]= "0";
         }
       }else if(rabbitMoveRight  && j <= 4 ){
@@ -148,6 +146,7 @@ void moveSecondRabbit(){
            tableArray[iInitialSecondRabbit][ jInitialSecondRabbit]= "0";
            score+=100;
         }else if(determinareCasutaGoala(i, j) && count>0){
+
             tableArray[i][j] = "R2";
             tableArray[iInitialSecondRabbit][ jInitialSecondRabbit]= "0";
         }
@@ -163,6 +162,7 @@ void moveThirdRabbit(){
      int j = (jThirdRabbit - 25) / cellDistY;
      printArray();
      println(i + "  "  + j );
+
     if(rabbitMoveUp && i >= 0){
         if(determinareCasutaObstacol(i,j)){
            iThirdRabbit = mouseY - yOffset;
@@ -215,7 +215,6 @@ void moveThirdRabbit(){
         determinareDirectie();
       }
    }
-
 }
 
 boolean determinareCasutaGoala(int i, int j){
@@ -338,8 +337,8 @@ void mouseReleased(){
       determinaObstacolStanga();
       determinaObstacolDreapta();
   }else if(lockedFox){
-
     j = (coordonateFoxHJ - 25) / cellDistY;
+
   }
 
   if((lockedFirstRabbit) || (lockedSecondRabbit) ||(lockedThirdRabbit)){
@@ -374,13 +373,11 @@ void moveRabbit(int i, int j){
   }else if( j== 5){
      j--;
   }
-
   int pozitieI = convertCoordToY(i);
   int pozitieJ = convertCoordToX(j);
 
   if(iesirePoz(i,j)){
        score += 100;
-
    }
   if(lockedFirstRabbit){
       iFirstRabbit = pozitieI;
@@ -400,9 +397,7 @@ void moveFox( int j){
   if(j == obstacolStanga){
      j++;
   }else if(j == obstacolDreapta){
-
      j--;
-
   }
   int pozitieJ = cellDistX * (j) + 30;
   coordonateFoxHJ = pozitieJ;
@@ -418,7 +413,7 @@ void determinaObstacolDreapta(){
      obstacolDreapta = 5-(j);
     }
     j++;
-   }  
+   }
 }
 
 void determinaObstacolStanga(){

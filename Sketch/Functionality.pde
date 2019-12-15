@@ -268,7 +268,7 @@ void updateFoxPositions(int tmp){
          tableArray[fOneI -1][i-1] = "F";
          tableArray[fOneI -1][i] = "F";
        }
-       fOneJ = i+3;
+       fOneJ = i+1;
      }else{
        int i =  (coordonateFoxJ + 50 + 80)/cellDistX - 1;
        if(tableArray[fOneI -1][i] == "F" && tableArray[fOneI -1][i-2] == "F"){
@@ -299,8 +299,6 @@ void mouseReleased(){
          i = iInitialFirstRabbit;
          j = jInitialFirstRabbit;
       }
-      determinaObstacolStanga();
-      determinaObstacolDreapta();
   }else if(lockedSecondRabbit){
       i = (iSecondRabbit - 25) / cellDistX;
       j = (jSecondRabbit - 25) / cellDistY;
@@ -315,9 +313,6 @@ void mouseReleased(){
          i = iInitialSecondRabbit;
          j = jInitialSecondRabbit;
       }
-      determinaObstacolStanga();
-      determinaObstacolDreapta();
-     
   }else if(lockedThirdRabbit){
       i = (iThirdRabbit - 25) / cellDistX;
       j = (jThirdRabbit - 25) / cellDistY;
@@ -335,11 +330,8 @@ void mouseReleased(){
          i = iInitialThirdRabbit;
          j = jInitialThirdRabbit;
       }
-      determinaObstacolStanga();
-      determinaObstacolDreapta();
   }else if(lockedFox){
     j = (coordonateFoxJ - 25) / cellDistY;
-    
   }
   
   if((lockedFirstRabbit) || (lockedSecondRabbit) ||(lockedThirdRabbit)){
@@ -358,6 +350,10 @@ void mouseReleased(){
  rabbitMoveLeft = false;
  rabbitMoveDown = false;
  rabbitMoveRight = false;
+ 
+  determinaObstacolStanga();
+  determinaObstacolDreapta();
+  
 }
 
 boolean iesirePoz(int i, int j){
@@ -394,10 +390,9 @@ void moveRabbit(int i, int j){
 
 //muta vulpea in casutele in care ar trebui sa fie atunci cand se elibereaza mouse-ul
 void moveFox( int j){
-  println(j);
   if(j == obstacolStanga){
      j++;
-  }else if(j == obstacolDreapta){
+  }else if(j == obstacolDreapta -1){
      j--; 
   }
   int pozitieJ = cellDistX * (j) + 30;
@@ -408,9 +403,8 @@ void determinaObstacolDreapta(){
    int j =  fOneJ -2;
    int i =  fOneI -1;
    obstacolDreapta = 0;
-   while(j <= 4){
-   
-    if(tableArray[i][j] != "0"){
+   while(j <= 4 && obstacolDreapta == 0){
+    if(tableArray[i][j] != "0" && tableArray[i][j] != "F"){
      obstacolDreapta = 5-(j);
     }
     j++;
@@ -418,17 +412,16 @@ void determinaObstacolDreapta(){
 }
 
 void determinaObstacolStanga(){
-   int j =  fOneJ -3;
+   int j =  fOneJ -2;
    int i =  fOneI -1;
    obstacolStanga = 5;
-   while(obstacolStanga == 5 && j >=0  ){
-     println(obstacolStanga +"+++++"+j + " ____" + i);
-    if(tableArray[i][j] != "0"){
-      if(tableArray[i][j] != "0" && j == 0){
-        obstacolStanga = j+1;
-      }else {
-         obstacolStanga = j;
-      }
+   while(obstacolStanga == 5 && j >0  ){
+    if(tableArray[i][j -1] != "0"){
+      //if(tableArray[i][j -1] != "0" && j == 1){
+      //  obstacolStanga = j;
+      //}else {
+         obstacolStanga = j ;
+      //}
     }
     j--;
    }

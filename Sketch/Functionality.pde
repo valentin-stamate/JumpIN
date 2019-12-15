@@ -500,3 +500,20 @@ void resetNextMoveArray(){
     }
   }
 }
+
+// I <-> Y , J <-> X
+int convertCoordToI(int y){
+  return (y - gameMenuSize - 50) / cellDistY;
+}
+
+int convertCoordToJ(int x){
+  return (x - 50) / cellDistX;
+}
+
+int convertCoordToX(int j){
+  return (cellDistX * (j + 1) - 50);
+}
+
+int convertCoordToY(int i){
+  return (cellDistY * (i + 1) - 50 + gameMenuSize - 8);
+}

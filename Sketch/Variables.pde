@@ -1,5 +1,5 @@
 // --== IMAGINI SVG ==--
-PShape rabbitGrey, rabbitOrange, rabbitWhite, fox, mushroom;
+PShape rabbitGrey, rabbitOrange, rabbitWhite,foxH, foxV, mushroom;
 PShape rabbitWhiteIntro, GameTitle;
 // --== VARIABILE DE LOGICA ==--
 // JOC

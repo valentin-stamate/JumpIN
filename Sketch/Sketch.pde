@@ -13,8 +13,8 @@ void setup(){
   textMode(SHAPE);
   shapeMode(CENTER);
 
-  file = new SoundFile(this, "./Music/bckMusic2.wav");
-  file.loop();
+  //file = new SoundFile(this, "./Music/bckMusic2.wav");
+  //file.loop();
 }
 
 

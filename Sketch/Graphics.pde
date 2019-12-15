@@ -109,7 +109,8 @@ void drawFoxes(){
    coordonateFoxI = cellDistY * fOneI - 50 - 6 + gameMenuSize;
    coordonateFoxJ =  cellDistX * fOneJ - 50 - 80;
   }
-  drawFox(coordonateFoxJ, coordonateFoxI, flagFOne);
+  drawFox(coordonateFoxJ, coordonateFoxI, 260, 80,flagFOne, foxH);
+  drawFox(convertCoordToX(3), convertCoordToY(4) - 72, 80, 260, flagFTwo, foxV);
 }
 
 void drawRabbit(int j, int i, PShape p, String flag){
@@ -119,13 +120,13 @@ void drawRabbit(int j, int i, PShape p, String flag){
   checkMouseOver(x, y, 80, 120 ,flag);
 }
 
-void drawFox(int j, int i, String flag){
+void drawFox(int j, int i, int w, int h, String flag, PShape f){
 
   int x = j;
   int y = i;
 
-  shape(fox, x, y, 260, 80);
-  checkMouseOver(x, y, 260, 80 ,flag);
+  shape(f, x, y, w, h);
+  checkMouseOver(x, y, w, h , flag);
 }
 
 void drawMushroom(int j, int i){

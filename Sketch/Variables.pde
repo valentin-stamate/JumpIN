@@ -1,6 +1,6 @@
 // --== IMAGINI SVG ==--
 PShape rabbitGrey, rabbitOrange, rabbitWhite, fox, mushroom;
-
+PShape rabbitWhiteIntro, GameTitle;
 // --== VARIABILE DE LOGICA ==--
 // JOC
 boolean gameStart = false;
@@ -38,6 +38,7 @@ int score  = 0;
 
 // --== POZITII ANIMALE ==--
 int coordonateFoxI = 0, coordonateFoxJ = 0;
+int coordonateFoxVI = 0, coordonateFoxVJ = 0;
 
 int iFirstRabbit = 0, jFirstRabbit = 0;
 int iSecondRabbit = 0, jSecondRabbit = 0;

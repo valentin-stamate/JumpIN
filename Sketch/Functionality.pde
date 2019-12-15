@@ -375,7 +375,7 @@ void moveRabbit(int i, int j){
      j--; 
   }
   int pozitieI = cellDistX * (i+1) -10;
-  int pozitieJ = cellDistX * (j+1) -60;
+  int pozitieJ = cellDistX * (j+1) -50;
   
   if(iesirePoz(i,j)){
        score += 100; 

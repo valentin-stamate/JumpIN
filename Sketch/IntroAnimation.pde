@@ -8,8 +8,8 @@ int phaze = 0;
 
 void InitializeIntroAnimation(){
 
-  rabbitWhiteIntro = loadShape("RabbitWhite.svg");
-  mushroom = loadShape("Mushroom.svg");
+  rabbitWhiteIntro = loadShape("rabbitWhite.svg");
+  mushroom = loadShape("mushroom.svg");
   GameTitle = loadShape("GameTitle.svg");
 
   rX = cellDistX * 1 - 50;

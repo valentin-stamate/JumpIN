@@ -19,6 +19,7 @@ boolean rabbitMoveLeft = false;
 boolean rabbitMoveDown = false;
 
 boolean lockedFox = false;
+boolean lockedSecondFox = false;
 
 boolean ROraneSelected = false;
 
@@ -30,6 +31,8 @@ int startTime = 14;
 int min, second;
 int obstacolStanga = 5;
 int obstacolDreapta = 0;
+int obstacolJos = 5;
+int obstacolSus = 0;
 
 int cellDistX;
 int cellDistY;
@@ -55,3 +58,4 @@ int rOneI = 1, rOneJ = 2;
 int rTwoI = 1, rTwoJ = 3;
 int rThreeI = 1, rThreeJ = 4;
 int fOneJ = 0, fOneI = 0;
+int fSecondJ =0, fSecondI = 0;

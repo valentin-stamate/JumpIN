@@ -62,7 +62,11 @@ void mousePressed(){
       lockedFox = true;
       xOffset = mouseX - coordonateFoxJ;
       yOffset = mouseY - coordonateFoxI;
-
+    }else if(egal(MouseFlag, flagFTwo) == true){
+      println("Second Fox is true");
+      lockedSecondFox = true;
+      xOffset = mouseX - coordonateFoxVI;
+      yOffset = mouseY - coordonateFoxVJ;
     }
     MouseFlag = "";
   }

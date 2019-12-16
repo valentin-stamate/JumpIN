@@ -91,32 +91,33 @@ void drawPositions(){
 
 void drawFoxes(){
   if((coordonateFoxI == 0) && (coordonateFoxJ == 0)){
-    int i = 0, j = 0;
-    while(((fOneI == 0) || (fOneJ == 0)) &&(i < 5)){
-      if( j ==4){
-        j = 0;
-        i++;
-      }
-      if((tableArray[i][j] =="0") && (tableArray[i][j+1] == "0")){
-        fOneJ = j+2;
-        fOneI = i+1;
-      }
-      j++;
-
-    }
+     fOneJ = 3;
+     fOneI = 1;
     determinaObstacolDreapta();
     determinaObstacolStanga();
     tableArray[fOneI-1][fOneJ -2] = "F";
     tableArray[fOneI-1][fOneJ -1] = "F";
    coordonateFoxI = convertCoordToY(fOneI - 1) + 8;
    coordonateFoxJ =  convertCoordToX(fOneJ - 1) - 80;
+   
+    fSecondI = 4;
+    fSecondJ = 5;
+    determinaObstacolSus();
+    determinaObstacolJos();
+   coordonateFoxVI = convertCoordToY(fSecondI - 1) - 40;
+   coordonateFoxVJ =  convertCoordToX(fSecondJ - 1) - 25;
+   tableArray[fSecondJ-2][fSecondI -1] = "F2";
+    tableArray[fSecondJ-1][fSecondI -1] = "F2";
+    
+    
+    printArray();
   }
   drawFox(coordonateFoxJ, coordonateFoxI, 260, 80,flagFOne, foxH);
 
 
   // TODO
   // just a demo position
-  drawFox(convertCoordToX(3), convertCoordToY(4) - 72, 80, 260, flagFTwo, foxV);
+  drawFox(coordonateFoxVI, coordonateFoxVJ, 80, 260, flagFTwo, foxV);
 }
 
 void drawRabbit(int j, int i, PShape p, String flag){

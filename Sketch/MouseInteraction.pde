@@ -16,6 +16,7 @@ void checkMouseOver(int x, int y, int bWidth, int bHeight, String s){
 }
 
 void mousePressed(){
+  click.play();
   if(mouseOver){
 
     if( egal(MouseFlag, startString) == true ){

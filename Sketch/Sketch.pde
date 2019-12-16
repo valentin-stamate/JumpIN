@@ -1,6 +1,6 @@
 import processing.sound.*;
 SoundFile file;
-SoundFile click;
+
 void setup(){
   size(800, 850);
   frameRate(60);
@@ -14,7 +14,6 @@ void setup(){
   shapeMode(CENTER);
 
   file = new SoundFile(this, "./Music/bckMusic2.wav");
-  click = new SoundFile(this,"./Music/Click.mp3");
   file.loop();
 }
 

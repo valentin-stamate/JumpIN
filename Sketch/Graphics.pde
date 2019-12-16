@@ -90,7 +90,7 @@ void drawPositions(){
 }
 
 void drawFoxes(){
-  if((coordonateFoxI == 0) && (coordonateFoxJ == 0)){
+  if((coordonateFoxHI == 0) && (coordonateFoxHJ == 0)){
     int i = 0, j = 0;
     while(((fOneI == 0) || (fOneJ == 0)) &&(i < 5)){
       if( j ==4){
@@ -108,6 +108,7 @@ void drawFoxes(){
     determinaObstacolStanga();
     tableArray[fOneI-1][fOneJ -2] = "F";
     tableArray[fOneI-1][fOneJ -1] = "F";
+
    coordonateFoxI = convertCoordToY(fOneI - 1) + 8;
    coordonateFoxJ =  convertCoordToX(fOneJ - 1) - 80;
   }

@@ -27,7 +27,7 @@ void draw(){
 
     drawPositions();
     drawGameMenu();
-    drawGamewButtons();
+    drawGameButtons();
 
     //create timer
     drawTimer();
@@ -42,11 +42,13 @@ void draw(){
 
     drawButtonIesireOption();
 
-  }else if(quit == true){
+  } else if (selectLevel == true){
+    drawSelectLevels();
+
+  } else if(quit == true){
     exit();
   } else {
 
-    //background(startMenuBkgCol);
     drawIntroAnimation();
     drawStartMenu();
 

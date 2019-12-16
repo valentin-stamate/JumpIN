@@ -4,3 +4,4 @@ color gameBkgColor = color(67, 160, 71);
 color startMenuBkgCol = color(38, 50, 56);
 color tableBkgCol = color(67, 160, 71);
 color gameMenuCol = color(38, 50, 56);
+color titleColor = color(0, 121, 107);

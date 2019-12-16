@@ -1,5 +1,6 @@
 // --== IMAGINI SVG ==--
 PShape rabbitGrey, rabbitOrange, rabbitWhite, foxH, foxV, mushroom;
+PShape ch_1, ch_2, ch_3, ch_4, ch_5, ch_6, ch_7, ch_8, ch_9; 
 
 PShape rabbitWhiteIntro, GameTitle;
 
@@ -7,6 +8,7 @@ PShape rabbitWhiteIntro, GameTitle;
 // JOC
 boolean intro = true;
 boolean gameStart = false;
+boolean selectLevel = false;
 boolean quit = false;
 boolean options = false;
 boolean mouseOver = false;

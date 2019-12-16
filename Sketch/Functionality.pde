@@ -1,25 +1,3 @@
-// button functions
-void startButton(){
-  gameStart = true;
-  intro = false;
-}
-
-void exitButton(){
-  gameStart = false;
-  intro = false;
-}
-
-void enterOptionButton(){
-    options = true;
-}
-
-void exitOptionButton(){
-  options = false;
-}
-
-void quitButton(){
-   quit = true;
-}
 
 //muta vulpile
 void mouseDragged(){

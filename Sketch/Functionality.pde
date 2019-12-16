@@ -21,8 +21,8 @@ void quitButton(){
 void mouseDragged(){
  if(lockedFox){
    if(((mouseX - xOffset > 150+cellDistX*obstacolStanga+ 20) &&(mouseX - xOffset < height -200 -cellDistX*obstacolDreapta))){
-     int tmp = coordonateFoxJ;
-     coordonateFoxJ = mouseX - xOffset;
+     int tmp = coordonateFoxHJ;
+     coordonateFoxHJ = mouseX - xOffset;
      //face update pozitiilor vulpii in matrice
      updateFoxPositions(tmp);
    }
@@ -95,6 +95,7 @@ void printArray(){
 }
 
 
+
 void mouseReleased(){
  int i = 0, j = 0;
   if(lockedFirstRabbit){
@@ -142,21 +143,21 @@ void mouseReleased(){
          j = jInitialThirdRabbit;
       }
   }else if(lockedFox){
-    j = (coordonateFoxJ - 25) / cellDistY;
+    j = (coordonateFoxHJ - 25) / cellDistY;
   }else if(lockedSecondFox){
     i = (coordonateFoxVJ - 25) / cellDistY;
   }
-  
+
   if((lockedFirstRabbit) || (lockedSecondRabbit) ||(lockedThirdRabbit)){
      println(i + " " + j);
-     
+
      moveRabbit(i,j);
   }else if(lockedFox){
     moveFox(j);
   }else if(lockedSecondFox){
     moveSecondFox(i);
   }
-  
+
  lockedFox = false;
  lockedFirstRabbit = false;
  lockedSecondRabbit = false;
@@ -171,6 +172,7 @@ void mouseReleased(){
   determinaObstacolSus();
   determinaObstacolJos();
 }
+
 
 boolean iesirePoz(int i, int j){
    if(((i == 0) && (j == 0)) || ((i ==0) &&(j==4))|| ((i == 2) &&(j == 2)) || (( i == 4) && (j==0)) || ((i == 4) &&( j == 4))){

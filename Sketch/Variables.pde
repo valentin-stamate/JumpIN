@@ -1,6 +1,6 @@
 // --== IMAGINI SVG ==--
+PShape rabbitGrey, rabbitOrange, rabbitWhite, foxH, foxV, mushroom;
 
-PShape rabbitGrey, rabbitOrange, rabbitWhite,foxH, foxV, mushroom;
 PShape rabbitWhiteIntro, GameTitle;
 
 // --== VARIABILE DE LOGICA ==--
@@ -43,9 +43,7 @@ int cellDistY;
 int score  = 0;
 
 // --== POZITII ANIMALE ==--
-
-int coordonateFoxI = 0, coordonateFoxJ = 0;
-
+int coordonateFoxHI = 0, coordonateFoxHJ = 0;
 int coordonateFoxVI = 0, coordonateFoxVJ = 0;
 
 int iFirstRabbit = 0, jFirstRabbit = 0;

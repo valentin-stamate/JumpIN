@@ -1,6 +1,6 @@
 void updateFoxPositions(int tmp){
-   if(tmp > coordonateFoxJ){
-       int i =  (coordonateFoxJ + 50 + 80)/cellDistX -1;
+   if(tmp > coordonateFoxHJ){
+       int i =  (coordonateFoxHJ + 50 + 80)/cellDistX -1;
        if(tableArray[fOneI -1][i] == "F" && tableArray[fOneI -1][i-1] == "0"){
          tableArray[fOneI -1][i+1] = "0";
          tableArray[fOneI -1][i] = "F";
@@ -11,7 +11,7 @@ void updateFoxPositions(int tmp){
        }
        fOneJ = i+1;
      }else{
-       int i =  (coordonateFoxJ + 50 + 80)/cellDistX - 1;
+       int i =  (coordonateFoxHJ + 50 + 80)/cellDistX - 1;
        if(tableArray[fOneI -1][i] == "F" && tableArray[fOneI -1][i-2] == "F"){
          tableArray[fOneI -1][i-2] = "0";
          tableArray[fOneI -1][i-1] = "F";
@@ -60,7 +60,7 @@ void moveFox( int j){
      j--; 
   }
   int pozitieJ = cellDistY * (j);
-  coordonateFoxJ = pozitieJ;
+  coordonateFoxHJ = pozitieJ;
 }
 
 void moveSecondFox( int j){

@@ -14,7 +14,7 @@ void setup(){
   shapeMode(CENTER);
 
   file = new SoundFile(this, "./Music/bckMusic2.wav");
-  click = new SoundFile(this,"./Music/Click.mp3");
+  click = new SoundFile(this, "./Music/Click.mp3");
   file.loop();
 }
 

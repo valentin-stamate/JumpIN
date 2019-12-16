@@ -60,8 +60,8 @@ void mousePressed(){
       jInitialThirdRabbit = (jThirdRabbit - 25) / cellDistY; 
     } else if( egal(MouseFlag, flagFOne) == true ){
       lockedFox = true;
-      xOffset = mouseX - coordonateFoxJ;
-      yOffset = mouseY - coordonateFoxI;
+      xOffset = mouseX - coordonateFoxHJ;
+      yOffset = mouseY - coordonateFoxHI;
     }else if(egal(MouseFlag, flagFTwo) == true){
       println("Second Fox is true");
       lockedSecondFox = true;

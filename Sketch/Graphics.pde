@@ -1,5 +1,3 @@
-
-  
 // deseneaza tabla de joc
 void drawTable(){
   fill(tableBkgCol);
@@ -90,15 +88,15 @@ void drawPositions(){
 }
 
 void drawFoxes(){
-  if((coordonateFoxI == 0) && (coordonateFoxJ == 0)){
+  if((coordonateFoxHI == 0) && (coordonateFoxHJ == 0)){
      fOneJ = 3;
      fOneI = 1;
     determinaObstacolDreapta();
     determinaObstacolStanga();
     tableArray[fOneI-1][fOneJ -2] = "F";
     tableArray[fOneI-1][fOneJ -1] = "F";
-   coordonateFoxI = convertCoordToY(fOneI - 1) + 8;
-   coordonateFoxJ =  convertCoordToX(fOneJ - 1) - 80;
+   coordonateFoxHI = convertCoordToY(fOneI - 1) + 8;
+   coordonateFoxHJ =  convertCoordToX(fOneJ - 1) - 80;
    
     fSecondI = 4;
     fSecondJ = 5;
@@ -112,7 +110,7 @@ void drawFoxes(){
     
     printArray();
   }
-  drawFox(coordonateFoxJ, coordonateFoxI, 260, 80,flagFOne, foxH);
+  drawFox(coordonateFoxHJ, coordonateFoxHI, 260, 80,flagFOne, foxH);
 
 
   // TODO

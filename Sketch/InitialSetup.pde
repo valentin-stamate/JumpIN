@@ -1,5 +1,6 @@
 // incarca imaginile svg
 void loadAssets(){
+
   rabbitOrange = loadShape("rabbitOrange.svg");
   rabbitGrey = loadShape("rabbitGrey.svg");
   rabbitWhite = loadShape("rabbitWhite.svg");

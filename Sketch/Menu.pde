@@ -2,6 +2,7 @@
 void drawStartMenu(){
 
   drawButtonStart();
+  drawButtonSelectLevel();
   drawButtonOption();
   drawQuitButton();
 
@@ -15,44 +16,9 @@ void drawGameMenu(){
 }
 
 
-// butoane
-void drawGamewButtons(){
-  drawButtonIesire();
-}
-
-void drawButtonStart(){
-  drawButton(width / 4 , height / 2 + 150, 90, 50, normalBtnCol_2, startString);
-}
 
 
-void drawButtonOption(){
-   drawButton(width / 2, height / 2 + 150, 90,50, normalBtnCol_2, optionsString);
-}
-
-void drawQuitButton(){
-   drawButton(width * 3 / 4, height / 2 + 150, 90,50, normalBtnCol_2, quitString);
-}
-
-void drawButtonIesire(){
-  drawButton(40, gameMenuSize / 2, 60, 30, normalBtnCol, exitString);
-}
-
-void drawButtonIesireOption(){
-  text("Pagina pentru optiuni", 400, 425);
-  drawButton(40, gameMenuSize / 2, 60, 30, normalBtnCol, optionsExitString);
-}
-
-void drawButton(int x, int y, int bWidth, int bHeight, color col, String s){
-  noStroke();
-  fill(col);
-  rect(x, y, bWidth, bHeight, 8);
-  fill( color(255) );
-  textSize(15);
-  text(s, x, y + 5);
-
-  checkMouseOver(x, y, bWidth, bHeight, s);
-}
-
+// TODO
 void drawSupportOneCell(int j, int i){
   fill(color(255, 255, 255, 30));
   strokeWeight(2);

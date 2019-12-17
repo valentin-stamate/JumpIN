@@ -58,7 +58,7 @@ void moveFox( int j){
   if(j == obstacolStanga){
      j++;
   }else if(j == obstacolDreapta){
-     j--; 
+     j--;
   }
   int pozitieJ = cellDistX * (j) + 30;
   coordonateFoxHJ = pozitieJ;
@@ -68,7 +68,7 @@ void moveSecondFox( int j){
   if(j == obstacolJos){
      j++;
   }else if(j == obstacolSus -1){
-     j--; 
+     j--;
   }
   println(j);
   int pozitieJ = cellDistX * (j) + 50;
@@ -85,7 +85,7 @@ void determinaObstacolDreapta(){
      obstacolDreapta = 5-(j);
     }
     j++;
-   }  
+   }
 }
 
 void determinaObstacolStanga(){
@@ -117,7 +117,7 @@ void determinaObstacolSus(){
      obstacolSus = 5-(j);
     }
     j++;
-   }  
+   }
    println(obstacolSus);
 }
 

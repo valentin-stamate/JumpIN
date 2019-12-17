@@ -1,4 +1,4 @@
-// interactiunea cu mouseul
+// interactiunea cu mouseul, butoane iepuri, etc;
 void checkMouseOver(int x, int y, int bWidth, int bHeight, String s){
   // schimb ca puntul sa fie in stanga sus
   x = x - bWidth / 2;
@@ -29,8 +29,31 @@ void mousePressed(){
       exitOptionButton();
     }else if(egal(MouseFlag, quitString) == true){
        quitButton();
+    } else if( egal(MouseFlag, selectLevelString) == true ){
+      enterSelectLevel();
+    }
+    // level selectin
+    else if( egal(MouseFlag, challenge_1) == true){
+      println("Challenge 1 Selected");
+    } else if( egal(MouseFlag, challenge_2) == true){
+      println("Challenge 2 Selected");
+    } else if( egal(MouseFlag, challenge_3) == true){
+      println("Challenge 3 Selected");
+    } else if( egal(MouseFlag, challenge_4) == true){
+      println("Challenge 4 Selected");
+    } else if( egal(MouseFlag, challenge_5) == true){
+      println("Challenge 5 Selected");
+    } else if( egal(MouseFlag, challenge_6) == true){
+      println("Challenge 6 Selected");
+    } else if( egal(MouseFlag, challenge_7) == true){
+      println("Challenge 7 Selected");
+    } else if( egal(MouseFlag, challenge_8) == true){
+      println("Challenge 8 Selected");
+    } else if( egal(MouseFlag, challenge_9) == true){
+      println("Challenge 9 Selected");
+    }
 
-    } else if( egal(MouseFlag, flagROne) == true ){
+    else if( egal(MouseFlag, flagROne) == true ){
       println("rabit one selected");
 
       //ROraneSelected = !ROraneSelected;

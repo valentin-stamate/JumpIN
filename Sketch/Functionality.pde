@@ -1,22 +1,3 @@
-void startButton(){
-  gameStart = true;
-}
-
-void exitButton(){
-  gameStart = false;
-}
-
-void enterOptionButton(){
-    options = true;
-}
-
-void exitOptionButton(){
-  options = false;
-}
-
-void quitButton(){
-   quit = true;
-}
 //muta vulpile
 void mouseDragged(){
  if(lockedFox){
@@ -134,7 +115,7 @@ void mouseReleased(){
          i = iInitialSecondRabbit;
          j = jInitialSecondRabbit;
       }
-     
+
   }else if(lockedThirdRabbit){
       i = (iThirdRabbit - 25) / cellDistX;
       j = (jThirdRabbit - 25) / cellDistY;
@@ -154,21 +135,21 @@ void mouseReleased(){
       }
   }else if(lockedFox){
     j = (coordonateFoxHJ - 25) / cellDistY;
-    
+
   }else if(lockedSecondFox){
     i = ( coordonateFoxVJ - 25) / cellDistX;
   }
-  
+
   if((lockedFirstRabbit) || (lockedSecondRabbit) ||(lockedThirdRabbit)){
      println(i + " " + j);
-     
+
      moveRabbit(i,j);
   }else if(lockedFox){
     moveFox(j);
   }else if(lockedSecondFox){
     moveSecondFox(i);
   }
-  
+
  lockedFox = false;
  lockedFirstRabbit = false;
  lockedSecondRabbit = false;
@@ -177,12 +158,14 @@ void mouseReleased(){
  rabbitMoveLeft = false;
  rabbitMoveDown = false;
  rabbitMoveRight = false;
- 
- determinaObstacolStanga();
- determinaObstacolDreapta();
- determinaObstacolSus();
- determinaObstacolJos();
- println(obstacolStanga + " " + obstacolDreapta);
+
+ if(gameStart == true){
+   determinaObstacolStanga();
+   determinaObstacolDreapta();
+   determinaObstacolSus();
+   determinaObstacolJos();
+   println(obstacolStanga + " " + obstacolDreapta);
+  }
 }
 
 

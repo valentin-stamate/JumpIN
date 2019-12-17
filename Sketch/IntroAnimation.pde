@@ -36,7 +36,7 @@ void drawIntroAnimation(){
 
 
   animate();
-  drawTitle();
+  drawAnimationTitle();
 }
 
 float dirY = -2;
@@ -116,7 +116,7 @@ float offScale = 0;
 int ScaleDegree = 180;
 
 
-void drawTitle(){
+void drawAnimationTitle(){
 
   pushMatrix();
   translate(width / 2, 70);
@@ -125,7 +125,7 @@ void drawTitle(){
   scale( sc - offScale );
 
 
-  fill(color(0, 121, 107));
+  fill(titleColor);
   rect(0, 0, 250, 90, 20);
 
   textSize(48);

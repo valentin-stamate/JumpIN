@@ -7,6 +7,7 @@ void drawTable(){
 
   noStroke();
 
+
   for(int i = 1; i <= 5; i++){
     for(int j = 1; j <= 5; j++){
 
@@ -97,7 +98,7 @@ void drawFoxes(){
     tableArray[fOneI-1][fOneJ -1] = "F";
    coordonateFoxHI = convertCoordToY(fOneI - 1) + 8;
    coordonateFoxHJ =  convertCoordToX(fOneJ - 1) - 80;
-   
+
     fSecondI = 4;
     fSecondJ = 5;
     determinaObstacolSus();
@@ -106,8 +107,8 @@ void drawFoxes(){
    coordonateFoxVJ =  convertCoordToX(fSecondJ - 1) - 25;
    tableArray[fSecondJ-2][fSecondI -1] = "F2";
     tableArray[fSecondJ-1][fSecondI -1] = "F2";
-    
-    
+
+
     printArray();
   }
   drawFox(coordonateFoxHJ, coordonateFoxHI, 260, 80,flagFOne, foxH);
@@ -143,10 +144,56 @@ void drawMushroom(int j, int i){
 }
 
 
+// --=== ===---
+// TODO variables
 
+int distX = width / 4;
+int distY = (height - 50) / 4;
+int scale = 140;
 
+void drawSelectLevels(){
+  // TODO , adauga ca si string pentru limba
 
+  background(color(76,175,80));
+  distX = width / 4;
+  distY = (height - 50) / 4;
 
+  drawTitle("Selectare Nivel", 200, 50);
+
+  drawLevel(ch_1, 1, 1, scale, challenge_1);
+  drawLevel(ch_2, 2, 1, scale, challenge_2);
+  drawLevel(ch_3, 3, 1, scale, challenge_3);
+  drawLevel(ch_4, 1, 2, scale, challenge_4);
+  drawLevel(ch_5, 2, 2, scale, challenge_5);
+  drawLevel(ch_6, 3, 2, scale, challenge_6);
+  drawLevel(ch_7, 1, 3, scale, challenge_7);
+  drawLevel(ch_8, 2, 3, scale, challenge_8);
+  drawLevel(ch_9, 3, 3, scale, challenge_9);
+
+  drawButtonIesire();
+
+}
+
+void drawLevel(PShape p, int j, int i, int scale, String s){
+  int x = distX * j;
+  int y = distY * i;
+  shape(p, x, y, scale, scale);
+  fill(255);
+  textSize(15);
+  text(s, x, y + 90);
+
+  checkMouseOver(x, y, scale, scale, s);
+}
+
+void drawTitle(String s, int w, int h){
+  int x = width / 2;
+  int y = 50;
+  fill(titleColor);
+  rect(x, y, w, h, 16);
+  fill(255);
+  textSize(24);
+  text(s, x , y + 8);
+}
 
 // posibilele mutari
 void drawNextMoves(){
@@ -184,6 +231,8 @@ boolean egal(String a, String b){
 
   return true;
 }
+
+
 
 
 // One - Orange

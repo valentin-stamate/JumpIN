@@ -54,12 +54,13 @@ void updateSecondFoxPositions(int tmp){
 
 //muta vulpea in casutele in care ar trebui sa fie atunci cand se elibereaza mouse-ul
 void moveFox( int j){
+  println(j);
   if(j == obstacolStanga){
      j++;
-  }else if(j == obstacolDreapta -1){
+  }else if(j == obstacolDreapta){
      j--; 
   }
-  int pozitieJ = cellDistY * (j);
+  int pozitieJ = cellDistX * (j) + 30;
   coordonateFoxHJ = pozitieJ;
 }
 

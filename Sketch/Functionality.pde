@@ -62,6 +62,7 @@ boolean determinareCasutaIesire(int i, int j){
 }
 
 boolean determinareCasutaObstacol(int i, int j, int dif){
+  println(dif + " ___ " + j);
   if(tableArray[i][j] != "0"){
     if(tableArray[i][j] =="5" && dif < 1){
        return false;
@@ -98,66 +99,76 @@ void printArray(){
 
 void mouseReleased(){
  int i = 0, j = 0;
+ println(count + " )))))))");
   if(lockedFirstRabbit){
       i = (iFirstRabbit - 25) / cellDistX;
       j = (jFirstRabbit - 25) / cellDistY;
-      if(iesirePoz(i,j) && count > 1){
+      if(iesirePoz(i,j) && count > 0){
          tableArray[i][j] = "R1";
          tableArray[iInitialFirstRabbit][jInitialFirstRabbit] = "0";
-      }else if(iesirePoz(iInitialFirstRabbit,jInitialFirstRabbit) && count > 1){
+      }else if(iesirePoz(iInitialFirstRabbit,jInitialFirstRabbit) && count > 0){
           tableArray[i][j] = "R1";
           tableArray[iInitialFirstRabbit][jInitialFirstRabbit] = "5";
-      }else if(count <=1 || ((i < 5) && (j < 5) && (tableArray[i][j] != "0") && (tableArray[i][j] != "R1"))) {
+      }else if(count <1 || ((i < 5) && (j < 5) && (tableArray[i][j] != "0") && (tableArray[i][j] != "R1"))) {
          i = iInitialFirstRabbit;
          j = jInitialFirstRabbit;
       }
   }else if(lockedSecondRabbit){
       i = (iSecondRabbit - 25) / cellDistX;
       j = (jSecondRabbit - 25) / cellDistY;
-      println(iSecondRabbit + " " + jSecondRabbit);
-      if(iesirePoz(i,j) && count > 1){
+      println(iSecondRabbit + " ___ " + jSecondRabbit);
+       println(iInitialSecondRabbit + " ___ " + jInitialSecondRabbit);
+      if(iesirePoz(i,j) && count > 0){
+        println("enter here " ) ;
          tableArray[i][j] = "R2";
          tableArray[iInitialSecondRabbit][jInitialSecondRabbit] = "0";
-      }else if(iesirePoz(iSecondRabbit,jSecondRabbit) && count > 1){
+      }else if(iesirePoz(iSecondRabbit,jSecondRabbit) && count > 0){
+        println("enter here 1 " ) ;
           tableArray[i][j] = "R2";
           tableArray[iInitialSecondRabbit][jInitialSecondRabbit] = "5";
-      }else if(count <=1 || ((i < 5) && (j < 5) && (tableArray[i][j] != "0") && (tableArray[i][j] != "R2"))) {
+      }else if(determinareCasutaGoala(i, j) && count>0){
+            tableArray[i][j] = "R2";
+            tableArray[iInitialSecondRabbit][ jInitialSecondRabbit]= "0";
+       }else if(count <=1 || ((i < 5) && (j < 5) && (tableArray[i][j] != "0") && (tableArray[i][j] != "R2"))) {
+        println("enter here 2 " ) ;
          i = iInitialSecondRabbit;
          j = jInitialSecondRabbit;
       }
+     
   }else if(lockedThirdRabbit){
       i = (iThirdRabbit - 25) / cellDistX;
       j = (jThirdRabbit - 25) / cellDistY;
       println(j);
       println(count);
-      if( count >1 &&  iesirePoz(i,j) ){
+      if( count >0 &&  iesirePoz(i,j) ){
         println("Enter");
          tableArray[i][j] = "R3";
          tableArray[iInitialThirdRabbit][jInitialThirdRabbit] = "0";
-      }else if(count > 1 && iesirePoz(iInitialThirdRabbit,jInitialThirdRabbit)){
+      }else if(count > 0 && iesirePoz(iInitialThirdRabbit,jInitialThirdRabbit)){
         println("Enter1");
           tableArray[i][j] = "R3";
           tableArray[iInitialThirdRabbit][jInitialThirdRabbit] = "5";
-      }if(count <=1 || ((i < 5) && (j < 5) && (tableArray[i][j] != "0") && (tableArray[i][j] != "R3"))) {
+      }if(count <1 || ((i < 5) && (j < 5) && (tableArray[i][j] != "0") && (tableArray[i][j] != "R3"))) {
          i = iInitialThirdRabbit;
          j = jInitialThirdRabbit;
       }
   }else if(lockedFox){
     j = (coordonateFoxHJ - 25) / cellDistY;
+    
   }else if(lockedSecondFox){
-    i = (coordonateFoxVJ - 25) / cellDistY;
+    i = ( coordonateFoxVJ - 25) / cellDistX;
   }
-
+  
   if((lockedFirstRabbit) || (lockedSecondRabbit) ||(lockedThirdRabbit)){
      println(i + " " + j);
-
+     
      moveRabbit(i,j);
   }else if(lockedFox){
     moveFox(j);
   }else if(lockedSecondFox){
     moveSecondFox(i);
   }
-
+  
  lockedFox = false;
  lockedFirstRabbit = false;
  lockedSecondRabbit = false;
@@ -166,11 +177,12 @@ void mouseReleased(){
  rabbitMoveLeft = false;
  rabbitMoveDown = false;
  rabbitMoveRight = false;
- lockedSecondFox = false;
-  determinaObstacolStanga();
-  determinaObstacolDreapta();
-  determinaObstacolSus();
-  determinaObstacolJos();
+ 
+ determinaObstacolStanga();
+ determinaObstacolDreapta();
+ determinaObstacolSus();
+ determinaObstacolJos();
+ println(obstacolStanga + " " + obstacolDreapta);
 }
 
 

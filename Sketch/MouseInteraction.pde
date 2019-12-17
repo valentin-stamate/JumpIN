@@ -50,7 +50,7 @@ void mousePressed(){
       yOffset = mouseY - iSecondRabbit;
       iInitialSecondRabbit = (iSecondRabbit - 25) / cellDistX;
       jInitialSecondRabbit = (jSecondRabbit - 25) / cellDistY; 
-      println(iInitialFirstRabbit + " _____" + jInitialFirstRabbit);
+      println(iInitialFirstRabbit + " _____++" + jInitialFirstRabbit);
     } else if( egal(MouseFlag, flagRThree) == true ){
       println("rabbit three  selectd");
       lockedThirdRabbit = true;

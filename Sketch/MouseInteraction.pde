@@ -16,7 +16,7 @@ void checkMouseOver(int x, int y, int bWidth, int bHeight, String s){
 }
 
 void mousePressed(){
-  click.play();
+   click.play();
   if(mouseOver){
 
     if( egal(MouseFlag, startString) == true ){
@@ -73,7 +73,7 @@ void mousePressed(){
       yOffset = mouseY - iSecondRabbit;
       iInitialSecondRabbit = (iSecondRabbit - 25) / cellDistX;
       jInitialSecondRabbit = (jSecondRabbit - 25) / cellDistY; 
-      println(iInitialFirstRabbit + " _____++" + jInitialFirstRabbit);
+      println(iInitialSecondRabbit + " _____++" + jInitialSecondRabbit);
     } else if( egal(MouseFlag, flagRThree) == true ){
       println("rabbit three  selectd");
       lockedThirdRabbit = true;

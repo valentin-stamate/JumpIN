@@ -99,14 +99,14 @@ void drawFoxes(){
    coordonateFoxHI = convertCoordToY(fOneI - 1) + 8;
    coordonateFoxHJ =  convertCoordToX(fOneJ - 1) - 80;
 
-    fSecondI = 4;
-    fSecondJ = 5;
+    fSecondI = 3;
+    fSecondJ = 4;
     determinaObstacolSus();
     determinaObstacolJos();
-   coordonateFoxVI = convertCoordToY(fSecondI - 1) - 40;
-   coordonateFoxVJ =  convertCoordToX(fSecondJ - 1) - 25;
-   tableArray[fSecondJ-2][fSecondI -1] = "F2";
-    tableArray[fSecondJ-1][fSecondI -1] = "F2";
+   coordonateFoxVI = convertCoordToY(fSecondI) - 40;
+   coordonateFoxVJ =  convertCoordToX(fSecondJ) - 25;
+   tableArray[fSecondJ-1][fSecondI] = "F2";
+    tableArray[fSecondJ][fSecondI] = "F2";
 
 
     printArray();

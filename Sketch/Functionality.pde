@@ -130,6 +130,11 @@ void mouseReleased(){
   }else if(lockedSecondFox){
     moveSecondFox(i);
   }
+ if(rabbitsInHoles() == countRabbits && gameStart == true){
+   println("REPEEEAAAT");
+   gameFinished = true;
+   gameStart = false;
+ }
 
  lockedFox = false;
  lockedSecondFox = false;

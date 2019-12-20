@@ -12,6 +12,7 @@ boolean selectLevel = false;
 boolean quit = false;
 boolean options = false;
 boolean mouseOver = false;
+boolean gameFinished = false;
 
 // ANIMALE
 boolean lockedFirstRabbit = false;
@@ -38,6 +39,8 @@ int obstacolStanga = 5;
 int obstacolDreapta = 0;
 int obstacolJos = 5;
 int obstacolSus = 0;
+int countRabbits = 0;
+int countRabbitsInHoles = 0;
 
 int cellDistX;
 int cellDistY;

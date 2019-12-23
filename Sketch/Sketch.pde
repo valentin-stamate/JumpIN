@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import processing.sound.*;
 SoundFile file;
 SoundFile click;
@@ -26,7 +28,7 @@ void draw(){
     background(gameBkgColor);
 
     drawTable();
-
+    drawFoxes();
     drawPositions();
     drawGameMenu();
     drawGameButtons();
@@ -35,10 +37,10 @@ void draw(){
     drawTimer();
 
     checkSelected();
-    drawFoxes();
     drawNextMoves();
-    
-
+    if(undo.size() > 0){
+      drawUndo();
+    }
   }else if(gameFinished){
     background(gameBkgColor);
     text("Felicitari ai castigat nivelul si ai obtinut " + score + " points", width/2, height/2);

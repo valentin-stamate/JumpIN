@@ -88,6 +88,10 @@ void mouseReleased(){
          i = iInitialFirstRabbit;
          j = jInitialFirstRabbit;
       }
+      if( i != iInitialFirstRabbit || j != jInitialFirstRabbit){
+        
+        putDataInList("R1", iInitialFirstRabbit, jInitialFirstRabbit);
+      }
   }else if(lockedSecondRabbit){
       i = (iSecondRabbit - 25) / cellDistX;
       j = (jSecondRabbit - 25) / cellDistY;
@@ -100,6 +104,9 @@ void mouseReleased(){
       }if(count <1 || ((i < 5) && (j < 5) && (tableArray[i][j] != "0") && (tableArray[i][j] != "R2"))) {
          i = iInitialSecondRabbit;
          j = jInitialSecondRabbit;
+      }
+      if( i != iInitialSecondRabbit || j != jInitialSecondRabbit){
+        putDataInList("R2", iInitialSecondRabbit, jInitialSecondRabbit);
       }
   }else if(lockedThirdRabbit){
       i = (iThirdRabbit - 25) / cellDistX;
@@ -114,9 +121,11 @@ void mouseReleased(){
          i = iInitialThirdRabbit;
          j = jInitialThirdRabbit;
       }
+      if( i != iInitialThirdRabbit || j != jInitialThirdRabbit){
+        putDataInList("R3", iInitialThirdRabbit, jInitialThirdRabbit);
+      }
   }else if(lockedFox){
     j = (coordonateFoxHJ - 25) / cellDistY;
-
   }else if(lockedSecondFox){
     i = ( coordonateFoxVJ - 25) / cellDistX;
   }
@@ -135,6 +144,8 @@ void mouseReleased(){
    gameFinished = true;
    gameStart = false;
  }
+ 
+ afisareLista();
 
  lockedFox = false;
  lockedSecondFox = false;
@@ -152,6 +163,7 @@ void mouseReleased(){
    determinaObstacolSus();
    determinaObstacolJos();
  }
+ printArray();
 }
 
 

@@ -59,6 +59,10 @@ void drawButtonIesireOption(){
   drawButton(40, gameMenuSize / 2, 60, 30, normalBtnCol, optionsExitString);
 }
 
+void drawUndo(){
+  drawButton(150, gameMenuSize / 2, 60, 30, normalBtnCol, undoString);
+}
+
 void drawButton(int x, int y, int bWidth, int bHeight, color col, String s){
   noStroke();
   fill(col);

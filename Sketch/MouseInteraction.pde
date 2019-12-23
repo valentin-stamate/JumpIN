@@ -31,6 +31,8 @@ void mousePressed(){
        quitButton();
     } else if( egal(MouseFlag, selectLevelString) == true ){
       enterSelectLevel();
+    }if( egal(MouseFlag, undoString) == true ){
+      pressedUndo();
     }
     // level selectin
     else if( egal(MouseFlag, challenge_1) == true){
@@ -85,11 +87,13 @@ void mousePressed(){
       lockedFox = true;
       xOffset = mouseX - coordonateFoxHJ;
       yOffset = mouseY - coordonateFoxHI;
+       putDataInList("F", fOneI, (coordonateFoxHJ - 25) / cellDistY);
     }else if(egal(MouseFlag, flagFTwo) == true){
       println("Second Fox is true");
       lockedSecondFox = true;
       xOffset = mouseX - coordonateFoxVI;
       yOffset = mouseY - coordonateFoxVJ;
+      putDataInList("F2", fSecondI, ( coordonateFoxVJ - 25) / cellDistX);
     }
     MouseFlag = "";
   }

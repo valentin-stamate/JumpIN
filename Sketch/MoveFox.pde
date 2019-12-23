@@ -22,7 +22,7 @@ void updateFoxPositions(int tmp){
        }
         fOneJ = i+1;
      }
-     printArray();
+    // printArray();
 }
 
 void updateSecondFoxPositions(int tmp){
@@ -41,7 +41,7 @@ void updateSecondFoxPositions(int tmp){
            }
          }
              fSecondJ = i;
-        printArray();
+        //printArray();
      }else{
        if(i > 1 && tableArray[i][fSecondI] == "F2" && tableArray[i-2][fSecondI] == "F2"){
          tableArray[i-2][fSecondI] = "0";
@@ -53,7 +53,7 @@ void updateSecondFoxPositions(int tmp){
        }
         fSecondJ = i;
      }
-     printArray();
+     //printArray();
   }
 }
 

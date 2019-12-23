@@ -5,10 +5,8 @@ void countRabbitsBegining(){
    for(i = 0; i < 5; i++){
      for(j = 0; j < 5; j++){
        if((tableArray[i][j] == "R1") || (tableArray[i][j] == "R2") || (tableArray[i][j] == "R3")){
-         println(tableArray[i][j] );
          countRabbits++;
        }
-        println(i + " " + j);
      }
    }
 }

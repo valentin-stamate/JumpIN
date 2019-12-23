@@ -112,10 +112,6 @@ void drawFoxes(){
     printArray();
   }
   drawFox(coordonateFoxHJ, coordonateFoxHI, 260, 80,flagFOne, foxH);
-
-
-  // TODO
-  // just a demo position
   drawFox(coordonateFoxVI, coordonateFoxVJ, 80, 260, flagFTwo, foxV);
 }
 

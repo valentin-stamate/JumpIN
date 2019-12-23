@@ -2,8 +2,8 @@ void moveFirstRabbit(){
    if((mouseX - xOffset > 75 ) &&(mouseX - xOffset < height -25 ) && (mouseY - yOffset > 130) && (mouseY - yOffset < width-10)){
      int i = (iFirstRabbit - 25) / cellDistX;
      int j = (jFirstRabbit - 25) / cellDistY;
-     printArray();
-     println(i + "  "  + j );
+     //printArray();
+     //println(i + "  "  + j );
     if(rabbitMoveUp && i >= 0){
         if(determinareCasutaObstacol(i,j, iInitialFirstRabbit - i)){
            iFirstRabbit = mouseY - yOffset;
@@ -60,8 +60,8 @@ void moveSecondRabbit(){
   if((mouseX - xOffset > 75 ) &&(mouseX - xOffset < height -25 ) && (mouseY - yOffset > 130) && (mouseY - yOffset < width-10)){
      int i = (iSecondRabbit - 25) / cellDistX ;
      int j = (jSecondRabbit - 25) / cellDistY;
-     printArray();
-     println(i + "  "  + j );
+     //printArray();
+     //println(i + "  "  + j );
      
     if(rabbitMoveUp && i >= 0){
       println("Enter Up");
@@ -122,8 +122,8 @@ void moveThirdRabbit(){
   if((mouseX - xOffset > 75 ) &&(mouseX - xOffset < height -25 ) && (mouseY - yOffset > 130) && (mouseY - yOffset < width-10)){
      int i = (iThirdRabbit - 25) / cellDistX ;
      int j = (jThirdRabbit - 25) / cellDistY;
-     printArray();
-     println(i + "  "  + j );
+     //printArray();
+     //println(i + "  "  + j );
      
     if(rabbitMoveUp && i >= 0){
         if(determinareCasutaObstacol(i,j, iInitialThirdRabbit - i)){

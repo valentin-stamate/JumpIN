@@ -16,6 +16,7 @@ void enterOptionButton(){
 
 void exitOptionButton(){
   options = false;
+  gameFinished = false;
 }
 
 void quitButton(){
@@ -54,10 +55,12 @@ void drawQuitButton(){
 void drawButtonIesire(){
   drawButton(40, gameMenuSize / 2, 60, 30, normalBtnCol_2, exitString);
 }
-
 void drawButtonIesireOption(){
-  text("Pagina pentru optiuni", 400, 425);
   drawButton(40, gameMenuSize / 2, 60, 30, normalBtnCol, optionsExitString);
+}
+
+void drawUndo(){
+  drawButton(150, gameMenuSize / 2, 60, 30, normalBtnCol, undoString);
 }
 
 void drawButton(int x, int y, int bWidth, int bHeight, color col, String s){

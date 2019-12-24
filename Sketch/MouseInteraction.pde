@@ -16,7 +16,7 @@ void checkMouseOver(int x, int y, int bWidth, int bHeight, String s){
 }
 
 void mousePressed(){
-  click.play();
+   click.play();
   if(mouseOver){
 
     if( egal(MouseFlag, startString) == true ){
@@ -31,6 +31,8 @@ void mousePressed(){
        quitButton();
     } else if( egal(MouseFlag, selectLevelString) == true ){
       enterSelectLevel();
+    }if( egal(MouseFlag, undoString) == true ){
+      pressedUndo();
     }
     // level selectin
     else if( egal(MouseFlag, challenge_1) == true){
@@ -73,7 +75,7 @@ void mousePressed(){
       yOffset = mouseY - iSecondRabbit;
       iInitialSecondRabbit = (iSecondRabbit - 25) / cellDistX;
       jInitialSecondRabbit = (jSecondRabbit - 25) / cellDistY; 
-      println(iInitialFirstRabbit + " _____++" + jInitialFirstRabbit);
+      println(iInitialSecondRabbit + " _____++" + jInitialSecondRabbit);
     } else if( egal(MouseFlag, flagRThree) == true ){
       println("rabbit three  selectd");
       lockedThirdRabbit = true;
@@ -85,11 +87,13 @@ void mousePressed(){
       lockedFox = true;
       xOffset = mouseX - coordonateFoxHJ;
       yOffset = mouseY - coordonateFoxHI;
+       putDataInList("F", fOneI, (coordonateFoxHJ - 25) / cellDistY);
     }else if(egal(MouseFlag, flagFTwo) == true){
       println("Second Fox is true");
       lockedSecondFox = true;
       xOffset = mouseX - coordonateFoxVI;
       yOffset = mouseY - coordonateFoxVJ;
+      putDataInList("F2", fSecondI, ( coordonateFoxVJ - 25) / cellDistX);
     }
     MouseFlag = "";
   }

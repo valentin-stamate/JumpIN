@@ -22,34 +22,39 @@ void updateFoxPositions(int tmp){
        }
         fOneJ = i+1;
      }
-     printArray();
+    // printArray();
 }
 
 void updateSecondFoxPositions(int tmp){
-   if(tmp > coordonateFoxVJ){
-       int i =  (coordonateFoxVJ + 50 + 80)/cellDistX -1;
-       if(tableArray[i -1][fOneI] == "F2" && tableArray[fOneI -1][i-1] == "0"){
-        tableArray[i +1][fOneI] = "0";
-         tableArray[i][fOneI] = "F2";
-         tableArray[i-1][fOneI] = "F2";
-       }else{
-         tableArray[i][fOneI] = "F2";
-         tableArray[i-1][fOneI] = "F2";
-       }
-       fSecondJ = i+1;
+  int i =  (coordonateFoxVJ + 50 + 80)/cellDistX-1;
+  if(i>0){
+   if(tmp > coordonateFoxVJ){ 
+       
+         if(tableArray[i][fSecondI] == "F2" && tableArray[i-1][fSecondI] == "0"){
+          tableArray[i + 1][fSecondI] = "0";
+           tableArray[i][fSecondI] = "F2";
+           tableArray[i-1][fSecondI] = "F2";
+         }else{
+           if(tableArray[i-1][fSecondI] == "0"){
+           tableArray[i][fSecondI] = "F2";
+           tableArray[i-1][fSecondI] = "F2";
+           }
+         }
+             fSecondJ = i;
+        //printArray();
      }else{
-       int i =  (coordonateFoxVJ + 50 + 80)/cellDistX - 1;
-       if( tableArray[i][fOneI] == "F2" && tableArray[i-2][fOneI] == "F2"){
-         tableArray[i-2][fOneI] = "0";
-         tableArray[i-1][fOneI] = "F2";
-         tableArray[i][fOneI] = "F2";
+       if(i > 1 && tableArray[i][fSecondI] == "F2" && tableArray[i-2][fSecondI] == "F2"){
+         tableArray[i-2][fSecondI] = "0";
+         tableArray[i-1][fSecondI] = "F2";
+         tableArray[i][fSecondI] = "F2";
        }else{
-        tableArray[i-1][fOneI] = "F2";
-         tableArray[i][fOneI] = "F2";
+        tableArray[i-1][fSecondI] = "F2";
+         tableArray[i][fSecondI] = "F2";
        }
-        fSecondJ = i+1;
+        fSecondJ = i;
      }
-     printArray();
+     //printArray();
+  }
 }
 
 //muta vulpea in casutele in care ar trebui sa fie atunci cand se elibereaza mouse-ul
@@ -57,7 +62,7 @@ void moveFox( int j){
   println(j);
   if(j == obstacolStanga){
      j++;
-  }else if(j == obstacolDreapta){
+  }else if(j == 5 -obstacolDreapta){
      j--;
   }
   int pozitieJ = cellDistX * (j) + 30;
@@ -65,12 +70,11 @@ void moveFox( int j){
 }
 
 void moveSecondFox( int j){
-  if(j == obstacolJos){
+  if(j == obstacolJos || j == 0){
      j++;
-  }else if(j == obstacolSus -1){
+  }else if(j == 5 - obstacolSus){
      j--;
   }
-  println(j);
   int pozitieJ = cellDistX * (j) + 50;
   coordonateFoxVJ = pozitieJ;
 }
@@ -108,22 +112,20 @@ void determinaObstacolStanga(){
 }
 
 void determinaObstacolSus(){
-   int j =  fSecondJ -2;
-   int i =  fSecondI -1;
+   int j =  fSecondJ;
+   int i =  fSecondI;
    obstacolSus = 0;
    while(j <= 4 && obstacolSus == 0){
-     println(j);
     if(tableArray[j][i] != "0" && tableArray[j][i] != "F2"){
      obstacolSus = 5-(j);
     }
     j++;
    }
-   println(obstacolSus);
 }
 
 void determinaObstacolJos(){
-   int j =  fSecondJ -2;
-   int i =  fSecondI -1;
+   int j =  fSecondJ;
+   int i =  fSecondI;
    obstacolJos = 1;
    while(obstacolJos == 1 && j >= 0  ){
     if(tableArray[j][i] != "0" && tableArray[j][i] != "F2"){
@@ -136,5 +138,4 @@ void determinaObstacolJos(){
     j--;
    }
   obstacolJos--;
-   println(obstacolJos);
 }

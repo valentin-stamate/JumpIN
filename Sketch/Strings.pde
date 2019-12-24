@@ -9,6 +9,7 @@ String flagFTwo = "f2";
 String quitString = "Quit";
 String optionsString = "Optiuni";
 String optionsExitString = "Menu";
+String undoString = "Undo";
 
 String challenge_1 = "Challenge 1";
 String challenge_2 = "Challenge 2";

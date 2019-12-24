@@ -13,7 +13,7 @@ void setup(){
   textAlign(CENTER);
   shapeMode(CENTER);
 
-  file = new SoundFile(this, "./Music/bckMusic2.wav");
+  file = new SoundFile(this, "./Music/bckMusic1.wav");
   click = new SoundFile(this, "./Music/Click.mp3");
   file.loop();
 }

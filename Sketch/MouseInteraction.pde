@@ -66,15 +66,15 @@ void mousePressed(){
       xOffset = mouseX - jFirstRabbit;
       yOffset = mouseY - iFirstRabbit;
       iInitialFirstRabbit = (iFirstRabbit - 25) / cellDistX;
-      jInitialFirstRabbit = (jFirstRabbit - 25) / cellDistY; 
-      
+      jInitialFirstRabbit = (jFirstRabbit - 25) / cellDistY;
+
     } else if( egal(MouseFlag, flagRTwo) ==true ){
       println("rabbit two selectd");
       lockedSecondRabbit = true;
       xOffset = mouseX - jSecondRabbit;
       yOffset = mouseY - iSecondRabbit;
       iInitialSecondRabbit = (iSecondRabbit - 25) / cellDistX;
-      jInitialSecondRabbit = (jSecondRabbit - 25) / cellDistY; 
+      jInitialSecondRabbit = (jSecondRabbit - 25) / cellDistY;
       println(iInitialSecondRabbit + " _____++" + jInitialSecondRabbit);
     } else if( egal(MouseFlag, flagRThree) == true ){
       println("rabbit three  selectd");
@@ -82,18 +82,18 @@ void mousePressed(){
       xOffset = mouseX - jThirdRabbit;
       yOffset = mouseY - iThirdRabbit;
       iInitialThirdRabbit = (iThirdRabbit - 25) / cellDistX;
-      jInitialThirdRabbit = (jThirdRabbit - 25) / cellDistY; 
+      jInitialThirdRabbit = (jThirdRabbit - 25) / cellDistY;
     } else if( egal(MouseFlag, flagFOne) == true ){
       lockedFox = true;
       xOffset = mouseX - coordonateFoxHJ;
       yOffset = mouseY - coordonateFoxHI;
-       putDataInList("F", fOneI, (coordonateFoxHJ - 25) / cellDistY);
+       putDataInList("FH", fOneI, (coordonateFoxHJ - 25) / cellDistY);
     }else if(egal(MouseFlag, flagFTwo) == true){
       println("Second Fox is true");
       lockedSecondFox = true;
       xOffset = mouseX - coordonateFoxVI;
       yOffset = mouseY - coordonateFoxVJ;
-      putDataInList("F2", fSecondI, ( coordonateFoxVJ - 25) / cellDistX);
+      putDataInList("FV", fSecondI, ( coordonateFoxVJ - 25) / cellDistX);
     }
     MouseFlag = "";
   }

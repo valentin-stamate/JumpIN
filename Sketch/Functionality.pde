@@ -89,7 +89,7 @@ void mouseReleased(){
          j = jInitialFirstRabbit;
       }
       if( i != iInitialFirstRabbit || j != jInitialFirstRabbit){
-        
+
         putDataInList("R1", iInitialFirstRabbit, jInitialFirstRabbit);
       }
   }else if(lockedSecondRabbit){
@@ -133,18 +133,20 @@ void mouseReleased(){
   if((lockedFirstRabbit) || (lockedSecondRabbit) ||(lockedThirdRabbit)){
      println(i + " " + j);
 
-     moveRabbit(i,j);
-  }else if(lockedFox){
+  moveRabbit(i,j);
+
+  }else if(lockedFox && showHorizontalFox){
     moveFox(j);
-  }else if(lockedSecondFox){
+  }else if(lockedSecondFox && showVerticalFox){
     moveSecondFox(i);
   }
- if(rabbitsInHoles() == countRabbits && gameStart == true){
-   println("REPEEEAAAT");
-   gameFinished = true;
-   gameStart = false;
- }
- 
+
+  if(rabbitsInHoles() == countRabbits && gameStart == true){
+    println("REPEEEAAAT");
+    gameFinished = true;
+    gameStart = false;
+  }
+
  afisareLista();
 
  lockedFox = false;
@@ -158,10 +160,17 @@ void mouseReleased(){
  rabbitMoveRight = false;
 
  if(gameStart == true){
-   determinaObstacolStanga();
-   determinaObstacolDreapta();
-   determinaObstacolSus();
-   determinaObstacolJos();
+
+  if(showHorizontalFox){
+    determinaObstacolStanga();
+    determinaObstacolDreapta();
+  }
+
+  if(showVerticalFox){
+    determinaObstacolSus();
+    determinaObstacolJos();
+  }
+
  }
  printArray();
 }

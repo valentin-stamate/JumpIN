@@ -107,7 +107,7 @@ void pressedUndo(){
     tableArray[fOneI-1][fOneJ -1] = "0";
     undoFox(yPosition);
     updateFoxPositions(coordonateFoxHJ);
-  }else if(animal == "F2"){
+  }else if(animal == "FV"){
     tableArray[fSecondJ-1][fSecondI] = "0";
     tableArray[fSecondJ][fSecondI] = "0";
     undoSecondFox(yPosition);
@@ -118,17 +118,17 @@ void pressedUndo(){
 
 void undoRabbit(int i, int j, String name){
   if( i == 5){
-     i--; 
+     i--;
   }
   if( j== 5){
-     j--; 
+     j--;
   }
   int pozitieI = cellDistX * (i+1) -10;
   int pozitieJ = cellDistX * (j+1) -50;
    println(pozitieJ + " ____" + pozitieI);
-  
+
   if(iesirePoz(i,j)){
-       score += 100; 
+       score += 100;
    }
   if(name == "R1"){
       iFirstRabbit = pozitieI;

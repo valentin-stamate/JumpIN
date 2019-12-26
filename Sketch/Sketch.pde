@@ -1,8 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 import processing.sound.*;
-SoundFile file;
-SoundFile click;
+
 void setup(){
   size(800, 850);
   frameRate(60);
@@ -15,10 +14,13 @@ void setup(){
   textAlign(CENTER);
   shapeMode(CENTER);
 
-  file = new SoundFile(this, "./Music/bckMusic1.wav");
+  backgroundMusic = new SoundFile(this, "./Music/bckMusic1.wav");
   click = new SoundFile(this, "./Music/Click.mp3");
-  file.loop();
-  countRabbitsBegining(); 
+  backgroundMusic.loop();
+
+  countRabbitsBegining();
+
+  setGameTable(challengeEightTable);
 }
 
 
@@ -45,7 +47,7 @@ void draw(){
     background(gameBkgColor);
     text("Felicitari ai castigat nivelul si ai obtinut " + score + " points", width/2, height/2);
     drawButtonIesireOption();
-   
+
   }else if (options == true){
     background(gameBkgColor);
     text("Pagina pentru optiuni", 400, 425);
@@ -59,8 +61,13 @@ void draw(){
   } else {
 
     drawIntroAnimation();
-    drawStartMenu(); 
+    drawStartMenu();
     //println(countRabbits + " rabb");
+  }
+
+
+  if(frameCount == 300){
+    //setGameTable(challengeSixTable);
   }
 
 }

@@ -1,24 +1,24 @@
 void updateFoxPositions(int tmp){
    if(tmp > coordonateFoxHJ){
        int i =  (coordonateFoxHJ + 50 + 80)/cellDistX -1;
-       if(tableArray[fOneI -1][i] == "F" && tableArray[fOneI -1][i-1] == "0"){
+       if(tableArray[fOneI -1][i] == "FH" && tableArray[fOneI -1][i-1] == "0"){
          tableArray[fOneI -1][i+1] = "0";
-         tableArray[fOneI -1][i] = "F";
-         tableArray[fOneI -1][i-1] = "F";
+         tableArray[fOneI -1][i] = "FH";
+         tableArray[fOneI -1][i-1] = "FH";
        }else{
-         tableArray[fOneI -1][i-1] = "F";
-         tableArray[fOneI -1][i] = "F";
+         tableArray[fOneI -1][i-1] = "FH";
+         tableArray[fOneI -1][i] = "FH";
        }
        fOneJ = i+1;
      }else{
        int i =  (coordonateFoxHJ + 50 + 80)/cellDistX - 1;
-       if(tableArray[fOneI -1][i] == "F" && tableArray[fOneI -1][i-2] == "F"){
+       if(i >= 2 && tableArray[fOneI -1][i] == "FH" && tableArray[fOneI -1][i-2] == "FH"){
          tableArray[fOneI -1][i-2] = "0";
-         tableArray[fOneI -1][i-1] = "F";
-         tableArray[fOneI -1][i] = "F";
+         tableArray[fOneI -1][i-1] = "FH";
+         tableArray[fOneI -1][i] = "FH";
        }else{
-         tableArray[fOneI -1][i-1] = "F";
-         tableArray[fOneI -1][i] = "F";
+         tableArray[fOneI -1][i-1] = "FH";
+         tableArray[fOneI -1][i] = "FH";
        }
         fOneJ = i+1;
      }
@@ -28,28 +28,28 @@ void updateFoxPositions(int tmp){
 void updateSecondFoxPositions(int tmp){
   int i =  (coordonateFoxVJ + 50 + 80)/cellDistX-1;
   if(i>0){
-   if(tmp > coordonateFoxVJ){ 
-       
-         if(tableArray[i][fSecondI] == "F2" && tableArray[i-1][fSecondI] == "0"){
+   if(tmp > coordonateFoxVJ){
+
+         if(tableArray[i][fSecondI] == "FV" && tableArray[i-1][fSecondI] == "0"){
           tableArray[i + 1][fSecondI] = "0";
-           tableArray[i][fSecondI] = "F2";
-           tableArray[i-1][fSecondI] = "F2";
+           tableArray[i][fSecondI] = "FV";
+           tableArray[i-1][fSecondI] = "FV";
          }else{
            if(tableArray[i-1][fSecondI] == "0"){
-           tableArray[i][fSecondI] = "F2";
-           tableArray[i-1][fSecondI] = "F2";
+           tableArray[i][fSecondI] = "FV";
+           tableArray[i-1][fSecondI] = "FV";
            }
          }
              fSecondJ = i;
         //printArray();
      }else{
-       if(i > 1 && tableArray[i][fSecondI] == "F2" && tableArray[i-2][fSecondI] == "F2"){
+       if(i > 1 && tableArray[i][fSecondI] == "FV" && tableArray[i-2][fSecondI] == "FV"){
          tableArray[i-2][fSecondI] = "0";
-         tableArray[i-1][fSecondI] = "F2";
-         tableArray[i][fSecondI] = "F2";
+         tableArray[i-1][fSecondI] = "FV";
+         tableArray[i][fSecondI] = "FV";
        }else{
-        tableArray[i-1][fSecondI] = "F2";
-         tableArray[i][fSecondI] = "F2";
+        tableArray[i-1][fSecondI] = "FV";
+         tableArray[i][fSecondI] = "FV";
        }
         fSecondJ = i;
      }
@@ -81,11 +81,11 @@ void moveSecondFox( int j){
 
 
 void determinaObstacolDreapta(){
-   int j =  fOneJ -2;
-   int i =  fOneI -1;
+   int j =  fOneJ - 2;
+   int i =  fOneI - 1;
    obstacolDreapta = 0;
    while(j <= 4 && obstacolDreapta == 0){
-    if(tableArray[i][j] != "0" && tableArray[i][j] != "F"){
+    if(tableArray[i][j] != "0" && tableArray[i][j] != "FH"){
      obstacolDreapta = 5-(j);
     }
     j++;
@@ -116,7 +116,7 @@ void determinaObstacolSus(){
    int i =  fSecondI;
    obstacolSus = 0;
    while(j <= 4 && obstacolSus == 0){
-    if(tableArray[j][i] != "0" && tableArray[j][i] != "F2"){
+    if(tableArray[j][i] != "0" && tableArray[j][i] != "FV"){
      obstacolSus = 5-(j);
     }
     j++;
@@ -128,7 +128,7 @@ void determinaObstacolJos(){
    int i =  fSecondI;
    obstacolJos = 1;
    while(obstacolJos == 1 && j >= 0  ){
-    if(tableArray[j][i] != "0" && tableArray[j][i] != "F2"){
+    if(tableArray[j][i] != "0" && tableArray[j][i] != "FV"){
       if(j==0){
         obstacolJos++;
       }else{

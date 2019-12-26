@@ -5,10 +5,12 @@ String flagROne = "r1";
 String flagRTwo = "r2";
 String flagRThree = "r3";
 String flagFOne = "f1";
-String flagFTwo = "f2";
+String flagFTwo = "FV";
 String quitString = "Quit";
 String optionsString = "Optiuni";
 String optionsExitString = "Menu";
+String undoString = "Undo";
+String solveString = "Rezolva";
 
 String challenge_1 = "Challenge 1";
 String challenge_2 = "Challenge 2";

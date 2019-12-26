@@ -2,8 +2,8 @@ void moveFirstRabbit(){
    if((mouseX - xOffset > 75 ) &&(mouseX - xOffset < height -25 ) && (mouseY - yOffset > 130) && (mouseY - yOffset < width-10)){
      int i = (iFirstRabbit - 25) / cellDistX;
      int j = (jFirstRabbit - 25) / cellDistY;
-     printArray();
-     println(i + "  "  + j );
+     //printArray();
+     //println(i + "  "  + j );
     if(rabbitMoveUp && i >= 0){
         if(determinareCasutaObstacol(i,j, iInitialFirstRabbit - i)){
            iFirstRabbit = mouseY - yOffset;
@@ -60,14 +60,15 @@ void moveSecondRabbit(){
   if((mouseX - xOffset > 75 ) &&(mouseX - xOffset < height -25 ) && (mouseY - yOffset > 130) && (mouseY - yOffset < width-10)){
      int i = (iSecondRabbit - 25) / cellDistX ;
      int j = (jSecondRabbit - 25) / cellDistY;
-     printArray();
-     println(i + "  "  + j );
+     //printArray();
+     //println(i + "  "  + j );
      
     if(rabbitMoveUp && i >= 0){
-        if(determinareCasutaObstacol(i,j, iInitialSecondRabbit - 1)){
+      println("Enter Up");
+        if(determinareCasutaObstacol(i,j, iInitialSecondRabbit - i)){
            iSecondRabbit = mouseY - yOffset;
            count = iInitialSecondRabbit - i;
-        }else if(determinareCasutaIesire(i,j) && count>0){
+        }else if(determinareCasutaIesire(i,j)&& count >0){
            tableArray[iInitialSecondRabbit][ jInitialSecondRabbit]= "0";
            score+=100;
         }else if(determinareCasutaGoala(i, j) && count>0){
@@ -75,20 +76,22 @@ void moveSecondRabbit(){
             tableArray[iInitialSecondRabbit][ jInitialSecondRabbit]= "0";
         }
       }else if(rabbitMoveDown &&  i <= 4){
-        if(determinareCasutaObstacol(i,j, i - iInitialSecondRabbit -1)){
+          println("Enter Down");
+        if(determinareCasutaObstacol(i,j, i - iInitialSecondRabbit)){
            iSecondRabbit = mouseY - yOffset;
            count = i - iInitialSecondRabbit;
-        }else if(determinareCasutaIesire(i,j) && count>0){
-           tableArray[iInitialSecondRabbit ][ jInitialSecondRabbit]= "0";
+        }else if(determinareCasutaIesire(i,j)&& count>0){
+           tableArray[iInitialSecondRabbit][ jInitialSecondRabbit]= "0";
            score+=100;
-        }else if(determinareCasutaGoala(i, j) && count>0){
+        }else if(determinareCasutaGoala(i, j)&& count>0){
             tableArray[i][j] = "R2";
             tableArray[iInitialSecondRabbit][ jInitialSecondRabbit]= "0";
         }
       }else if(rabbitMoveLeft &&  j >= 0){
-         if(determinareCasutaObstacol(i,j, jInitialSecondRabbit  - 1)){
+        println("Enter Left");
+         if(determinareCasutaObstacol(i,j,jInitialSecondRabbit - j)){
              jSecondRabbit = mouseX - xOffset;
-           count = jInitialSecondRabbit  - j ;
+           count =  jInitialSecondRabbit - j ;
         }else if(determinareCasutaIesire(i,j) && count>0){
            tableArray[iInitialSecondRabbit ][ jInitialSecondRabbit]= "0";
            score+=100;
@@ -97,17 +100,18 @@ void moveSecondRabbit(){
             tableArray[iInitialSecondRabbit ][ jInitialSecondRabbit]= "0";
         }
       }else if(rabbitMoveRight  && j <= 4 ){
-         if(determinareCasutaObstacol(i,j, j - jInitialSecondRabbit -1)){
-             jSecondRabbit = mouseX - xOffset;
-           count =  j - jInitialSecondRabbit;
+        println("Enter Right");
+         if(determinareCasutaObstacol(i,j, j - jInitialSecondRabbit )){
+           jSecondRabbit = mouseX - xOffset;
+           count = j - jInitialSecondRabbit ;
         }else if(determinareCasutaIesire(i,j) && count>0){
            tableArray[iInitialSecondRabbit][ jInitialSecondRabbit]= "0";
            score+=100;
         }else if(determinareCasutaGoala(i, j) && count>0){
+           
             tableArray[i][j] = "R2";
             tableArray[iInitialSecondRabbit][ jInitialSecondRabbit]= "0";
         }
-        
       }else {
         determinareDirectie();
       }
@@ -118,11 +122,11 @@ void moveThirdRabbit(){
   if((mouseX - xOffset > 75 ) &&(mouseX - xOffset < height -25 ) && (mouseY - yOffset > 130) && (mouseY - yOffset < width-10)){
      int i = (iThirdRabbit - 25) / cellDistX ;
      int j = (jThirdRabbit - 25) / cellDistY;
-     printArray();
-     println(i + "  "  + j );
+     //printArray();
+     //println(i + "  "  + j );
      
     if(rabbitMoveUp && i >= 0){
-        if(determinareCasutaObstacol(i,j, iInitialThirdRabbit - 1)){
+        if(determinareCasutaObstacol(i,j, iInitialThirdRabbit - i)){
            iThirdRabbit = mouseY - yOffset;
            count = iInitialThirdRabbit - i;
         }else if(determinareCasutaIesire(i,j) && count>0){
@@ -133,7 +137,7 @@ void moveThirdRabbit(){
             tableArray[iInitialThirdRabbit][ jInitialThirdRabbit]= "0";
         }
       }else if(rabbitMoveDown &&  i <= 4){
-        if(determinareCasutaObstacol(i,j, i - iInitialThirdRabbit -1)){
+        if(determinareCasutaObstacol(i,j, i - iInitialThirdRabbit)){
            iThirdRabbit = mouseY - yOffset;
            count = i - iInitialThirdRabbit;
         }else if(determinareCasutaIesire(i,j) && count>0){
@@ -144,7 +148,7 @@ void moveThirdRabbit(){
             tableArray[iInitialThirdRabbit][ jInitialThirdRabbit]= "0";
         }
       }else if(rabbitMoveLeft &&  j >= 0){
-         if(determinareCasutaObstacol(i,j, jInitialThirdRabbit  - 1)){
+         if(determinareCasutaObstacol(i,j, jInitialThirdRabbit  - j)){
              jThirdRabbit = mouseX - xOffset;
            count = jInitialThirdRabbit  - j ;
         }else if(determinareCasutaIesire(i,j) && count>0){
@@ -155,7 +159,7 @@ void moveThirdRabbit(){
             tableArray[iInitialThirdRabbit ][ jInitialThirdRabbit]= "0";
         }
       }else if(rabbitMoveRight  && j <= 4 ){
-         if(determinareCasutaObstacol(i,j, j - jInitialFirstRabbit -1)){
+         if(determinareCasutaObstacol(i,j, j - jInitialFirstRabbit)){
              jThirdRabbit = mouseX - xOffset;
            count =  j - jInitialFirstRabbit;
         }else if(determinareCasutaIesire(i,j) && count>0){
@@ -175,11 +179,13 @@ void moveThirdRabbit(){
 void moveRabbit(int i, int j){
   if( i == 5){
      i--; 
-  }else if( j== 5){
+  }
+  if( j== 5){
      j--; 
   }
   int pozitieI = cellDistX * (i+1) -10;
   int pozitieJ = cellDistX * (j+1) -50;
+   println(pozitieJ + " ____" + pozitieI);
   
   if(iesirePoz(i,j)){
        score += 100; 

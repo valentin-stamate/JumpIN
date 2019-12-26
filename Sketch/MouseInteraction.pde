@@ -16,7 +16,7 @@ void checkMouseOver(int x, int y, int bWidth, int bHeight, String s){
 }
 
 void mousePressed(){
-  click.play();
+   click.play();
   if(mouseOver){
 
     if( egal(MouseFlag, startString) == true ){
@@ -31,26 +31,49 @@ void mousePressed(){
        quitButton();
     } else if( egal(MouseFlag, selectLevelString) == true ){
       enterSelectLevel();
+    }if( egal(MouseFlag, undoString) == true ){
+      pressedUndo();
+    } else if( egal(MouseFlag, solveString) == true ){
+      println("Solving");
+      levelSolving = true;
     }
     // level selectin
     else if( egal(MouseFlag, challenge_1) == true){
       println("Challenge 1 Selected");
+      setGameTable(challengeOneTable);
+      Challenge = 1;
     } else if( egal(MouseFlag, challenge_2) == true){
       println("Challenge 2 Selected");
+      setGameTable(challengeTwoTable);
+      Challenge = 2;
     } else if( egal(MouseFlag, challenge_3) == true){
       println("Challenge 3 Selected");
+      setGameTable(challengeThreeTable);
+      Challenge = 3;
     } else if( egal(MouseFlag, challenge_4) == true){
       println("Challenge 4 Selected");
+      setGameTable(challengeFourTable);
+      Challenge = 4;
     } else if( egal(MouseFlag, challenge_5) == true){
       println("Challenge 5 Selected");
+      setGameTable(challengeFiveTable);
+      Challenge = 5;
     } else if( egal(MouseFlag, challenge_6) == true){
       println("Challenge 6 Selected");
+      setGameTable(challengeSixTable);
+      Challenge = 6;
     } else if( egal(MouseFlag, challenge_7) == true){
       println("Challenge 7 Selected");
+      setGameTable(challengeSevenTable);
+      Challenge = 7;
     } else if( egal(MouseFlag, challenge_8) == true){
       println("Challenge 8 Selected");
+      setGameTable(challengeEightTable);
+      Challenge = 8;
     } else if( egal(MouseFlag, challenge_9) == true){
       println("Challenge 9 Selected");
+      setGameTable(challengeNineTable);
+      Challenge = 9;
     }
 
     else if( egal(MouseFlag, flagROne) == true ){
@@ -64,32 +87,34 @@ void mousePressed(){
       xOffset = mouseX - jFirstRabbit;
       yOffset = mouseY - iFirstRabbit;
       iInitialFirstRabbit = (iFirstRabbit - 25) / cellDistX;
-      jInitialFirstRabbit = (jFirstRabbit - 25) / cellDistY; 
-      
+      jInitialFirstRabbit = (jFirstRabbit - 25) / cellDistY;
+
     } else if( egal(MouseFlag, flagRTwo) ==true ){
       println("rabbit two selectd");
       lockedSecondRabbit = true;
       xOffset = mouseX - jSecondRabbit;
       yOffset = mouseY - iSecondRabbit;
       iInitialSecondRabbit = (iSecondRabbit - 25) / cellDistX;
-      jInitialSecondRabbit = (jSecondRabbit - 25) / cellDistY; 
-      println(iInitialFirstRabbit + " _____++" + jInitialFirstRabbit);
+      jInitialSecondRabbit = (jSecondRabbit - 25) / cellDistY;
+      println(iInitialSecondRabbit + " _____++" + jInitialSecondRabbit);
     } else if( egal(MouseFlag, flagRThree) == true ){
       println("rabbit three  selectd");
       lockedThirdRabbit = true;
       xOffset = mouseX - jThirdRabbit;
       yOffset = mouseY - iThirdRabbit;
       iInitialThirdRabbit = (iThirdRabbit - 25) / cellDistX;
-      jInitialThirdRabbit = (jThirdRabbit - 25) / cellDistY; 
+      jInitialThirdRabbit = (jThirdRabbit - 25) / cellDistY;
     } else if( egal(MouseFlag, flagFOne) == true ){
       lockedFox = true;
       xOffset = mouseX - coordonateFoxHJ;
       yOffset = mouseY - coordonateFoxHI;
+       putDataInList("FH", fOneI, (coordonateFoxHJ - 25) / cellDistY);
     }else if(egal(MouseFlag, flagFTwo) == true){
       println("Second Fox is true");
       lockedSecondFox = true;
       xOffset = mouseX - coordonateFoxVI;
       yOffset = mouseY - coordonateFoxVJ;
+      putDataInList("FV", fSecondI, ( coordonateFoxVJ - 25) / cellDistX);
     }
     MouseFlag = "";
   }

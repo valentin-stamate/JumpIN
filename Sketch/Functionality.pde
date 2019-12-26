@@ -8,15 +8,11 @@ void mouseDragged(){
      updateFoxPositions(tmp);
    }
  }else if(lockedSecondFox){
-   println("Is here now" );
-   println(mouseY - yOffset );
-   println( 150 + cellDistY*obstacolJos);
-   println(cellDistY*obstacolSus);
    if(((mouseY - yOffset > 150+cellDistY*obstacolJos) &&(mouseY - yOffset < width-100 -cellDistY*obstacolSus))){
     int tmp = coordonateFoxVJ;
      coordonateFoxVJ = mouseY - yOffset;
      //face update pozitiilor vulpii in matrice
-     //updateSecondFoxPositions(tmp);
+     updateSecondFoxPositions(tmp);
    }
  }else if(lockedFirstRabbit){
    moveFirstRabbit();
@@ -43,9 +39,8 @@ boolean determinareCasutaIesire(int i, int j){
 }
 
 boolean determinareCasutaObstacol(int i, int j, int dif){
-  println(dif + " ___ " + j);
   if(tableArray[i][j] != "0"){
-    if(tableArray[i][j] =="5" && dif < 1){
+    if(tableArray[i][j] =="5" && dif < 2){
        return false;
     }else{
        return true;
@@ -80,62 +75,57 @@ void printArray(){
 
 void mouseReleased(){
  int i = 0, j = 0;
- println(count + " )))))))");
   if(lockedFirstRabbit){
       i = (iFirstRabbit - 25) / cellDistX;
       j = (jFirstRabbit - 25) / cellDistY;
-      if(iesirePoz(i,j) && count > 0){
+      if(iesirePoz(i,j) && count >1){
          tableArray[i][j] = "R1";
          tableArray[iInitialFirstRabbit][jInitialFirstRabbit] = "0";
-      }else if(iesirePoz(iInitialFirstRabbit,jInitialFirstRabbit) && count > 0){
+      }else if(iesirePoz(iInitialFirstRabbit,jInitialFirstRabbit) && count > 1){
           tableArray[i][j] = "R1";
           tableArray[iInitialFirstRabbit][jInitialFirstRabbit] = "5";
       }else if(count <1 || ((i < 5) && (j < 5) && (tableArray[i][j] != "0") && (tableArray[i][j] != "R1"))) {
          i = iInitialFirstRabbit;
          j = jInitialFirstRabbit;
       }
+      if( i != iInitialFirstRabbit || j != jInitialFirstRabbit){
+
+        putDataInList("R1", iInitialFirstRabbit, jInitialFirstRabbit);
+      }
   }else if(lockedSecondRabbit){
       i = (iSecondRabbit - 25) / cellDistX;
       j = (jSecondRabbit - 25) / cellDistY;
-      println(iSecondRabbit + " ___ " + jSecondRabbit);
-       println(iInitialSecondRabbit + " ___ " + jInitialSecondRabbit);
-      if(iesirePoz(i,j) && count > 0){
-        println("enter here " ) ;
+      if( count >1 &&  iesirePoz(i,j) ){
          tableArray[i][j] = "R2";
          tableArray[iInitialSecondRabbit][jInitialSecondRabbit] = "0";
-      }else if(iesirePoz(iSecondRabbit,jSecondRabbit) && count > 0){
-        println("enter here 1 " ) ;
+      }else if(count > 1 && iesirePoz(iInitialSecondRabbit,jInitialSecondRabbit)){
           tableArray[i][j] = "R2";
           tableArray[iInitialSecondRabbit][jInitialSecondRabbit] = "5";
-      }else if(determinareCasutaGoala(i, j) && count>0){
-            tableArray[i][j] = "R2";
-            tableArray[iInitialSecondRabbit][ jInitialSecondRabbit]= "0";
-       }else if(count <=1 || ((i < 5) && (j < 5) && (tableArray[i][j] != "0") && (tableArray[i][j] != "R2"))) {
-        println("enter here 2 " ) ;
+      }if(count <1 || ((i < 5) && (j < 5) && (tableArray[i][j] != "0") && (tableArray[i][j] != "R2"))) {
          i = iInitialSecondRabbit;
          j = jInitialSecondRabbit;
       }
-
+      if( i != iInitialSecondRabbit || j != jInitialSecondRabbit){
+        putDataInList("R2", iInitialSecondRabbit, jInitialSecondRabbit);
+      }
   }else if(lockedThirdRabbit){
       i = (iThirdRabbit - 25) / cellDistX;
       j = (jThirdRabbit - 25) / cellDistY;
-      println(j);
-      println(count);
-      if( count >0 &&  iesirePoz(i,j) ){
-        println("Enter");
+      if( count >1 &&  iesirePoz(i,j) ){
          tableArray[i][j] = "R3";
          tableArray[iInitialThirdRabbit][jInitialThirdRabbit] = "0";
-      }else if(count > 0 && iesirePoz(iInitialThirdRabbit,jInitialThirdRabbit)){
-        println("Enter1");
+      }else if(count > 1 && iesirePoz(iInitialThirdRabbit,jInitialThirdRabbit)){
           tableArray[i][j] = "R3";
           tableArray[iInitialThirdRabbit][jInitialThirdRabbit] = "5";
       }if(count <1 || ((i < 5) && (j < 5) && (tableArray[i][j] != "0") && (tableArray[i][j] != "R3"))) {
          i = iInitialThirdRabbit;
          j = jInitialThirdRabbit;
       }
+      if( i != iInitialThirdRabbit || j != jInitialThirdRabbit){
+        putDataInList("R3", iInitialThirdRabbit, jInitialThirdRabbit);
+      }
   }else if(lockedFox){
     j = (coordonateFoxHJ - 25) / cellDistY;
-
   }else if(lockedSecondFox){
     i = ( coordonateFoxVJ - 25) / cellDistX;
   }
@@ -143,14 +133,24 @@ void mouseReleased(){
   if((lockedFirstRabbit) || (lockedSecondRabbit) ||(lockedThirdRabbit)){
      println(i + " " + j);
 
-     moveRabbit(i,j);
-  }else if(lockedFox){
+  moveRabbit(i,j);
+
+  }else if(lockedFox && showHorizontalFox){
     moveFox(j);
-  }else if(lockedSecondFox){
+  }else if(lockedSecondFox && showVerticalFox){
     moveSecondFox(i);
   }
 
+  if(rabbitsInHoles() == countRabbits && gameStart == true){
+    println("REPEEEAAAT");
+    gameFinished = true;
+    gameStart = false;
+  }
+
+ afisareLista();
+
  lockedFox = false;
+ lockedSecondFox = false;
  lockedFirstRabbit = false;
  lockedSecondRabbit = false;
  lockedThirdRabbit = false;
@@ -160,12 +160,19 @@ void mouseReleased(){
  rabbitMoveRight = false;
 
  if(gameStart == true){
-   determinaObstacolStanga();
-   determinaObstacolDreapta();
-   determinaObstacolSus();
-   determinaObstacolJos();
-   println(obstacolStanga + " " + obstacolDreapta);
+
+  if(showHorizontalFox){
+    determinaObstacolStanga();
+    determinaObstacolDreapta();
   }
+
+  if(showVerticalFox){
+    determinaObstacolSus();
+    determinaObstacolJos();
+  }
+
+ }
+ printArray();
 }
 
 

@@ -16,23 +16,23 @@ void drawTable(){
 
       fill(color(46,125,50));
 
-      int vf = (i - 1) * 5 + j;
-      if(vf == 1 || vf == 5 || vf == 13 || vf == 21 || vf == 25){
+      int vf = (i - 1) * 5 + j - 1;
+      if(vf == 0 || vf == 4 || vf == 12 || vf == 20 || vf == 24){
         int tl = 8, tr = 8, br = 8, bl = 8;
         // aici desenez casutele pentru iesiri
-        if(vf == 1){
+        if(vf == 0){
           tl = 40;
-        } else if(vf == 5){
+        } else if(vf == 4){
           tr = 40;
-        } else if(vf == 21){
+        } else if(vf == 20){
           bl = 40;
-        } else if(vf == 25){
+        } else if(vf == 24){
           br = 40;
         }
         fill(color(62,39,35));
-        circle(x, y + gameMenuSize, 110);
+        circle(x, y + gameMenuSize, 100);
         fill(color(20, 20, 20, 90));
-        circle(x, y + gameMenuSize, 90);
+        circle(x, y + gameMenuSize, 85);
 
         fill(color(255, 255, 255, 30));
         strokeWeight(2);
@@ -55,26 +55,24 @@ void drawPositions(){
 
   for(int i = 0; i < 5; i++){
     for(int j = 0; j < 5; j++){
-      if( tableArray[i][j] == "R1" ){
-        if(iFirstRabbit == 0 && jFirstRabbit == 0){
+      if( egal(tableArray[i][j], "R1") ){
+        if(!lockedFirstRabbit){
          iFirstRabbit = convertCoordToY(i);
          jFirstRabbit = convertCoordToX(j);
-
-         //rOneI = i;
-         //rOneJ = j;
         }
 
         drawRabbit(jFirstRabbit, iFirstRabbit, rabbitOrange, flagROne);
       }
-      else if( tableArray[i][j] == "R2" ){
-       if(iSecondRabbit == 0 && jSecondRabbit == 0){
+      else if( egal(tableArray[i][j], "R2") ){
+       if(!lockedSecondRabbit){
            iSecondRabbit = convertCoordToY(i);
            jSecondRabbit = convertCoordToX(j);
         }
+
         drawRabbit(jSecondRabbit, iSecondRabbit, rabbitGrey, flagRTwo);
       }
-      else if( tableArray[i][j] == "R3" ){
-        if(iThirdRabbit == 0 && jThirdRabbit == 0){
+      else if( egal(tableArray[i][j], "R3") ){
+        if(!lockedThirdRabbit){
            iThirdRabbit = convertCoordToY(i);
            jThirdRabbit = convertCoordToX(j);
         }
@@ -89,34 +87,34 @@ void drawPositions(){
 }
 
 void drawFoxes(){
-  if((coordonateFoxHI == 0) && (coordonateFoxHJ == 0)){
-     fOneJ = 3;
-     fOneI = 1;
-    determinaObstacolDreapta();
-    determinaObstacolStanga();
-    tableArray[fOneI-1][fOneJ -2] = "F";
-    tableArray[fOneI-1][fOneJ -1] = "F";
-   coordonateFoxHI = convertCoordToY(fOneI - 1) + 8;
-   coordonateFoxHJ =  convertCoordToX(fOneJ - 1) - 80;
+  // if((coordonateFoxHI == 0) && (coordonateFoxHJ == 0)){
+  //    fOneJ = 3;
+  //    fOneI = 1;
+  //   determinaObstacolDreapta();
+  //   determinaObstacolStanga();
+  //   tableArray[fOneI-1][fOneJ -2] = "FH";
+  //   tableArray[fOneI-1][fOneJ -1] = "FH";
+  //  coordonateFoxHI = convertCoordToY(fOneI - 1) + 8;
+  //  coordonateFoxHJ =  convertCoordToX(fOneJ - 1) - 80;
+  //
+  //   fSecondI = 3;
+  //   fSecondJ = 4;
+  //   determinaObstacolSus();
+  //   determinaObstacolJos();
+  //  coordonateFoxVI = convertCoordToY(fSecondI) - 40;
+  //  coordonateFoxVJ =  convertCoordToX(fSecondJ) - 25;
+  //  tableArray[fSecondJ-1][fSecondI] = "FV";
+  //   tableArray[fSecondJ][fSecondI] = "FV";
+  //
+  //
+  //   printArray();
+  // }
 
-    fSecondI = 4;
-    fSecondJ = 5;
-    determinaObstacolSus();
-    determinaObstacolJos();
-   coordonateFoxVI = convertCoordToY(fSecondI - 1) - 40;
-   coordonateFoxVJ =  convertCoordToX(fSecondJ - 1) - 25;
-   tableArray[fSecondJ-2][fSecondI -1] = "F2";
-    tableArray[fSecondJ-1][fSecondI -1] = "F2";
+  if(showHorizontalFox)
+    drawFox(coordonateFoxHJ, coordonateFoxHI, 260, 80,flagFOne, foxH);
 
-
-    printArray();
-  }
-  drawFox(coordonateFoxHJ, coordonateFoxHI, 260, 80,flagFOne, foxH);
-
-
-  // TODO
-  // just a demo position
-  drawFox(coordonateFoxVI, coordonateFoxVJ, 80, 260, flagFTwo, foxV);
+  if(showVerticalFox)
+    drawFox(coordonateFoxVI, coordonateFoxVJ, 80, 260, flagFTwo, foxV);
 }
 
 void drawRabbit(int j, int i, PShape p, String flag){
@@ -139,7 +137,10 @@ void drawMushroom(int j, int i){
   int x = cellDistX * (j + 1) - 50;
   int y = cellDistY * (i + 1) - 50 + gameMenuSize;
 
-  drawSupportOneCell(j, i);
+  int vf = i + j;
+  if( !(vf == 0 || vf == 4 || vf == 12 || vf == 20 || vf == 24) ){
+    drawSupportOneCell(j, i);
+  }
   shape(mushroom, x, y, 100, 100);
 }
 

@@ -1,8 +1,14 @@
+import java.util.ArrayList;
+import java.util.List;
 // --== IMAGINI SVG ==--
 PShape rabbitGrey, rabbitOrange, rabbitWhite, foxH, foxV, mushroom;
-PShape ch_1, ch_2, ch_3, ch_4, ch_5, ch_6, ch_7, ch_8, ch_9; 
+PShape ch_1, ch_2, ch_3, ch_4, ch_5, ch_6, ch_7, ch_8, ch_9;
 
 PShape rabbitWhiteIntro, GameTitle;
+
+// --== MUZICA SI SUNETE ==--
+SoundFile backgroundMusic;
+SoundFile click;
 
 // --== VARIABILE DE LOGICA ==--
 // JOC
@@ -12,6 +18,11 @@ boolean selectLevel = false;
 boolean quit = false;
 boolean options = false;
 boolean mouseOver = false;
+boolean gameFinished = false;
+boolean undoMoves = false;
+
+boolean showVerticalFox = false;
+boolean showHorizontalFox = false;
 
 // ANIMALE
 boolean lockedFirstRabbit = false;
@@ -26,6 +37,8 @@ boolean rabbitMoveDown = false;
 boolean lockedFox = false;
 boolean lockedSecondFox = false;
 
+boolean levelSolving = false;
+
 boolean ROraneSelected = false;
 
 String MouseFlag;
@@ -38,6 +51,10 @@ int obstacolStanga = 5;
 int obstacolDreapta = 0;
 int obstacolJos = 5;
 int obstacolSus = 0;
+int countRabbits = 0;
+int countRabbitsInHoles = 0;
+
+int Challenge = 0;
 
 int cellDistX;
 int cellDistY;
@@ -64,3 +81,6 @@ int rTwoI = 1, rTwoJ = 3;
 int rThreeI = 1, rThreeJ = 4;
 int fOneJ = 0, fOneI = 0;
 int fSecondJ =0, fSecondI = 0;
+
+//UNDO
+ArrayList<Undo> undo = new ArrayList<Undo>();

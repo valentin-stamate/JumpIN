@@ -35,7 +35,6 @@ void moveFoxVertical(int i, int j){
   fSecondJ = i;
 }
 
-// TODO
 void moveFoxHorizontal(int i, int j){
   coordonateFoxHI = convertCoordToY(i) + 8;
   coordonateFoxHJ =  convertCoordToX(j) - 80;

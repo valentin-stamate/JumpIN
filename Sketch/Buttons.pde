@@ -60,7 +60,11 @@ void drawButtonIesireOption(){
 }
 
 void drawUndo(){
-  drawButton(150, gameMenuSize / 2, 60, 30, normalBtnCol, undoString);
+  drawButton(110, gameMenuSize / 2, 60, 30, normalBtnCol, undoString);
+}
+
+void drawSolve(){
+  drawButton(185, gameMenuSize / 2, 70, 30, normalBtnCol, solveString);
 }
 
 void drawButton(int x, int y, int bWidth, int bHeight, color col, String s){

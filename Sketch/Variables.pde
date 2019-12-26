@@ -37,6 +37,8 @@ boolean rabbitMoveDown = false;
 boolean lockedFox = false;
 boolean lockedSecondFox = false;
 
+boolean levelSolving = false;
+
 boolean ROraneSelected = false;
 
 String MouseFlag;
@@ -51,6 +53,8 @@ int obstacolJos = 5;
 int obstacolSus = 0;
 int countRabbits = 0;
 int countRabbitsInHoles = 0;
+
+int Challenge = 0;
 
 int cellDistX;
 int cellDistY;

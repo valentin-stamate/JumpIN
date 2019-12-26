@@ -43,7 +43,7 @@ void updateSecondFoxPositions(int tmp){
              fSecondJ = i;
         //printArray();
      }else{
-       if(i > 1 && tableArray[i][fSecondI] == "FV" && tableArray[i-2][fSecondI] == "FV"){
+       if(i > 1 && i <= 6 && tableArray[i][fSecondI] == "FV" && tableArray[i-2][fSecondI] == "FV"){
          tableArray[i-2][fSecondI] = "0";
          tableArray[i-1][fSecondI] = "FV";
          tableArray[i][fSecondI] = "FV";

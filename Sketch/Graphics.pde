@@ -55,7 +55,7 @@ void drawPositions(){
 
   for(int i = 0; i < 5; i++){
     for(int j = 0; j < 5; j++){
-      if( tableArray[i][j] == "R1" ){
+      if( egal(tableArray[i][j], "R1") ){
         if(!lockedFirstRabbit){
          iFirstRabbit = convertCoordToY(i);
          jFirstRabbit = convertCoordToX(j);
@@ -63,7 +63,7 @@ void drawPositions(){
 
         drawRabbit(jFirstRabbit, iFirstRabbit, rabbitOrange, flagROne);
       }
-      else if( tableArray[i][j] == "R2" ){
+      else if( egal(tableArray[i][j], "R2") ){
        if(!lockedSecondRabbit){
            iSecondRabbit = convertCoordToY(i);
            jSecondRabbit = convertCoordToX(j);
@@ -71,7 +71,7 @@ void drawPositions(){
 
         drawRabbit(jSecondRabbit, iSecondRabbit, rabbitGrey, flagRTwo);
       }
-      else if( tableArray[i][j] == "R3" ){
+      else if( egal(tableArray[i][j], "R3") ){
         if(!lockedThirdRabbit){
            iThirdRabbit = convertCoordToY(i);
            jThirdRabbit = convertCoordToX(j);

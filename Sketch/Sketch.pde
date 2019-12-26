@@ -20,7 +20,8 @@ void setup(){
 
   countRabbitsBegining();
 
-  setGameTable(challengeEightTable);
+  setGameTable(challengeOneTable);
+  Challenge = 6;
 }
 
 
@@ -43,6 +44,11 @@ void draw(){
     if(undo.size() > 0){
       drawUndo();
     }
+
+    if(!levelSolving){
+      drawSolve();
+    }
+
   }else if(gameFinished){
     background(gameBkgColor);
     text("Felicitari ai castigat nivelul si ai obtinut " + score + " points", width/2, height/2);
@@ -63,6 +69,19 @@ void draw(){
     drawIntroAnimation();
     drawStartMenu();
     //println(countRabbits + " rabb");
+  }
+
+  int oneSecond = 60;
+
+  if(levelSolving){
+    if(frameCount % oneSecond == 0){
+      if(undo.size() > 0){
+        pressedUndo();
+
+      } else{
+        autoSolve(tableArray, Challenge);
+      }
+    }
   }
 
 

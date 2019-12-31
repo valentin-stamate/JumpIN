@@ -55,20 +55,13 @@ void drawPositions(){
 
   for(int i = 0; i < 5; i++){
     for(int j = 0; j < 5; j++){
-      if( egal(tableArray[i][j], "R1") ){
-        if(!lockedFirstRabbit){
-         iFirstRabbit = convertCoordToY(i);
-         jFirstRabbit = convertCoordToX(j);
-        }
-
-        drawRabbit(jFirstRabbit, iFirstRabbit, rabbitOrange, flagROne);
-      }
-      else if( egal(tableArray[i][j], "R2") ){
+       if( tableArray[i][j] == "M" ){
+        drawMushroom(j, i);
+      }else if( egal(tableArray[i][j], "R2") ){
        if(!lockedSecondRabbit){
            iSecondRabbit = convertCoordToY(i);
            jSecondRabbit = convertCoordToX(j);
         }
-
         drawRabbit(jSecondRabbit, iSecondRabbit, rabbitGrey, flagRTwo);
       }
       else if( egal(tableArray[i][j], "R3") ){
@@ -78,8 +71,13 @@ void drawPositions(){
         }
         drawRabbit(jThirdRabbit,iThirdRabbit, rabbitWhite, flagRThree);
       }
-      else if( tableArray[i][j] == "M" ){
-        drawMushroom(j, i);
+      else if( egal(tableArray[i][j], "R1") ){
+        if(!lockedFirstRabbit){
+         iFirstRabbit = convertCoordToY(i);
+         jFirstRabbit = convertCoordToX(j);
+        }
+         
+        drawRabbit(jFirstRabbit, iFirstRabbit, rabbitOrange, flagROne);
       }
     }
   }
@@ -110,11 +108,16 @@ void drawFoxes(){
   //   printArray();
   // }
 
-  if(showHorizontalFox)
+  if(showHorizontalFox){
     drawFox(coordonateFoxHJ, coordonateFoxHI, 260, 80,flagFOne, foxH);
-
-  if(showVerticalFox)
+    determinaObstacolDreapta();
+    determinaObstacolStanga();
+  }
+  if(showVerticalFox){
     drawFox(coordonateFoxVI, coordonateFoxVJ, 80, 260, flagFTwo, foxV);
+    determinaObstacolSus();
+    determinaObstacolJos();
+  }
 }
 
 void drawRabbit(int j, int i, PShape p, String flag){

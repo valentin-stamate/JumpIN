@@ -102,7 +102,7 @@ void pressedUndo(){
       }
     }
     undoRabbit(xPosition, yPosition, "R3");
-  }else if(animal == "F"){
+  }else if(animal == "FH"){
     tableArray[fOneI-1][fOneJ -2] = "0";
     tableArray[fOneI-1][fOneJ -1] = "0";
     undoFox(yPosition);

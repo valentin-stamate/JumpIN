@@ -45,8 +45,7 @@ boolean determinareCasutaObstacol(int i, int j, int dif){
     }else{
        return true;
     }
-  }
-  else return false;
+  }else return false;
 }
 
 void determinareDirectie(){
@@ -75,60 +74,66 @@ void printArray(){
 
 void mouseReleased(){
  int i = 0, j = 0;
-  if(lockedFirstRabbit){
-      i = (iFirstRabbit - 25) / cellDistX;
-      j = (jFirstRabbit - 25) / cellDistY;
-      if(iesirePoz(i,j) && count >1){
-         tableArray[i][j] = "R1";
-         tableArray[iInitialFirstRabbit][jInitialFirstRabbit] = "0";
-      }else if(iesirePoz(iInitialFirstRabbit,jInitialFirstRabbit) && count > 1){
-          tableArray[i][j] = "R1";
-          tableArray[iInitialFirstRabbit][jInitialFirstRabbit] = "5";
-      }else if(count <1 || ((i < 5) && (j < 5) && (tableArray[i][j] != "0") && (tableArray[i][j] != "R1"))) {
-         i = iInitialFirstRabbit;
-         j = jInitialFirstRabbit;
+ if(determinareTabelJoc()){
+      if(lockedFirstRabbit){
+          i = convertCoordToI(iFirstRabbit);
+          j = convertCoordToJ(jFirstRabbit);
+          println(i + " ________ " + j );
+          if(iesirePoz(i,j) && count >1 && tableArray[i][j] == "5" && (i != iInitialFirstRabbit || j != jInitialFirstRabbit) && !iesirePoz(iInitialFirstRabbit,jInitialFirstRabbit)){
+             tableArray[i][j] = "R1";
+             tableArray[iInitialFirstRabbit][jInitialFirstRabbit] = "0";
+             score+=100;
+          }else if((iesirePoz(iInitialFirstRabbit,jInitialFirstRabbit) && count > 1)  && (i != iInitialFirstRabbit || j != jInitialFirstRabbit)){
+              tableArray[i][j] = "R1"; 
+              tableArray[iInitialFirstRabbit][jInitialFirstRabbit] = "5";
+          }else if(count <1 || ((i < 5) && (j < 5) && (tableArray[i][j] != "0") && (tableArray[i][j] != "R1"))) {
+             i = iInitialFirstRabbit;
+             j = jInitialFirstRabbit;
+          }
+          if( i != iInitialFirstRabbit || j != jInitialFirstRabbit){
+            putDataInList("R1", iInitialFirstRabbit, jInitialFirstRabbit);
+          }
+      }else if(lockedSecondRabbit){
+          i = convertCoordToI(iSecondRabbit);
+          j = convertCoordToJ(jSecondRabbit);
+          if(iesirePoz(i,j) && count >1 && tableArray[i][j] == "5" && (i != iInitialSecondRabbit || j != jInitialSecondRabbit) && !iesirePoz(iInitialSecondRabbit,jInitialSecondRabbit)){
+             tableArray[i][j] = "R2";
+             tableArray[iInitialSecondRabbit][jInitialSecondRabbit] = "0";
+             score+=100;
+          }else if(iesirePoz(iInitialSecondRabbit,jInitialSecondRabbit) && count > 1  && (i != iInitialSecondRabbit || j != jInitialSecondRabbit)){
+              tableArray[i][j] = "R2";
+              tableArray[iInitialSecondRabbit][jInitialSecondRabbit] = "5";
+          }else if(count <1 || ((i < 5) && (j < 5) && (tableArray[i][j] != "0") && (tableArray[i][j] != "R2"))) {
+             i = iInitialSecondRabbit;
+             j = jInitialSecondRabbit;
+          }
+          println(iInitialSecondRabbit + " line "  + jInitialSecondRabbit +  " ___ " + i +  " @@@@ " + j);
+          if( i != iInitialSecondRabbit || j != jInitialSecondRabbit){
+            putDataInList("R2", iInitialSecondRabbit, jInitialSecondRabbit);
+          }
+      }else if(lockedThirdRabbit){
+          i = convertCoordToI(iThirdRabbit);
+          j = convertCoordToJ(jThirdRabbit);
+          if( count >1 &&  iesirePoz(i,j) && tableArray[i][j] == "5" && (i != iInitialThirdRabbit || j != jInitialThirdRabbit ) && !iesirePoz(iInitialThirdRabbit,jInitialThirdRabbit)){
+             tableArray[i][j] = "R3";
+             tableArray[iInitialThirdRabbit][jInitialThirdRabbit] = "0";
+          }else if((count > 1 && iesirePoz(iInitialThirdRabbit,jInitialThirdRabbit)) && (i != iInitialThirdRabbit || j != jInitialThirdRabbit )){
+              tableArray[i][j] = "R3";
+              tableArray[iInitialThirdRabbit][jInitialThirdRabbit] = "5";
+              score+=100;
+          }if(count <1 || ((i < 5) && (j < 5) && (tableArray[i][j] != "0") && (tableArray[i][j] != "R3"))) {
+             i = iInitialThirdRabbit;
+             j = jInitialThirdRabbit;
+          }
+          if( i != iInitialThirdRabbit || j != jInitialThirdRabbit){
+            putDataInList("R3", iInitialThirdRabbit, jInitialThirdRabbit);
+          }
+      }else if(lockedFox){
+        j = (coordonateFoxHJ - 25) / cellDistY;
+      }else if(lockedSecondFox){
+        i = ( coordonateFoxVJ - 25) / cellDistX;
       }
-      if( i != iInitialFirstRabbit || j != jInitialFirstRabbit){
-
-        putDataInList("R1", iInitialFirstRabbit, jInitialFirstRabbit);
-      }
-  }else if(lockedSecondRabbit){
-      i = (iSecondRabbit - 25) / cellDistX;
-      j = (jSecondRabbit - 25) / cellDistY;
-      if( count >1 &&  iesirePoz(i,j) ){
-         tableArray[i][j] = "R2";
-         tableArray[iInitialSecondRabbit][jInitialSecondRabbit] = "0";
-      }else if(count > 1 && iesirePoz(iInitialSecondRabbit,jInitialSecondRabbit)){
-          tableArray[i][j] = "R2";
-          tableArray[iInitialSecondRabbit][jInitialSecondRabbit] = "5";
-      }if(count <1 || ((i < 5) && (j < 5) && (tableArray[i][j] != "0") && (tableArray[i][j] != "R2"))) {
-         i = iInitialSecondRabbit;
-         j = jInitialSecondRabbit;
-      }
-      if( i != iInitialSecondRabbit || j != jInitialSecondRabbit){
-        putDataInList("R2", iInitialSecondRabbit, jInitialSecondRabbit);
-      }
-  }else if(lockedThirdRabbit){
-      i = (iThirdRabbit - 25) / cellDistX;
-      j = (jThirdRabbit - 25) / cellDistY;
-      if( count >1 &&  iesirePoz(i,j) ){
-         tableArray[i][j] = "R3";
-         tableArray[iInitialThirdRabbit][jInitialThirdRabbit] = "0";
-      }else if(count > 1 && iesirePoz(iInitialThirdRabbit,jInitialThirdRabbit)){
-          tableArray[i][j] = "R3";
-          tableArray[iInitialThirdRabbit][jInitialThirdRabbit] = "5";
-      }if(count <1 || ((i < 5) && (j < 5) && (tableArray[i][j] != "0") && (tableArray[i][j] != "R3"))) {
-         i = iInitialThirdRabbit;
-         j = jInitialThirdRabbit;
-      }
-      if( i != iInitialThirdRabbit || j != jInitialThirdRabbit){
-        putDataInList("R3", iInitialThirdRabbit, jInitialThirdRabbit);
-      }
-  }else if(lockedFox){
-    j = (coordonateFoxHJ - 25) / cellDistY;
-  }else if(lockedSecondFox){
-    i = ( coordonateFoxVJ - 25) / cellDistX;
-  }
+ }
 
   if((lockedFirstRabbit) || (lockedSecondRabbit) ||(lockedThirdRabbit)){
      println(i + " " + j);
@@ -142,7 +147,6 @@ void mouseReleased(){
   }
 
   if(rabbitsInHoles() == countRabbits && gameStart == true){
-    println("REPEEEAAAT");
     gameFinished = true;
     gameStart = false;
   }
@@ -236,6 +240,43 @@ void drawPossibleMoves(int i, int j){
       nextMoveArray[iN][jN] = "P";
     }
 
+}
+
+int determinareCasutaGoalaJos(int c, int j){
+  for(int i = c; i >= 0; i--){
+    if(tableArray[i][j] =="0"){
+      return i;
+    }
+  }
+  return 0;
+}
+
+int determinareCasutaGoalaSus(int c, int j){
+  for(int i = c; i <= 4; i++){
+    println(i + " _____________ " + j + " " + tableArray[i][j]);
+    if(tableArray[i][j] == "0"){
+      return i;
+    }
+  }
+  return 4;
+}
+
+int determinareCasutaGoalaDreapta(int c, int j){
+  for(int i = j; i <= 4; i++){
+    if(tableArray[c][i] =="0"){
+      return i;
+    }
+  }
+  return 4;
+}
+
+int determinareCasutaGoalaStanga(int c, int j){
+  for(int i = j; i >= 0; i--){
+    if(tableArray[c][i] =="0"){
+      return i;
+    }
+  }
+  return 0;
 }
 
 void resetNextMoveArray(){

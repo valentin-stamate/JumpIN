@@ -53,6 +53,10 @@ int obstacolJos = 5;
 int obstacolSus = 0;
 int countRabbits = 0;
 int countRabbitsInHoles = 0;
+int casutaGoalaSus = 0;
+int casutaGoalaJos = 0;
+int casutaGoalaDreapta = 0;
+int casutaGoalaStanga = 0;
 
 int Challenge = 0;
 

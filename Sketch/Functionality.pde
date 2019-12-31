@@ -303,3 +303,7 @@ int convertCoordToX(int j){
 int convertCoordToY(int i){
   return (cellDistY * (i + 1) - 50 + gameMenuSize - 8);
 }
+
+void emptyList(){
+ undo = new ArrayList<Undo>();
+}

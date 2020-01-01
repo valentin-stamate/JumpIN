@@ -2,6 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 import processing.sound.*;
 
+// TODO autosolve bug
+
 void setup(){
   size(800, 850);
   frameRate(60);
@@ -14,14 +16,14 @@ void setup(){
   textAlign(CENTER);
   shapeMode(CENTER);
 
-  backgroundMusic = new SoundFile(this, "./Music/bckMusic1.wav");
-  click = new SoundFile(this, "./Music/Click.mp3");
-  backgroundMusic.loop();
+  //backgroundMusic = new SoundFile(this, "./Music/bckMusic1.wav");
+  //click = new SoundFile(this, "./Music/Click.mp3");
+  //backgroundMusic.loop();
 
   countRabbitsBegining();
 
   setGameTable(challengeOneTable);
-  Challenge = 6;
+  Challenge = 1;
 }
 
 
@@ -61,6 +63,9 @@ void draw(){
 
   } else if (selectLevel == true){
     drawSelectLevels();
+
+  } else if (instructions == true){
+    drawInstructions();
 
   } else if(quit == true){
     exit();

@@ -17,6 +17,8 @@ void loadAssets(){
   ch_8 = loadShape("./Challenges/Challenge_8.svg");
   ch_9 = loadShape("./Challenges/Challenge_9.svg");
 
+  instructionsBackground = loadShape("InstructionsBackground.svg");
+
   cellDistX = (width + 100) / 6;
   cellDistY = (height + 100 - gameMenuSize) / 6;
 }

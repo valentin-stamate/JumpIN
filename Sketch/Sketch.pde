@@ -73,7 +73,7 @@ void draw(){
 
     drawIntroAnimation();
     drawStartMenu();
-    //println(countRabbits + " rabb");
+    emptyList();
   }
 
   int oneSecond = 60;

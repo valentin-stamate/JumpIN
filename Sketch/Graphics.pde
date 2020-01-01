@@ -76,7 +76,7 @@ void drawPositions(){
          iFirstRabbit = convertCoordToY(i);
          jFirstRabbit = convertCoordToX(j);
         }
-
+        
         drawRabbit(jFirstRabbit, iFirstRabbit, rabbitOrange, flagROne);
       }
     }

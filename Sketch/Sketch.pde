@@ -2,6 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 import processing.sound.*;
 
+// TODO autosolve bug
+
 void setup(){
   size(800, 850);
   frameRate(60);
@@ -21,7 +23,7 @@ void setup(){
   countRabbitsBegining();
 
   setGameTable(challengeOneTable);
-  Challenge = 6;
+  Challenge = 1;
 }
 
 
@@ -61,6 +63,9 @@ void draw(){
 
   } else if (selectLevel == true){
     drawSelectLevels();
+
+  } else if (instructions == true){
+    drawInstructions();
 
   } else if(quit == true){
     exit();

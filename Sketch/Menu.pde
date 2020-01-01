@@ -3,6 +3,7 @@ void drawStartMenu(){
 
   drawButtonStart();
   drawButtonSelectLevel();
+  drawInstructionsButton();
   drawButtonOption();
   drawQuitButton();
 

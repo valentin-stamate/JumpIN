@@ -76,7 +76,7 @@ void drawPositions(){
          iFirstRabbit = convertCoordToY(i);
          jFirstRabbit = convertCoordToX(j);
         }
-         
+        
         drawRabbit(jFirstRabbit, iFirstRabbit, rabbitOrange, flagROne);
       }
     }
@@ -162,7 +162,7 @@ void drawSelectLevels(){
   distX = width / 4;
   distY = (height - 50) / 4;
 
-  drawTitle("Selectare Nivel", 200, 50);
+  drawTitle(selectLevelString, 200, 50);
 
   drawLevel(ch_1, 1, 1, scale, challenge_1);
   drawLevel(ch_2, 2, 1, scale, challenge_2);
@@ -178,6 +178,26 @@ void drawSelectLevels(){
 
 }
 
+void drawInstructions() {
+  background(76, 175, 80);
+  shape(instructionsBackground, width / 2, height / 2, 800, 850);
+  drawTitle(instructionString, 160, 50);
+
+  drawText(firstIns, width / 2, 120);
+  drawText(secondIns, width / 2, 330);
+  drawText(thirdIns, width / 2, 595);
+  drawText(fourthIns, width / 2, 760);
+
+  drawButtonIesire();
+
+}
+
+void drawText(String s, int x, int y){
+  textSize(18);
+  fill(255);
+  text(s, x, y);
+}
+
 void drawLevel(PShape p, int j, int i, int scale, String s){
   int x = distX * j;
   int y = distY * i;
@@ -186,6 +206,7 @@ void drawLevel(PShape p, int j, int i, int scale, String s){
   textSize(15);
   text(s, x, y + 90);
 
+  drawTitle("Selectare Nivel", 200, 50);
   checkMouseOver(x, y, scale, scale, s);
 }
 

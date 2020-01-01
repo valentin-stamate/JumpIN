@@ -8,6 +8,7 @@ void exitButton(){
   gameStart = false;
   intro = false;
   selectLevel = false;
+  instructions = false;
 }
 
 void enterOptionButton(){
@@ -30,6 +31,13 @@ void enterSelectLevel(){
   selectLevel = true;
 }
 
+void enterInstructions(){
+  instructions = true;
+  gameStart = false;
+  options = false;
+  selectLevel = false;
+}
+
 
 // butoane
 void drawGameButtons(){
@@ -45,7 +53,11 @@ void drawButtonSelectLevel(){
 }
 
 void drawButtonOption(){
-   drawButton(width / 2, height / 2 + 250, 90,50, normalBtnCol_2, optionsString);
+   drawButton(width * 1 / 3, height / 2 + 250, 90, 50, normalBtnCol_2, optionsString);
+}
+
+void drawInstructionsButton(){
+   drawButton(width * 2 / 3, height / 2 + 250, 120, 50, normalBtnCol_2, instructionString);
 }
 
 void drawQuitButton(){
@@ -55,6 +67,7 @@ void drawQuitButton(){
 void drawButtonIesire(){
   drawButton(40, gameMenuSize / 2, 60, 30, normalBtnCol_2, exitString);
 }
+
 void drawButtonIesireOption(){
   drawButton(40, gameMenuSize / 2, 60, 30, normalBtnCol, optionsExitString);
 }

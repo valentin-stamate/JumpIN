@@ -23,15 +23,17 @@ void mousePressed(){
       startButton();
     } else if( egal(MouseFlag, exitString) == true ){
       exitButton();
-    }else if( egal(MouseFlag, optionsString) == true ){
+    } else if( egal(MouseFlag, optionsString) == true ){
      enterOptionButton();
-    }else if(egal(MouseFlag, optionsExitString) == true){
+    } else if(egal(MouseFlag, optionsExitString) == true){
       exitOptionButton();
-    }else if(egal(MouseFlag, quitString) == true){
+    } else if(egal(MouseFlag, quitString) == true){
        quitButton();
     } else if( egal(MouseFlag, selectLevelString) == true ){
       enterSelectLevel();
-    }if( egal(MouseFlag, undoString) == true ){
+    } else if( egal(MouseFlag, instructionString) == true ){
+      enterInstructions();
+    } if( egal(MouseFlag, undoString) == true ){
       pressedUndo();
     } else if( egal(MouseFlag, solveString) == true ){
       println("Solving");

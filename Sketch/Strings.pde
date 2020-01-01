@@ -7,6 +7,7 @@ String flagRThree = "r3";
 String flagFOne = "f1";
 String flagFTwo = "FV";
 String quitString = "Quit";
+String instructionString = "Instructiuni";
 String optionsString = "Optiuni";
 String optionsExitString = "Menu";
 String undoString = "Undo";

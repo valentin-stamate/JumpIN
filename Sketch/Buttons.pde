@@ -90,3 +90,14 @@ void drawButton(int x, int y, int bWidth, int bHeight, color col, String s){
 
   checkMouseOver(x, y, bWidth, bHeight, s);
 }
+
+void drawButton(int x, int y, int bWidth, int bHeight, color col, String s, PImage p){
+  noStroke();
+  fill(col);
+  image(p, x, y, bWidth, bHeight);
+  fill( color(255) );
+  textSize(18);
+  text(s, x, y + 70);
+
+  checkMouseOver(x, y, bWidth, bHeight, s);
+}

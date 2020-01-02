@@ -11,6 +11,8 @@ String solveString = "Rezolva";
 String winningLevel = "Felicitari ai castigat nivelul si ai obtinut ";
 String points = " puncte";
 String timer = " Cronometru ";
+String languageStringTitle = "Limba";
+String musicStringTitle = "Melodie De Fundal";
 
 //China
 
@@ -26,6 +28,7 @@ String chinaSolveString = "Jiějué";
 String chinaWinningLevel = "Gōngxǐ nín yíngdéle guānkǎ bìng huòdéle ";
 String chinaPoints = " diǎn";
 String chinaTimer = " Miǎobiǎo ";
+String chinaLanguageStringTitle = "Yīngyǔ";
 
 //France
 
@@ -41,6 +44,7 @@ String franceSolveString = "Résoudre";
 String franceWinningLevel = "Félicitations, vous avez remporté le niveau et vous avez obtenu ";
 String francePoints = " points";
 String franceTimer = "Chronomètre ";
+String franceLanguageStringTitle = "Langue";
 
 
 //Germany
@@ -57,6 +61,7 @@ String germanySolveString = "Lösen";
 String germanyWinningLevel = "Herzlichen Glückwunsch, Sie haben das Level erreicht und erhalten ";
 String germanyPoints = " punkte";
 String germanyTimer = " Stoppuhr ";
+String germanyLanguageStringTitle = "Sprache";
 
 //India
 
@@ -72,6 +77,7 @@ String indiaSolveString = "Ka samaadhaan";
 String indiaWinningLevel = "Badhaee aap star jeet chuke hain aur aapane praapt kiya hai ";
 String indiaPoints = " ank";
 String indiaTimer = " Stopavoch dekhanee ";
+String indiaLanguageStringTitle = "Bhaasha";
 
 //Romania
 
@@ -87,13 +93,14 @@ String romaniaSolveString = "Rezolva";
 String romaniaWinningLevel = "Felicitari ai castigat nivelul si ai obtinut ";
 String romaniaPoints = " puncte";
 String romaniaTimer = " Cronometru ";
+String romaniaLanguageStringTitle = "Limba";
 
 //Countries
 String romania = "Romania";
 String india = " India";
 String china = " China";
 String france = " France";
-String germany = " Germany"; 
+String germany = " Germany";
 
 
 //animale

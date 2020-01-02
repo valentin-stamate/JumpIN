@@ -70,7 +70,8 @@ void draw(){
   } else if(quit == true){
     exit();
   } else {
-
+    countRabbits = 0;
+    countRabbitsBegining();
     drawIntroAnimation();
     drawStartMenu();
     emptyList();

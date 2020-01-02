@@ -90,6 +90,7 @@ void mouseReleased(){
              i = iInitialFirstRabbit;
              j = jInitialFirstRabbit;
           }
+          println(i + "  " + j + " " + iInitialThirdRabbit + "  " + jInitialThirdRabbit);
           if( i != iInitialFirstRabbit || j != jInitialFirstRabbit){
             putDataInList("R1", iInitialFirstRabbit, jInitialFirstRabbit);
           }
@@ -98,7 +99,7 @@ void mouseReleased(){
           j = convertCoordToJ(jSecondRabbit);
           if(iesirePoz(i,j) && count >1 && tableArray[i][j] == "5" && (i != iInitialSecondRabbit || j != jInitialSecondRabbit) && !iesirePoz(iInitialSecondRabbit,jInitialSecondRabbit)){
              tableArray[i][j] = "R2";
-             tableArray[iInitialSecondRabbit][jInitialSecondRabbit] = "0";
+             tableArray[iInitialSecondRabbit][jInitialSecondRabbit] = "0";  
              score+=100;
           }else if(iesirePoz(iInitialSecondRabbit,jInitialSecondRabbit) && count > 1  && (i != iInitialSecondRabbit || j != jInitialSecondRabbit)){
               tableArray[i][j] = "R2";
@@ -117,10 +118,10 @@ void mouseReleased(){
           if( count >1 &&  iesirePoz(i,j) && tableArray[i][j] == "5" && (i != iInitialThirdRabbit || j != jInitialThirdRabbit ) && !iesirePoz(iInitialThirdRabbit,jInitialThirdRabbit)){
              tableArray[i][j] = "R3";
              tableArray[iInitialThirdRabbit][jInitialThirdRabbit] = "0";
+             score+=100;
           }else if((count > 1 && iesirePoz(iInitialThirdRabbit,jInitialThirdRabbit)) && (i != iInitialThirdRabbit || j != jInitialThirdRabbit )){
               tableArray[i][j] = "R3";
               tableArray[iInitialThirdRabbit][jInitialThirdRabbit] = "5";
-              score+=100;
           }if(count <1 || ((i < 5) && (j < 5) && (tableArray[i][j] != "0") && (tableArray[i][j] != "R3"))) {
              i = iInitialThirdRabbit;
              j = jInitialThirdRabbit;
@@ -133,24 +134,23 @@ void mouseReleased(){
       }else if(lockedSecondFox){
         i = ( coordonateFoxVJ - 25) / cellDistX;
       }
+      if((lockedFirstRabbit) || (lockedSecondRabbit) ||(lockedThirdRabbit)){
+        println(i + "  " + j + " " + iInitialThirdRabbit + "  " + jInitialThirdRabbit);
+        moveRabbit(i,j);
+      }else if(lockedFox && showHorizontalFox){
+        moveFox(j);
+      }else if(lockedSecondFox && showVerticalFox){
+        moveSecondFox(i);
+      }
+    
+      if(rabbitsInHoles() == countRabbits && gameStart == true){
+        gameFinished = true;
+        gameStart = false;
+      }
+
  }
 
-  if((lockedFirstRabbit) || (lockedSecondRabbit) ||(lockedThirdRabbit)){
-     println(i + " " + j);
-
-  moveRabbit(i,j);
-
-  }else if(lockedFox && showHorizontalFox){
-    moveFox(j);
-  }else if(lockedSecondFox && showVerticalFox){
-    moveSecondFox(i);
-  }
-
-  if(rabbitsInHoles() == countRabbits && gameStart == true){
-    gameFinished = true;
-    gameStart = false;
-  }
-
+  
  afisareLista();
 
  lockedFox = false;

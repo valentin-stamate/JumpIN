@@ -49,7 +49,7 @@ void drawButtonStart(){
 }
 
 void drawButtonSelectLevel(){
-  drawButton(width / 2 , height / 2 + 150, 150, 50, normalBtnCol_2, selectLevelString);
+  drawButton(width / 2 , height / 2 + 150, 190, 50, normalBtnCol_2, selectLevelString);
 }
 
 void drawButtonOption(){
@@ -65,19 +65,19 @@ void drawQuitButton(){
 }
 
 void drawButtonIesire(){
-  drawButton(40, gameMenuSize / 2, 60, 30, normalBtnCol_2, exitString);
+  drawButton(40, gameMenuSize / 2, 90, 30, normalBtnCol_2, exitString);
 }
 
 void drawButtonIesireOption(){
-  drawButton(40, gameMenuSize / 2, 60, 30, normalBtnCol, optionsExitString);
+  drawButton(40, gameMenuSize / 2, 90, 30, normalBtnCol, optionsExitString);
 }
 
 void drawUndo(){
-  drawButton(110, gameMenuSize / 2, 60, 30, normalBtnCol, undoString);
+  drawButton(150, gameMenuSize / 2, 120, 30, normalBtnCol, undoString);
 }
 
 void drawSolve(){
-  drawButton(185, gameMenuSize / 2, 70, 30, normalBtnCol, solveString);
+  drawButton(275, gameMenuSize / 2,115, 30, normalBtnCol, solveString);
 }
 
 void drawButton(int x, int y, int bWidth, int bHeight, color col, String s){

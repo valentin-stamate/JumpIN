@@ -53,12 +53,12 @@ void draw(){
 
   }else if(gameFinished){
     background(gameBkgColor);
-    text("Felicitari ai castigat nivelul si ai obtinut " + score + " points", width/2, height/2);
+    text(winningLevel + score + points, width/2, height/2);
     drawButtonIesireOption();
 
   }else if (options == true){
     background(gameBkgColor);
-    text("Pagina pentru optiuni", 400, 425);
+    drawFlags();
     drawButtonIesireOption();
 
   } else if (selectLevel == true){

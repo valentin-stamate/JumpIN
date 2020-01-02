@@ -4,6 +4,7 @@ import java.util.List;
 PShape rabbitGrey, rabbitOrange, rabbitWhite, foxH, foxV, mushroom;
 PShape ch_1, ch_2, ch_3, ch_4, ch_5, ch_6, ch_7, ch_8, ch_9;
 PShape instructionsBackground;
+PShape rom, chi, fra, ger, ind;
 
 PShape rabbitWhiteIntro, GameTitle;
 
@@ -25,6 +26,14 @@ boolean instructions = false;
 
 boolean showVerticalFox = false;
 boolean showHorizontalFox = false;
+
+//Countries
+
+boolean romaniaClick = false;
+boolean indiaClick = false;
+boolean chinaClick = false;
+boolean germanyClick = false;
+boolean franceClick = false;
 
 // ANIMALE
 boolean lockedFirstRabbit = false;

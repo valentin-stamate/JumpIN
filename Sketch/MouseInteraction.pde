@@ -108,6 +108,18 @@ void mousePressed(){
       yOffset = mouseY - coordonateFoxVJ;
       putDataInList("FV", fSecondI, ( coordonateFoxVJ - 25) / cellDistX);
     }
+    //changeLanguage
+    else if(egal(MouseFlag, romania) == true){
+     changeRomaniaLanguage(); 
+    }else if(egal(MouseFlag, india) == true){
+     changeIndiaLanguage(); 
+    }else if(egal(MouseFlag, china) == true){
+     changeChinaLanguage(); 
+    }else if(egal(MouseFlag, france) == true){
+     changeFranceLanguage(); 
+    }else if(egal(MouseFlag, germany) == true){
+     changeGermanyLanguage(); 
+    }
     MouseFlag = "";
   }
 }

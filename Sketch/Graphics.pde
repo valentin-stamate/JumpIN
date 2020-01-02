@@ -85,29 +85,6 @@ void drawPositions(){
 }
 
 void drawFoxes(){
-  // if((coordonateFoxHI == 0) && (coordonateFoxHJ == 0)){
-  //    fOneJ = 3;
-  //    fOneI = 1;
-  //   determinaObstacolDreapta();
-  //   determinaObstacolStanga();
-  //   tableArray[fOneI-1][fOneJ -2] = "FH";
-  //   tableArray[fOneI-1][fOneJ -1] = "FH";
-  //  coordonateFoxHI = convertCoordToY(fOneI - 1) + 8;
-  //  coordonateFoxHJ =  convertCoordToX(fOneJ - 1) - 80;
-  //
-  //   fSecondI = 3;
-  //   fSecondJ = 4;
-  //   determinaObstacolSus();
-  //   determinaObstacolJos();
-  //  coordonateFoxVI = convertCoordToY(fSecondI) - 40;
-  //  coordonateFoxVJ =  convertCoordToX(fSecondJ) - 25;
-  //  tableArray[fSecondJ-1][fSecondI] = "FV";
-  //   tableArray[fSecondJ][fSecondI] = "FV";
-  //
-  //
-  //   printArray();
-  // }
-
   if(showHorizontalFox){
     drawFox(coordonateFoxHJ, coordonateFoxHI, 260, 80,flagFOne, foxH);
     determinaObstacolDreapta();
@@ -238,6 +215,14 @@ void drawPossibleMoveSquare(int i, int j){
 
   noStroke();
   rect(cellDistX * (j + 1) - 50, cellDistY * (i + 1), cellDistX / 2 + 75, cellDistY / 2 + 75, 8);
+}
+
+void drawFlags(){
+  drawButton(100,250, 100, 100,normalBtnCol, romania);
+  drawButton(250,250, 100, 100,normalBtnCol, india);
+  drawButton(400,250, 100, 100,normalBtnCol, china);
+  drawButton(550,250, 100, 100,normalBtnCol, france);
+  drawButton(700,250, 100, 100,normalBtnCol, germany);
 }
 
 

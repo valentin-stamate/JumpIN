@@ -228,10 +228,11 @@ void drawFlags(){
 }
 
 void drawMusicButtons(){
-  drawSubTitle(musicStringTitle, width / 2, 440, 260, 60);
+  drawSubTitle(musicStringTitle, width / 2, 440, 300, 60);
  // TODO
-  drawButton(width / 3, 550, 90, 50, color(81,45,168), "Default");
-  drawButton(width * 2 / 3, 550, 90, 50, color(81,45,168), "DubStyle");
+  drawButton(width / 4, 550, 150, 60, color(81,45,168), firstMusic);
+  drawButton(width * 2 / 4, 550, 150, 60, color(81,45,168), secondMusic);
+  drawButton(width * 3 / 4, 550, 150, 60, color(81,45,168), noSoundString);
 }
 
 void drawSubTitle(String s, int x, int y, int w, int h){

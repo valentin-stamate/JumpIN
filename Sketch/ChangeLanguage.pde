@@ -16,6 +16,11 @@ void changeRomaniaLanguage(){
    thirdIns = romaniaThirdIns;
    fourthIns = romaniaFourthIns;
    languageStringTitle = romaniaLanguageStringTitle;
+   musicStringTitle = romaniaMusicStringTitle;
+   firstMusic = romaniaFirstMusic;
+   secondMusic = romaniaSecondMusic;
+   noSoundString = romaniaNoSoundString;
+   movesString = romaniaMovesString;
 }
 
 void changeIndiaLanguage(){
@@ -36,6 +41,11 @@ void changeIndiaLanguage(){
    thirdIns = indiaThirdIns;
    fourthIns = indiaFourthIns;
    languageStringTitle = indiaLanguageStringTitle;
+   musicStringTitle = indiaMusicStringTitle;
+   firstMusic = indiaFirstMusic;
+   secondMusic = indiaSecondMusic;
+   noSoundString = indiaNoSoundString;
+   movesString = indiaMovesString;
 }
 
 void changeFranceLanguage(){
@@ -56,6 +66,11 @@ void changeFranceLanguage(){
    thirdIns = franceThirdIns;
    fourthIns = franceFourthIns;
    languageStringTitle = franceLanguageStringTitle;
+   musicStringTitle = franceMusicStringTitle;
+   firstMusic = franceFirstMusic;
+   secondMusic = franceSecondMusic;
+   noSoundString = franceNoSoundString;
+   movesString = franceMovesString;
 }
 
 void changeGermanyLanguage(){
@@ -76,6 +91,11 @@ void changeGermanyLanguage(){
    thirdIns = germanyThirdIns;
    fourthIns = germanyFourthIns;
    languageStringTitle = germanyLanguageStringTitle;
+   musicStringTitle = germanyMusicStringTitle;
+   firstMusic = germanyFirstMusic;
+   secondMusic = germanySecondMusic;
+   noSoundString = germanyNoSoundString;
+   movesString = germanyMovesString;
 }
 
 void changeChinaLanguage(){
@@ -96,4 +116,9 @@ void changeChinaLanguage(){
    thirdIns = chinaThirdIns;
    fourthIns = chinaFourthIns;
    languageStringTitle = chinaLanguageStringTitle;
+   musicStringTitle = chinaMusicStringTitle;
+   firstMusic = chinaFirstMusic;
+   secondMusic = chinaSecondMusic;
+   noSoundString = chinaNoSoundString;
+   movesString = chinaMovesString;
 }

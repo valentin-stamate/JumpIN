@@ -110,15 +110,25 @@ void mousePressed(){
     }
     //changeLanguage
     else if(egal(MouseFlag, romania) == true){
-     changeRomaniaLanguage(); 
+     changeRomaniaLanguage();
     }else if(egal(MouseFlag, india) == true){
-     changeIndiaLanguage(); 
+     changeIndiaLanguage();
     }else if(egal(MouseFlag, china) == true){
-     changeChinaLanguage(); 
+     changeChinaLanguage();
     }else if(egal(MouseFlag, france) == true){
-     changeFranceLanguage(); 
+     changeFranceLanguage();
     }else if(egal(MouseFlag, germany) == true){
-     changeGermanyLanguage(); 
+     changeGermanyLanguage();
+    } else if( egal(MouseFlag, firstMusic) == true ){
+      backgroundMusic.stop();
+      backgroundMusic = new SoundFile(this, "./Music/bckMusic1.wav");
+      backgroundMusic.loop();
+    } else if( egal(MouseFlag, secondMusic) == true ){
+      backgroundMusic.stop();
+      backgroundMusic = new SoundFile(this, "./Music/bckMusic2.wav");
+      backgroundMusic.loop();
+    } else if( egal(MouseFlag, noSoundString) == true ){
+      backgroundMusic.stop();
     }
     MouseFlag = "";
   }

@@ -13,6 +13,10 @@ String points = " puncte";
 String timer = " Cronometru ";
 String languageStringTitle = "Limba";
 String musicStringTitle = "Melodie De Fundal";
+String firstMusic = "Default";
+String secondMusic = "Dubstep";
+String noSoundString = "Fara Sunet";
+String movesString = "Moves";
 
 //China
 
@@ -29,6 +33,11 @@ String chinaWinningLevel = "Gōngxǐ nín yíngdéle guānkǎ bìng huòdéle ";
 String chinaPoints = " diǎn";
 String chinaTimer = " Miǎobiǎo ";
 String chinaLanguageStringTitle = "Yīngyǔ";
+String chinaMusicStringTitle = "Bèijǐng Gēqǔ";
+String chinaFirstMusic = "Mòrèn";
+String chinaSecondMusic = "Pèiyīn";
+String chinaNoSoundString = "Méiyǒu Shēngyīn";
+String chinaMovesString = "Moves";
 
 //France
 
@@ -45,7 +54,11 @@ String franceWinningLevel = "Félicitations, vous avez remporté le niveau et vo
 String francePoints = " points";
 String franceTimer = "Chronomètre ";
 String franceLanguageStringTitle = "Langue";
-
+String franceMusicStringTitle = "Musique De Fond";
+String franceFirstMusic = "Défaut";
+String franceSecondMusic = "Dubstep";
+String franceNoSoundString = "Pas De Son";
+String franceMovesString = "Moves";
 
 //Germany
 
@@ -62,6 +75,11 @@ String germanyWinningLevel = "Herzlichen Glückwunsch, Sie haben das Level errei
 String germanyPoints = " punkte";
 String germanyTimer = " Stoppuhr ";
 String germanyLanguageStringTitle = "Sprache";
+String germanyMusicStringTitle = "Hintergrundmusik";
+String germanyFirstMusic = "Standard";
+String germanySecondMusic = "Dubstep";
+String germanyNoSoundString = "Kein Ton";
+String germanyMovesString = "Moves";
 
 //India
 
@@ -78,6 +96,11 @@ String indiaWinningLevel = "Badhaee aap star jeet chuke hain aur aapane praapt k
 String indiaPoints = " ank";
 String indiaTimer = " Stopavoch dekhanee ";
 String indiaLanguageStringTitle = "Bhaasha";
+String indiaMusicStringTitle = "Prshthabhoomi Yyoon";
+String indiaFirstMusic = "Chook";
+String indiaSecondMusic = "Dabastep";
+String indiaNoSoundString = "Koee Aavaaj Nahin";
+String indiaMovesString = "Moves";
 
 //Romania
 
@@ -94,6 +117,12 @@ String romaniaWinningLevel = "Felicitari ai castigat nivelul si ai obtinut ";
 String romaniaPoints = " puncte";
 String romaniaTimer = " Cronometru ";
 String romaniaLanguageStringTitle = "Limba";
+String romaniaMusicStringTitle = "Melodie De Fundal";
+String romaniaFirstMusic = "Implicit";
+String romaniaSecondMusic = "Dubstep";
+String romaniaNoSoundString = "Fara Sunet";
+String romaniaMovesString = "Moves";
+
 
 //Countries
 String romania = "Romania";

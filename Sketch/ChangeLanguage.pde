@@ -15,6 +15,12 @@ void changeRomaniaLanguage(){
    secondIns = romaniaSecondIns;
    thirdIns = romaniaThirdIns;
    fourthIns = romaniaFourthIns;
+   languageStringTitle = romaniaLanguageStringTitle;
+   musicStringTitle = romaniaMusicStringTitle;
+   firstMusic = romaniaFirstMusic;
+   secondMusic = romaniaSecondMusic;
+   noSoundString = romaniaNoSoundString;
+   movesString = romaniaMovesString;
 }
 
 void changeIndiaLanguage(){
@@ -34,6 +40,12 @@ void changeIndiaLanguage(){
    secondIns = indiaSecondIns;
    thirdIns = indiaThirdIns;
    fourthIns = indiaFourthIns;
+   languageStringTitle = indiaLanguageStringTitle;
+   musicStringTitle = indiaMusicStringTitle;
+   firstMusic = indiaFirstMusic;
+   secondMusic = indiaSecondMusic;
+   noSoundString = indiaNoSoundString;
+   movesString = indiaMovesString;
 }
 
 void changeFranceLanguage(){
@@ -53,6 +65,12 @@ void changeFranceLanguage(){
    secondIns = franceSecondIns;
    thirdIns = franceThirdIns;
    fourthIns = franceFourthIns;
+   languageStringTitle = franceLanguageStringTitle;
+   musicStringTitle = franceMusicStringTitle;
+   firstMusic = franceFirstMusic;
+   secondMusic = franceSecondMusic;
+   noSoundString = franceNoSoundString;
+   movesString = franceMovesString;
 }
 
 void changeGermanyLanguage(){
@@ -72,6 +90,12 @@ void changeGermanyLanguage(){
    secondIns = germanySecondIns;
    thirdIns = germanyThirdIns;
    fourthIns = germanyFourthIns;
+   languageStringTitle = germanyLanguageStringTitle;
+   musicStringTitle = germanyMusicStringTitle;
+   firstMusic = germanyFirstMusic;
+   secondMusic = germanySecondMusic;
+   noSoundString = germanyNoSoundString;
+   movesString = germanyMovesString;
 }
 
 void changeChinaLanguage(){
@@ -91,4 +115,10 @@ void changeChinaLanguage(){
    secondIns = chinaSecondIns;
    thirdIns = chinaThirdIns;
    fourthIns = chinaFourthIns;
+   languageStringTitle = chinaLanguageStringTitle;
+   musicStringTitle = chinaMusicStringTitle;
+   firstMusic = chinaFirstMusic;
+   secondMusic = chinaSecondMusic;
+   noSoundString = chinaNoSoundString;
+   movesString = chinaMovesString;
 }

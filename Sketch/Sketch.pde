@@ -15,10 +15,11 @@ void setup(){
   rectMode(CENTER);
   textAlign(CENTER);
   shapeMode(CENTER);
+  imageMode(CENTER);
 
-  //backgroundMusic = new SoundFile(this, "./Music/bckMusic1.wav");
-  //click = new SoundFile(this, "./Music/Click.mp3");
+  backgroundMusic = new SoundFile(this, "./Music/bckMusic1.wav");
   //backgroundMusic.loop();
+  //click = new SoundFile(this, "./Music/Click.mp3");
 
   countRabbitsBegining();
 
@@ -59,6 +60,7 @@ void draw(){
   }else if (options == true){
     background(gameBkgColor);
     drawFlags();
+    drawMusicButtons();
     drawButtonIesireOption();
 
   } else if (selectLevel == true){

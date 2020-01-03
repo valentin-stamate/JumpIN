@@ -5,7 +5,7 @@ void drawTimer(){
         min = second / 60;
     }
     int offset = 270;
-    text("Moves : ", 425, gameMenuSize / 2 + 6);
+    text(movesString + " : ", 425, gameMenuSize / 2 + 6);
     text(score,475 , gameMenuSize / 2 + 6);
     text(timer, 630 , gameMenuSize / 2 + 6);
     text(second %60 ,450 + offset, gameMenuSize / 2 + 6);

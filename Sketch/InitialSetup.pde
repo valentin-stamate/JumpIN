@@ -6,12 +6,6 @@ void loadAssets(){
   mushroom = loadShape("Mushroom.svg");
   foxH = loadShape("FoxH.svg");
   foxV = loadShape("FoxV.svg");
-  
-  //rom = loadShape("./Flags/romania.svg");
-  //chi = loadShape("./Flags/china.svg");
-  //ind = loadShape("./Flags/india.svg");
-  //ger = loadShape("./Flags/germany.svg");
-  //fra = loadShape("./Flags/france.svg");
 
   ch_1 = loadShape("./Challenges/Challenge_1.svg");
   ch_2 = loadShape("./Challenges/Challenge_2.svg");
@@ -23,7 +17,15 @@ void loadAssets(){
   ch_8 = loadShape("./Challenges/Challenge_8.svg");
   ch_9 = loadShape("./Challenges/Challenge_9.svg");
 
+  rom = loadImage("./Flags/RomaniaFlag.png");
+  chi = loadImage("./Flags/ChinaFlag.png");
+  fra = loadImage("./Flags/FranceFlag.png");
+  ger = loadImage("./Flags/GermanyFlag.png");
+  ind = loadImage("./Flags/IndiaFlag.png");
+
   instructionsBackground = loadShape("InstructionsBackground.svg");
+
+  changeRomaniaLanguage();
 
   cellDistX = (width + 100) / 6;
   cellDistY = (height + 100 - gameMenuSize) / 6;

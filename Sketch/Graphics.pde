@@ -76,7 +76,7 @@ void drawPositions(){
          iFirstRabbit = convertCoordToY(i);
          jFirstRabbit = convertCoordToX(j);
         }
-        
+
         drawRabbit(jFirstRabbit, iFirstRabbit, rabbitOrange, flagROne);
       }
     }
@@ -218,11 +218,29 @@ void drawPossibleMoveSquare(int i, int j){
 }
 
 void drawFlags(){
-  drawButton(100,250, 100, 100,normalBtnCol, romania);
-  drawButton(250,250, 100, 100,normalBtnCol, india);
-  drawButton(400,250, 100, 100,normalBtnCol, china);
-  drawButton(550,250, 100, 100,normalBtnCol, france);
-  drawButton(700,250, 100, 100,normalBtnCol, germany);
+  drawSubTitle(languageStringTitle, width / 2, 140, 120, 60);
+
+  drawButton(100,250, 100, 75,normalBtnCol, romania, rom);
+  drawButton(250,250, 100, 75,normalBtnCol, india, ind);
+  drawButton(400,250, 100, 75,normalBtnCol, china, chi);
+  drawButton(550,250, 100, 75,normalBtnCol, france, fra);
+  drawButton(700,250, 100, 75,normalBtnCol, germany, ger);
+}
+
+void drawMusicButtons(){
+  drawSubTitle(musicStringTitle, width / 2, 440, 300, 60);
+ // TODO
+  drawButton(width / 4, 550, 150, 60, color(81,45,168), firstMusic);
+  drawButton(width * 2 / 4, 550, 150, 60, color(81,45,168), secondMusic);
+  drawButton(width * 3 / 4, 550, 150, 60, color(81,45,168), noSoundString);
+}
+
+void drawSubTitle(String s, int x, int y, int w, int h){
+  fill(titleColor);
+  rect(x, y, w, h, 16);
+  fill(255);
+  textSize(24);
+  text(s, x , y + 8);
 }
 
 

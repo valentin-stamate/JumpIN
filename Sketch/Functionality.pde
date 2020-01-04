@@ -74,7 +74,6 @@ void printArray(){
 
 void mouseReleased(){
  int i = 0, j = 0;
- if(determinareTabelJoc()){
       if(lockedFirstRabbit){
           i = convertCoordToI(iFirstRabbit);
           j = convertCoordToJ(jFirstRabbit);
@@ -90,7 +89,6 @@ void mouseReleased(){
              i = iInitialFirstRabbit;
              j = jInitialFirstRabbit;
           }
-          println(i + "  " + j + " " + iInitialThirdRabbit + "  " + jInitialThirdRabbit);
           if( i != iInitialFirstRabbit || j != jInitialFirstRabbit){
             putDataInList("R1", iInitialFirstRabbit, jInitialFirstRabbit);
           }
@@ -108,7 +106,6 @@ void mouseReleased(){
              i = iInitialSecondRabbit;
              j = jInitialSecondRabbit;
           }
-          println(iInitialSecondRabbit + " line "  + jInitialSecondRabbit +  " ___ " + i +  " @@@@ " + j);
           if( i != iInitialSecondRabbit || j != jInitialSecondRabbit){
             putDataInList("R2", iInitialSecondRabbit, jInitialSecondRabbit);
           }
@@ -135,7 +132,6 @@ void mouseReleased(){
         i = ( coordonateFoxVJ - 25) / cellDistX;
       }
       if((lockedFirstRabbit) || (lockedSecondRabbit) ||(lockedThirdRabbit)){
-        println(i + "  " + j + " " + iInitialThirdRabbit + "  " + jInitialThirdRabbit);
         moveRabbit(i,j);
       }else if(lockedFox && showHorizontalFox){
         moveFox(j);
@@ -147,8 +143,6 @@ void mouseReleased(){
         gameFinished = true;
         gameStart = false;
       }
-
- }
 
   
  afisareLista();
@@ -277,6 +271,44 @@ int determinareCasutaGoalaStanga(int c, int j){
     }
   }
   return 0;
+}
+
+void determinareNivel(int challenge){
+  switch(challenge){
+    case 1:
+      println("Challenge 2 Selected");
+      setGameTable(challengeTwoTable);
+      break;
+    case 2:
+      println("Challenge 3 Selected");
+      setGameTable(challengeThreeTable);
+      break;
+    case 3:
+      println("Challenge 4 Selected");
+      setGameTable(challengeFourTable);
+      break;
+    case 4:
+      println("Challenge 5 Selected");
+      setGameTable(challengeFiveTable);
+      break;
+    case 5:
+      println("Challenge 6 Selected");
+      setGameTable(challengeSixTable);
+      break;
+    case 6:
+      println("Challenge 7 Selected");
+      setGameTable(challengeSevenTable);
+      break;
+    case 7:
+      println("Challenge 8 Selected");
+      setGameTable(challengeEightTable);
+      break;
+    case 8:
+      println("Challenge 9 Selected");
+      setGameTable(challengeNineTable);
+      break;
+  }
+  Challenge++;
 }
 
 void resetNextMoveArray(){

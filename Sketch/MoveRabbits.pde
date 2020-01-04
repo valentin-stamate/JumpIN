@@ -5,12 +5,12 @@ void moveFirstRabbit(){
      //printArray();
      //println(i + "  "  + j );
     if(rabbitMoveUp && i >= 0){
-      println(casutaGoalaSus + " !!!! " + (mouseY - yOffset)  + "  " + convertCoordToY(casutaGoalaSus));
       if(mouseY - yOffset >= convertCoordToY(casutaGoalaSus)- 30){
         if(determinareCasutaObstacol(i,j, iInitialFirstRabbit - i)){
            iFirstRabbit = mouseY - yOffset;
            count = iInitialFirstRabbit - i;
         }else if(determinareCasutaGoala(i, j) && count>0){
+            iFirstRabbit = mouseY - yOffset;
             tableArray[i][j] = "R1";
             tableArray[iInitialFirstRabbit][ jInitialFirstRabbit]= "0";
         }
@@ -21,6 +21,7 @@ void moveFirstRabbit(){
              iFirstRabbit = mouseY - yOffset;
              count = i - iInitialFirstRabbit;
           }else if(determinareCasutaGoala(i, j)&& count>0){
+              iFirstRabbit = mouseY - yOffset;
               tableArray[i][j] = "R1";
               tableArray[iInitialFirstRabbit][ jInitialFirstRabbit]= "0";
           }
@@ -31,6 +32,7 @@ void moveFirstRabbit(){
              jFirstRabbit = mouseX - xOffset;
              count =  jInitialFirstRabbit - j ;
           }else if(determinareCasutaGoala(i, j) && count>0){
+              jFirstRabbit = mouseX - xOffset;
               tableArray[i][j] = "R1";
               tableArray[iInitialFirstRabbit ][ jInitialFirstRabbit]= "0";
           }
@@ -41,7 +43,7 @@ void moveFirstRabbit(){
              jFirstRabbit = mouseX - xOffset;
              count = j - jInitialFirstRabbit ;
           }else if(determinareCasutaGoala(i, j) && count>0){
-             
+              jFirstRabbit = mouseX - xOffset;
               tableArray[i][j] = "R1";
               tableArray[iInitialFirstRabbit][ jInitialFirstRabbit]= "0";
           }
@@ -69,6 +71,7 @@ void moveSecondRabbit(){
              iSecondRabbit = mouseY - yOffset;
              count = iInitialSecondRabbit - i;
           }else if(determinareCasutaGoala(i, j) && count>0){
+              iSecondRabbit = mouseY - yOffset;
               tableArray[i][j] = "R2";
               tableArray[iInitialSecondRabbit][ jInitialSecondRabbit]= "0";
           }
@@ -79,6 +82,7 @@ void moveSecondRabbit(){
              iSecondRabbit = mouseY - yOffset;
              count = i - iInitialSecondRabbit;
           }else if(determinareCasutaGoala(i, j)&& count>0){
+              iSecondRabbit = mouseY - yOffset;
               tableArray[i][j] = "R2";
               tableArray[iInitialSecondRabbit][ jInitialSecondRabbit]= "0";
           }
@@ -89,6 +93,7 @@ void moveSecondRabbit(){
              jSecondRabbit = mouseX - xOffset;
              count =  jInitialSecondRabbit - j ;
           }else if(determinareCasutaGoala(i, j) && count>0){
+              jSecondRabbit = mouseX - xOffset;
               tableArray[i][j] = "R2";
               tableArray[iInitialSecondRabbit ][ jInitialSecondRabbit]= "0";
           }
@@ -98,7 +103,8 @@ void moveSecondRabbit(){
            if(determinareCasutaObstacol(i,j, j - jInitialSecondRabbit )){
               jSecondRabbit = mouseX - xOffset;
              count = j - jInitialSecondRabbit ;
-          }else if(determinareCasutaGoala(i, j) && count>0){        
+          }else if(determinareCasutaGoala(i, j) && count>0){ 
+              jSecondRabbit = mouseX - xOffset;
               tableArray[i][j] = "R2";
               tableArray[iInitialSecondRabbit][ jInitialSecondRabbit]= "0";
           }
@@ -125,6 +131,7 @@ void moveThirdRabbit(){
                iThirdRabbit = mouseY - yOffset;
              count = iInitialThirdRabbit - i;
           }else if(determinareCasutaGoala(i, j) && count>0){
+              iThirdRabbit = mouseY - yOffset;
               tableArray[i][j] = "R3";
               tableArray[iInitialThirdRabbit][ jInitialThirdRabbit]= "0";
           }
@@ -133,8 +140,9 @@ void moveThirdRabbit(){
         if(mouseY - yOffset < convertCoordToY(casutaGoalaJos)){
           if(determinareCasutaObstacol(i,j, i - iInitialThirdRabbit)){
                iThirdRabbit = mouseY - yOffset;
-             count = i - iInitialThirdRabbit;
+               count = i - iInitialThirdRabbit;
           }else if(determinareCasutaGoala(i, j)&& count>0){
+              iThirdRabbit = mouseY - yOffset;
               tableArray[i][j] = "R3";
               tableArray[iInitialThirdRabbit][ jInitialThirdRabbit]= "0";
           }
@@ -145,6 +153,7 @@ void moveThirdRabbit(){
                jThirdRabbit = mouseX - xOffset;
              count =  jInitialThirdRabbit - j ;
           }else if(determinareCasutaGoala(i, j) && count>0){
+              jThirdRabbit = mouseX - xOffset;
               tableArray[i][j] = "R3";
               tableArray[iInitialThirdRabbit ][ jInitialThirdRabbit]= "0";
           }
@@ -154,7 +163,8 @@ void moveThirdRabbit(){
            if(determinareCasutaObstacol(i,j, j - jInitialThirdRabbit )){
               jThirdRabbit = mouseX - xOffset;
              count = j - jInitialThirdRabbit ;
-          }else if(determinareCasutaGoala(i, j) && count>0){        
+          }else if(determinareCasutaGoala(i, j) && count>0){  
+              jThirdRabbit = mouseX - xOffset;
               tableArray[i][j] = "R3";
               tableArray[iInitialThirdRabbit][ jInitialThirdRabbit]= "0";
           }

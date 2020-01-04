@@ -9,14 +9,16 @@ String optionsExitString = "Menu";
 String undoString = "Undo";
 String solveString = "Rezolva";
 String winningLevel = "Felicitari ai castigat nivelul si ai obtinut ";
-String points = " puncte";
+String points = " Puncte";
 String timer = " Cronometru ";
 String languageStringTitle = "Limba";
 String musicStringTitle = "Melodie De Fundal";
 String firstMusic = "Default";
 String secondMusic = "Dubstep";
 String noSoundString = "Fara Sunet";
-String movesString = "Moves";
+String movesString = "Mutari";
+String nextLevel = "Nivelul Urmator ";
+String end = " pana acum ";
 
 //China
 
@@ -38,6 +40,8 @@ String chinaFirstMusic = "Mòrèn";
 String chinaSecondMusic = "Pèiyīn";
 String chinaNoSoundString = "Méiyǒu Shēngyīn";
 String chinaMovesString = "Moves";
+String chinaNextLevel = "Xià yījí ";
+String chinaEnd = " dào mùqián wéizhǐ ";
 
 //France
 
@@ -59,6 +63,8 @@ String franceFirstMusic = "Défaut";
 String franceSecondMusic = "Dubstep";
 String franceNoSoundString = "Pas De Son";
 String franceMovesString = "Moves";
+String franceNextLevel = "Le niveau suivant ";
+String franceEnd = " jusqu'ici ";
 
 //Germany
 
@@ -80,6 +86,8 @@ String germanyFirstMusic = "Standard";
 String germanySecondMusic = "Dubstep";
 String germanyNoSoundString = "Kein Ton";
 String germanyMovesString = "Moves";
+String germanyNextLevel = "Das nächste Level";
+String germanyEnd = " soweit ";
 
 //India
 
@@ -101,6 +109,9 @@ String indiaFirstMusic = "Chook";
 String indiaSecondMusic = "Dabastep";
 String indiaNoSoundString = "Koee Aavaaj Nahin";
 String indiaMovesString = "Moves";
+String indiaNextLevel = "Agale star";
+String indiaEnd = " ab tak ";
+
 
 //Romania
 
@@ -122,7 +133,8 @@ String romaniaFirstMusic = "Implicit";
 String romaniaSecondMusic = "Dubstep";
 String romaniaNoSoundString = "Fara Sunet";
 String romaniaMovesString = "Moves";
-
+String romaniaNextLevel = "Nivelul urmator";
+String romaniaEnd = " pana acum ";
 
 //Countries
 String romania = "Romania";

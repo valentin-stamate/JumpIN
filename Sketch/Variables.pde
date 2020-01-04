@@ -23,6 +23,7 @@ boolean mouseOver = false;
 boolean gameFinished = false;
 boolean undoMoves = false;
 boolean instructions = false;
+boolean changeLevel = false;
 
 boolean showVerticalFox = false;
 boolean showHorizontalFox = false;

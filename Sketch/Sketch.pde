@@ -54,9 +54,11 @@ void draw(){
 
   }else if(gameFinished){
     background(gameBkgColor);
-    text(winningLevel + score + points, width/2, height/2);
-    drawButtonIesireOption();
-
+    text(winningLevel + score + end,height/2, 200);
+    drawButton(300,350, 150,100,normalBtnCol_2, optionsExitString);
+    if(Challenge < 9){
+      drawButton(500,350, 150,100,normalBtnCol_2, nextLevel);
+    }
   }else if (options == true){
     background(gameBkgColor);
     drawFlags();
@@ -72,7 +74,6 @@ void draw(){
   } else if(quit == true){
     exit();
   } else {
-    countRabbits = 0;
     countRabbitsBegining();
     drawIntroAnimation();
     drawStartMenu();

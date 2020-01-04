@@ -20,6 +20,11 @@ void exitOptionButton(){
   gameFinished = false;
 }
 
+void nextLevelButton(){
+  gameFinished = false;
+}
+
+
 void quitButton(){
    quit = true;
 

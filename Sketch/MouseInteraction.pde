@@ -76,8 +76,14 @@ void mousePressed(){
       println("Challenge 9 Selected");
       setGameTable(challengeNineTable);
       Challenge = 9;
+    }else if( egal(MouseFlag, nextLevel) == true){
+      gameStart  = true;
+      gameFinished = false;
+      emptyList();
+      determinareNivel(Challenge);
+      countRabbitsBegining();
     }
-
+    //animals
     else if( egal(MouseFlag, flagROne) == true ){
       lockedFirstRabbit = true;
       xOffset = mouseX - jFirstRabbit;

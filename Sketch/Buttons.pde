@@ -85,6 +85,7 @@ void drawSolve(){
   drawButton(295, gameMenuSize / 2,115, 30, normalBtnColor1, solveString);
 }
 
+
 void drawButton(int x, int y, int bWidth, int bHeight, color col, String s){
   noStroke();
   fill(col);

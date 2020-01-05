@@ -91,7 +91,7 @@ int iInitialThirdRabbit = 0, jInitialThirdRabbit = 0;
 
 int count = 0;
 
-// TODO
+
 int rOneI = 1, rOneJ = 2;
 int rTwoI = 1, rTwoJ = 3;
 int rThreeI = 1, rThreeJ = 4;

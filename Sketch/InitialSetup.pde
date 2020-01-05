@@ -1,4 +1,3 @@
-// incarca imaginile svg
 void loadAssets(){
   rabbitOrange = loadShape("RabbitOrange.svg");
   rabbitGrey = loadShape("RabbitGray.svg");

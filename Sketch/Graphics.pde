@@ -1,6 +1,6 @@
 // deseneaza tabla de joc
 void drawTable(){
-  fill(tableBkgCol);
+  fill(tableBkgColor);
   strokeWeight(2);
   stroke(255);
   rect(width / 2, height / 2 + gameMenuSize / 2, width - 50, height - gameMenuSize - 50, 40);

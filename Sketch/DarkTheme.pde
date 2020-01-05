@@ -12,8 +12,6 @@ void drawDarkModeButton(){
 
   circle(x, y, radius);
 
-
-
   checkMouseOver(x, y, radius, radius, darkSwitcher);
 }
 
@@ -21,7 +19,7 @@ void changeToDark(){
   println("Changed To Dark");
 
   gameBkgColor = gameBkgColorDark;
-  tableBkgCol = tableBkgColorDark;
+  tableBkgColor = tableBkgColorDark;
   supportCellColor = supportCellColorDark;
   emptyHoleColor = emptyHoleColorDark;
   instructionsBackgroundColor = instructionsBackgroundColorDark;
@@ -30,7 +28,7 @@ void changeToDark(){
   normalBtnColor1 = normalBtnColor1Dark;
   normalBtnColor2 = normalBtnColor2Dark;
   normalBtnColor3 = normalBtnColor3Dark;
-  gameMenuCol = gameMenuColorDark;
+  gameMenuColor = gameMenuColorDark;
 
 }
 
@@ -38,7 +36,7 @@ void changeToNormal(){
   println("Changed To Normal");
 
   gameBkgColor = gameBkgColorNormal;
-  tableBkgCol = tableBkgColorNormal;
+  tableBkgColor = tableBkgColorNormal;
   supportCellColor = supportCellColorNormal;
   emptyHoleColor = emptyHoleColorNormal;
   instructionsBackgroundColor = instructionsBackgroundColorNormal;
@@ -47,5 +45,5 @@ void changeToNormal(){
   normalBtnColor1 = normalBtnColor1Normal;
   normalBtnColor2 = normalBtnColor2Normal;
   normalBtnColor3 = normalBtnColor3Normal;
-  gameMenuCol = gameMenuColorNormal;
+  gameMenuColor = gameMenuColorNormal;
 }

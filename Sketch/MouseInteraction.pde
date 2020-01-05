@@ -76,7 +76,9 @@ void mousePressed(){
       println("Challenge 9 Selected");
       setGameTable(challengeNineTable);
       Challenge = 9;
-    }else if( egal(MouseFlag, nextLevel) == true){
+    }
+
+    else if( egal(MouseFlag, nextLevel) == true){
       gameStart  = true;
       gameFinished = false;
       score = 0;
@@ -117,14 +119,14 @@ void mousePressed(){
     }
     //changeLanguage
     else if(egal(MouseFlag, romania) == true){
-     changeRomaniaLanguage();
-    }else if(egal(MouseFlag, india) == true){
-     changeIndiaLanguage();
-    }else if(egal(MouseFlag, china) == true){
-     changeChinaLanguage();
-    }else if(egal(MouseFlag, france) == true){
+      changeRomaniaLanguage();
+    } else if(egal(MouseFlag, india) == true){
+      changeIndiaLanguage();
+    } else if(egal(MouseFlag, china) == true){
+      changeChinaLanguage();
+    } else if(egal(MouseFlag, france) == true){
      changeFranceLanguage();
-    }else if(egal(MouseFlag, germany) == true){
+    } else if(egal(MouseFlag, germany) == true){
      changeGermanyLanguage();
     } else if( egal(MouseFlag, firstMusic) == true ){
       backgroundMusic.stop();
@@ -147,6 +149,7 @@ void mousePressed(){
       }
 
     }
+
     MouseFlag = "";
   }
 }

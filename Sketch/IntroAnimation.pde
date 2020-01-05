@@ -1,5 +1,3 @@
-
-
 float rX, rY, fX, fY, mX, mY;
 float speedRateY, speedRateX;
 
@@ -33,7 +31,6 @@ void drawIntroAnimation(){
   shape(mushroom, fX, fY, 100, 100);
   shape(mushroom, mX, mY, 100, 100);
   shape(rabbitWhite, 1.32 * (rX + 6) - 44, (rY - 8), 100, 100);
-
 
   animate();
   drawAnimationTitle();

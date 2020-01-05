@@ -6,13 +6,12 @@ color rabbitHoleStroke = color(62, 39, 35);
 color rabbitHoleCenter = color(46, 31, 29);
 
 color gameBkgColor = color(21, 155, 73);
-color tableBkgCol = color(15, 146, 71);
+color tableBkgColor = color(15, 146, 71);
 color supportCellColor = color(21, 155, 73);
 color emptyHoleColor = color(14, 129, 64);
 color instructionsBackgroundColor = color(51, 163, 86);
-color gameMenuCol = color(38, 50, 56);
+color gameMenuColor = color(38, 50, 56);
 
-color startMenuBkgCol = color(38, 50, 56);
 
 
 

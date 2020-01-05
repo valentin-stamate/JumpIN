@@ -7,7 +7,7 @@ import processing.sound.*;
 void setup(){
   size(800, 850);
   frameRate(60);
-  background(startMenuBkgCol);
+  background(gameMenuColor);
 
   loadAssets();
   InitializeIntroAnimation();
@@ -36,17 +36,16 @@ void draw(){
     drawTable();
     drawFoxes();
     drawPositions();
+
     drawGameMenu();
     drawGameButtons();
 
-    //create timer
     drawTimer();
-
-    // dark mode button
     drawDarkModeButton();
 
     checkSelected();
     drawNextMoves();
+
     if(undo.size() > 0){
       drawUndo();
     }

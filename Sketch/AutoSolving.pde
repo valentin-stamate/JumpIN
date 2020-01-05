@@ -5,37 +5,14 @@ String[] steps = null;
 
 void autoSolve(String table[][], int challenge) {
 
-    //if(tablesAreEqual(table, ))
-
     int oneSecond = 60;
 
     if(initialState){
 
-
-      if (challenge == 1)
-        steps = challengeOneSteps;
-      else if (challenge == 2)
-        steps = challengeTwoSteps;
-      else if (challenge == 3)
-        steps = challengeThreeSteps;
-      else if (challenge == 4)
-        steps = challengeFourSteps;
-      else if (challenge == 5)
-        steps = challengeFiveSteps;
-      else if (challenge == 6)
-        steps = challengeSixSteps;
-      else if (challenge == 7)
-        steps = challengeSevenSteps;
-      else if (challenge == 8)
-        steps = challengeEightSteps;
-      else if (challenge == 9)
-        steps = challengeNineSteps;
-
+      steps = getStep(challenge);
       initialState = false;
 
     }
-
-
 
     if(frameCount % oneSecond  == 0){
       if(StepI < steps.length){
@@ -43,13 +20,11 @@ void autoSolve(String table[][], int challenge) {
         makeStep(step);
         StepI++;
       } else {
-
         levelSolving = false;
-        StepI = 0;
         initialState = true;
-
         gameStart = false;
         gameFinished = true;
+        StepI = 0;
 
       }
     }
@@ -102,13 +77,8 @@ void autoSolve(String table[][], int challenge) {
     }
 
     // get instant score
-    score = 0;
-    if(rabbitInsideHole("R1"))
-      score += 100;
-    if(rabbitInsideHole("R2"))
-      score += 100;
-    if(rabbitInsideHole("R3"))
-      score += 100;
+
+    getInstantScore();
 
 }
 
@@ -117,4 +87,39 @@ boolean rabbitInsideHole(String rabbit){
     return true;
   }
   return false;
+}
+
+String[] getStep(int challenge){
+  if (challenge == 1)
+    return challengeOneSteps;
+  if (challenge == 2)
+    return challengeTwoSteps;
+  if (challenge == 3)
+    return challengeThreeSteps;
+  if (challenge == 4)
+    return challengeFourSteps;
+  if (challenge == 5)
+    return challengeFiveSteps;
+  if (challenge == 6)
+    return challengeSixSteps;
+  if (challenge == 7)
+    return challengeSevenSteps;
+  if (challenge == 8)
+    return challengeEightSteps;
+
+  return challengeNineSteps;
+
+}
+
+void getInstantScore(){
+  score = 0;
+  if(rabbitInsideHole("R1")){
+    score += 100;
+  }
+  if(rabbitInsideHole("R2")){
+    score += 100;
+  }
+  if(rabbitInsideHole("R3")){
+    score += 100;
+  }
 }

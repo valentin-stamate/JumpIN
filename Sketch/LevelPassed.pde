@@ -1,5 +1,3 @@
-
-
 void countRabbitsBegining(){
   countRabbits = 0;
   int i, j;

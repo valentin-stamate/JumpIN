@@ -26,7 +26,7 @@ void InitializeIntroAnimation(){
   rectMode(CENTER);
 }
 void drawIntroAnimation(){
-  background(color(67,160,71));
+  background( gameBkgColor );
 
   drawCells();
 
@@ -85,13 +85,13 @@ void drawCells(){
   x = cellDistX * 1 - 50;
   y = cellDistY * 3 - 50;
 
-  fill(color(46,125,50));
+  fill( emptyHoleColor );
   circle(x, y, 90);
 
   x = cellDistX * 3 - 50;
   y = cellDistY * 3 - 50;
 
-  fill(color(46,125,50));
+  fill( emptyHoleColor );
   circle(x, y, 90);
 
 

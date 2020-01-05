@@ -70,25 +70,25 @@ void drawQuitButton(){
 }
 
 void drawButtonIesire(){
-  drawButton(40, gameMenuSize / 2, 90, 30, normalBtnCol_2, exitString);
+  drawButton(55, gameMenuSize / 2, 90, 30, normalBtnCol_2, exitString);
 }
 
 void drawButtonIesireOption(){
-  drawButton(40, gameMenuSize / 2, 90, 30, normalBtnCol, optionsExitString);
+  drawButton(55, gameMenuSize / 2, 90, 30, normalBtnCol, optionsExitString);
 }
 
 void drawUndo(){
-  drawButton(150, gameMenuSize / 2, 120, 30, normalBtnCol, undoString);
+  drawButton(170, gameMenuSize / 2, 120, 30, normalBtnCol, undoString);
 }
 
 void drawSolve(){
-  drawButton(275, gameMenuSize / 2,115, 30, normalBtnCol, solveString);
+  drawButton(295, gameMenuSize / 2,115, 30, normalBtnCol, solveString);
 }
 
 void drawButton(int x, int y, int bWidth, int bHeight, color col, String s){
   noStroke();
   fill(col);
-  rect(x, y, bWidth, bHeight, 8);
+  rect(x, y, bWidth, bHeight, 16);
   fill( color(255) );
   textSize(15);
   text(s, x, y + 5);

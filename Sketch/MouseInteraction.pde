@@ -79,6 +79,7 @@ void mousePressed(){
     }else if( egal(MouseFlag, nextLevel) == true){
       gameStart  = true;
       gameFinished = false;
+      score = 0;
       emptyList();
       determinareNivel(Challenge);
       countRabbitsBegining();

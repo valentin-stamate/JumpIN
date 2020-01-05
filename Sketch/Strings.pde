@@ -20,6 +20,8 @@ String movesString = "Mutari";
 String nextLevel = "Nivelul Urmator ";
 String end = " pana acum ";
 
+String darkSwitcher = "darkSwitcher";
+
 //China
 
 String chinaStartString = "Tiáomù";

@@ -30,10 +30,9 @@ void drawTable(){
       if(vf == 0 || vf == 4 || vf == 12 || vf == 20 || vf == 24){
 
         // aici desenez casutele pentru iesiri
-
-        fill(color(62,39,35));
+        fill( rabbitHoleStroke );
         circle(x, y + gameMenuSize, 100);
-        fill(color(20, 20, 20, 90));
+        fill( rabbitHoleCenter );
         circle(x, y + gameMenuSize, 85);
 
         continue;
@@ -190,7 +189,7 @@ void drawLevel(PShape p, int j, int i, int scale, String s){
 void drawTitle(String s, int w, int h){
   int x = width / 2;
   int y = 50;
-  fill(titleColor);
+  fill( normalBtnColor3 );
   rect(x, y, w, h, 24);
   fill(255);
   textSize(24);
@@ -220,23 +219,23 @@ void drawPossibleMoveSquare(int i, int j){
 void drawFlags(){
   drawSubTitle(languageStringTitle, width / 2, 140, 120, 60);
 
-  drawButton(100,250, 100, 75,normalBtnCol, romania, rom);
-  drawButton(250,250, 100, 75,normalBtnCol, india, ind);
-  drawButton(400,250, 100, 75,normalBtnCol, china, chi);
-  drawButton(550,250, 100, 75,normalBtnCol, france, fra);
-  drawButton(700,250, 100, 75,normalBtnCol, germany, ger);
+  drawButton(100,250, 100, 75,normalBtnColor1, romania, rom);
+  drawButton(250,250, 100, 75,normalBtnColor1, india, ind);
+  drawButton(400,250, 100, 75,normalBtnColor1, china, chi);
+  drawButton(550,250, 100, 75,normalBtnColor1, france, fra);
+  drawButton(700,250, 100, 75,normalBtnColor1, germany, ger);
 }
 
 void drawMusicButtons(){
   drawSubTitle(musicStringTitle, width / 2, 440, 300, 60);
- // TODO
-  drawButton(width / 4, 550, 150, 60, normalBtnCol, firstMusic);
-  drawButton(width * 2 / 4, 550, 150, 60, normalBtnCol, secondMusic);
-  drawButton(width * 3 / 4, 550, 150, 60, normalBtnCol, noSoundString);
+
+  drawButton(width / 4, 550, 150, 60, normalBtnColor1, firstMusic);
+  drawButton(width * 2 / 4, 550, 150, 60, normalBtnColor1, secondMusic);
+  drawButton(width * 3 / 4, 550, 150, 60, normalBtnColor1, noSoundString);
 }
 
 void drawSubTitle(String s, int x, int y, int w, int h){
-  fill(titleColor);
+  fill( normalBtnColor3 );
   rect(x, y, w, h, 24);
   fill(255);
   textSize(24);

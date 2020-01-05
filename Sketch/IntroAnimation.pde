@@ -98,9 +98,9 @@ void drawCells(){
   x = cellDistX * 5 - 50;
   y = cellDistY * 3 - 50;
 
-  fill(color(62,39,35));
+  fill( rabbitHoleStroke );
   circle(x, y , 110);
-  fill(color(20, 20, 20, 90));
+  fill( rabbitHoleCenter );
   circle(x, y, 90);
 
   fill(color(255, 255, 255, 30));
@@ -125,7 +125,7 @@ void drawAnimationTitle(){
   scale( sc - offScale );
 
 
-  fill(titleColor);
+  fill( normalBtnColor3 );
   rect(0, 0, 250, 90, 20);
 
   textSize(48);

@@ -42,6 +42,9 @@ void draw(){
     //create timer
     drawTimer();
 
+    // dark mode button
+    drawDarkModeButton();
+
     checkSelected();
     drawNextMoves();
     if(undo.size() > 0){
@@ -55,9 +58,9 @@ void draw(){
   }else if(gameFinished){
     background(gameBkgColor);
     text(winningLevel + score + end,height/2, 200);
-    drawButton(300,350, 150,100,normalBtnCol_2, optionsExitString);
+    drawButton(300,350, 150,100,normalBtnColor2, optionsExitString);
     if(Challenge < 9){
-      drawButton(500,350, 150,100,normalBtnCol_2, nextLevel);
+      drawButton(500,350, 150,100,normalBtnColor2, nextLevel);
     }
   }else if (options == true){
     background(gameBkgColor);

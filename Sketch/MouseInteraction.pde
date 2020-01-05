@@ -79,6 +79,7 @@ void mousePressed(){
     }else if( egal(MouseFlag, nextLevel) == true){
       gameStart  = true;
       gameFinished = false;
+      score = 0;
       emptyList();
       determinareNivel(Challenge);
       countRabbitsBegining();
@@ -135,6 +136,16 @@ void mousePressed(){
       backgroundMusic.loop();
     } else if( egal(MouseFlag, noSoundString) == true ){
       backgroundMusic.stop();
+    }
+    // dark button
+    else if( egal(MouseFlag, darkSwitcher) == true ){
+      darkMode = !darkMode;
+      if(darkMode){
+        changeToDark();
+      } else {
+        changeToNormal();
+      }
+
     }
     MouseFlag = "";
   }

@@ -5,8 +5,18 @@ void drawTable(){
   stroke(255);
   rect(width / 2, height / 2 + gameMenuSize / 2, width - 50, height - gameMenuSize - 50, 40);
 
-  noStroke();
 
+  drawSupportOneCell(0, 0);
+  drawSupportOneCell(4, 0);
+  drawSupportOneCell(0, 4);
+  drawSupportOneCell(4, 4);
+  drawSupportOneCell(2, 2);
+
+  drawSupportOneCell(2, 0);
+  drawSupportOneCell(0, 2);
+  drawSupportOneCell(4, 2);
+  drawSupportOneCell(2, 4);
+  noStroke();
 
   for(int i = 1; i <= 5; i++){
     for(int j = 1; j <= 5; j++){
@@ -14,37 +24,25 @@ void drawTable(){
       int x = cellDistX * j - 50;
       int y = cellDistY * i - 50;
 
-      fill(color(46,125,50));
+      fill( emptyHoleColor );
 
       int vf = (i - 1) * 5 + j - 1;
       if(vf == 0 || vf == 4 || vf == 12 || vf == 20 || vf == 24){
-        int tl = 8, tr = 8, br = 8, bl = 8;
+
         // aici desenez casutele pentru iesiri
-        if(vf == 0){
-          tl = 40;
-        } else if(vf == 4){
-          tr = 40;
-        } else if(vf == 20){
-          bl = 40;
-        } else if(vf == 24){
-          br = 40;
-        }
-        fill(color(62,39,35));
+        fill( rabbitHoleStroke );
         circle(x, y + gameMenuSize, 100);
-        fill(color(20, 20, 20, 90));
+        fill( rabbitHoleCenter );
         circle(x, y + gameMenuSize, 85);
 
-        fill(color(255, 255, 255, 30));
-        strokeWeight(2);
-        stroke(255);
-        rect(cellDistX * j - 50, cellDistY * i, cellDistX / 2 + 75, cellDistY / 2 + 75, tl, tr, br, bl);
-        noStroke();
         continue;
       }
 
       circle(x, y + gameMenuSize, 90);
     }
   }
+
+
 
 }
 
@@ -117,25 +115,26 @@ void drawMushroom(int j, int i){
   int x = cellDistX * (j + 1) - 50;
   int y = cellDistY * (i + 1) - 50 + gameMenuSize;
 
-  int vf = i + j;
-  if( !(vf == 0 || vf == 4 || vf == 12 || vf == 20 || vf == 24) ){
-    drawSupportOneCell(j, i);
-  }
   shape(mushroom, x, y, 100, 100);
+}
+
+void drawSupportOneCell(int j, int i){
+  fill( supportCellColor );
+  strokeWeight(2);
+  stroke(255);
+  rect(cellDistX * (j + 1) - 50, cellDistY * (i + 1), cellDistX / 2 + 75, cellDistY / 2 + 75, 32);
 }
 
 
 // --=== ===---
-// TODO variables
 
 int distX = width / 4;
 int distY = (height - 50) / 4;
 int scale = 140;
 
 void drawSelectLevels(){
-  // TODO , adauga ca si string pentru limba
 
-  background(color(76,175,80));
+  background( instructionsBackgroundColor );
   distX = width / 4;
   distY = (height - 50) / 4;
 
@@ -156,7 +155,7 @@ void drawSelectLevels(){
 }
 
 void drawInstructions() {
-  background(76, 175, 80);
+  background( instructionsBackgroundColor );
   shape(instructionsBackground, width / 2, height / 2, 800, 850);
   drawTitle(instructionString, 160, 50);
 
@@ -183,15 +182,15 @@ void drawLevel(PShape p, int j, int i, int scale, String s){
   textSize(15);
   text(s, x, y + 90);
 
-  drawTitle("Selectare Nivel", 200, 50);
+  drawTitle(selectLevelString, 280, 60);
   checkMouseOver(x, y, scale, scale, s);
 }
 
 void drawTitle(String s, int w, int h){
   int x = width / 2;
   int y = 50;
-  fill(titleColor);
-  rect(x, y, w, h, 16);
+  fill( normalBtnColor3 );
+  rect(x, y, w, h, 24);
   fill(255);
   textSize(24);
   text(s, x , y + 8);
@@ -220,24 +219,24 @@ void drawPossibleMoveSquare(int i, int j){
 void drawFlags(){
   drawSubTitle(languageStringTitle, width / 2, 140, 120, 60);
 
-  drawButton(100,250, 100, 75,normalBtnCol, romania, rom);
-  drawButton(250,250, 100, 75,normalBtnCol, india, ind);
-  drawButton(400,250, 100, 75,normalBtnCol, china, chi);
-  drawButton(550,250, 100, 75,normalBtnCol, france, fra);
-  drawButton(700,250, 100, 75,normalBtnCol, germany, ger);
+  drawButton(100,250, 100, 75,normalBtnColor1, romania, rom);
+  drawButton(250,250, 100, 75,normalBtnColor1, india, ind);
+  drawButton(400,250, 100, 75,normalBtnColor1, china, chi);
+  drawButton(550,250, 100, 75,normalBtnColor1, france, fra);
+  drawButton(700,250, 100, 75,normalBtnColor1, germany, ger);
 }
 
 void drawMusicButtons(){
   drawSubTitle(musicStringTitle, width / 2, 440, 300, 60);
- // TODO
-  drawButton(width / 4, 550, 150, 60, color(81,45,168), firstMusic);
-  drawButton(width * 2 / 4, 550, 150, 60, color(81,45,168), secondMusic);
-  drawButton(width * 3 / 4, 550, 150, 60, color(81,45,168), noSoundString);
+
+  drawButton(width / 4, 550, 150, 60, normalBtnColor1, firstMusic);
+  drawButton(width * 2 / 4, 550, 150, 60, normalBtnColor1, secondMusic);
+  drawButton(width * 3 / 4, 550, 150, 60, normalBtnColor1, noSoundString);
 }
 
 void drawSubTitle(String s, int x, int y, int w, int h){
-  fill(titleColor);
-  rect(x, y, w, h, 16);
+  fill( normalBtnColor3 );
+  rect(x, y, w, h, 24);
   fill(255);
   textSize(24);
   text(s, x , y + 8);

@@ -83,7 +83,7 @@ void mouseReleased(){
              tableArray[iInitialFirstRabbit][jInitialFirstRabbit] = "0";
              score+=100;
           }else if((iesirePoz(iInitialFirstRabbit,jInitialFirstRabbit) && count > 1)  && (i != iInitialFirstRabbit || j != jInitialFirstRabbit)){
-              tableArray[i][j] = "R1"; 
+              tableArray[i][j] = "R1";
               tableArray[iInitialFirstRabbit][jInitialFirstRabbit] = "5";
           }else if(count <1 || ((i < 5) && (j < 5) && (tableArray[i][j] != "0") && (tableArray[i][j] != "R1"))) {
              i = iInitialFirstRabbit;
@@ -97,7 +97,7 @@ void mouseReleased(){
           j = convertCoordToJ(jSecondRabbit);
           if(iesirePoz(i,j) && count >1 && tableArray[i][j] == "5" && (i != iInitialSecondRabbit || j != jInitialSecondRabbit) && !iesirePoz(iInitialSecondRabbit,jInitialSecondRabbit)){
              tableArray[i][j] = "R2";
-             tableArray[iInitialSecondRabbit][jInitialSecondRabbit] = "0";  
+             tableArray[iInitialSecondRabbit][jInitialSecondRabbit] = "0";
              score+=100;
           }else if(iesirePoz(iInitialSecondRabbit,jInitialSecondRabbit) && count > 1  && (i != iInitialSecondRabbit || j != jInitialSecondRabbit)){
               tableArray[i][j] = "R2";
@@ -138,13 +138,13 @@ void mouseReleased(){
       }else if(lockedSecondFox && showVerticalFox){
         moveSecondFox(i);
       }
-    
+
       if(rabbitsInHoles() == countRabbits && gameStart == true){
         gameFinished = true;
         gameStart = false;
       }
 
-  
+
  afisareLista();
 
  lockedFox = false;

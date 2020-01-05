@@ -43,9 +43,14 @@ void autoSolve(String table[][], int challenge) {
         makeStep(step);
         StepI++;
       } else {
+
         levelSolving = false;
         StepI = 0;
         initialState = true;
+
+        gameStart = false;
+        gameFinished = true;
+
       }
     }
 
@@ -96,4 +101,20 @@ void autoSolve(String table[][], int challenge) {
       moveFoxHorizontal(newI, newJ);
     }
 
+    // get instant score
+    score = 0;
+    if(rabbitInsideHole("R1"))
+      score += 100;
+    if(rabbitInsideHole("R2"))
+      score += 100;
+    if(rabbitInsideHole("R3"))
+      score += 100;
+
+}
+
+boolean rabbitInsideHole(String rabbit){
+  if(tableArray[0][0].equals(rabbit) || tableArray[0][4].equals(rabbit) || tableArray[2][2].equals(rabbit) || tableArray[4][0].equals(rabbit) || tableArray[4][4].equals(rabbit)){
+    return true;
   }
+  return false;
+}

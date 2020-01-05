@@ -18,15 +18,6 @@ void drawGameMenu(){
 
 
 
-
-// TODO
-void drawSupportOneCell(int j, int i){
-  fill(color(255, 255, 255, 30));
-  strokeWeight(2);
-  stroke(255);
-  rect(cellDistX * (j + 1) - 50, cellDistY * (i + 1), cellDistX / 2 + 75, cellDistY / 2 + 75, 8);
-}
-
 void drawSupportVer(int j, int i){
   fill(tableBkgCol);
   strokeWeight(2);

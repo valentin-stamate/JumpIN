@@ -41,7 +41,6 @@ void draw(){
     drawGameButtons();
 
     drawTimer();
-    drawDarkModeButton();
 
     checkSelected();
     drawNextMoves();
@@ -66,10 +65,11 @@ void draw(){
     drawFlags();
     drawMusicButtons();
     drawButtonIesireOption();
+    drawDarkModeButton();
 
   } else if (selectLevel == true){
     drawSelectLevels();
-
+    
   } else if (instructions == true){
     drawInstructions();
 
@@ -79,7 +79,6 @@ void draw(){
     countRabbitsBegining();
     drawIntroAnimation();
     drawStartMenu();
-    emptyList();
   }
 
   int oneSecond = 60;

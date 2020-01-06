@@ -23,6 +23,7 @@ void changeRomaniaLanguage(){
    movesString = romaniaMovesString;
    nextLevel = romaniaNextLevel;
    end = romaniaEnd;
+   theme = romaniaTheme;
 }
 
 void changeIndiaLanguage(){
@@ -50,6 +51,7 @@ void changeIndiaLanguage(){
    movesString = indiaMovesString;
    nextLevel = indiaNextLevel;
    end = indiaEnd;
+   theme = indiaTheme;
 }
 
 void changeFranceLanguage(){
@@ -77,6 +79,7 @@ void changeFranceLanguage(){
    movesString = franceMovesString;
    nextLevel = franceNextLevel;
    end = franceEnd;
+   theme = franceTheme;
 }
 
 void changeGermanyLanguage(){
@@ -104,6 +107,7 @@ void changeGermanyLanguage(){
    movesString = germanyMovesString;
    nextLevel = germanyNextLevel;
    end = germanyEnd;
+   theme = germanyTheme;
 }
 
 void changeChinaLanguage(){
@@ -131,4 +135,5 @@ void changeChinaLanguage(){
    movesString = chinaMovesString;
    nextLevel = chinaNextLevel;
    end = chinaEnd;
+   theme = chinaTheme;
 }

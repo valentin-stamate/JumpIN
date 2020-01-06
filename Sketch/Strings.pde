@@ -19,8 +19,7 @@ String noSoundString = "Fara Sunet";
 String movesString = "Mutari";
 String nextLevel = "Nivelul Urmator ";
 String end = " pana acum ";
-
-String darkSwitcher = "darkSwitcher";
+String theme = " Schimba Tema ";
 
 //China
 
@@ -44,7 +43,7 @@ String chinaNoSoundString = "Méiyǒu Shēngyīn";
 String chinaMovesString = "Moves";
 String chinaNextLevel = "Xià yījí ";
 String chinaEnd = " dào mùqián wéizhǐ ";
-
+String chinaTheme = " Gǎibiàn zhǔtí";
 //France
 
 String franceStartString = "Entrée";
@@ -67,6 +66,7 @@ String franceNoSoundString = "Pas De Son";
 String franceMovesString = "Moves";
 String franceNextLevel = "Le niveau suivant ";
 String franceEnd = " jusqu'ici ";
+String franceTheme = " Changer de Thème";
 
 //Germany
 
@@ -90,6 +90,7 @@ String germanyNoSoundString = "Kein Ton";
 String germanyMovesString = "Moves";
 String germanyNextLevel = "Das nächste Level";
 String germanyEnd = " soweit ";
+String germanyTheme = " Thema wechseln";
 
 //India
 
@@ -113,7 +114,7 @@ String indiaNoSoundString = "Koee Aavaaj Nahin";
 String indiaMovesString = "Moves";
 String indiaNextLevel = "Agale star";
 String indiaEnd = " ab tak ";
-
+String indiaTheme = " Vishay Badalen";
 
 //Romania
 
@@ -137,6 +138,7 @@ String romaniaNoSoundString = "Fara Sunet";
 String romaniaMovesString = "Moves";
 String romaniaNextLevel = "Nivelul urmator";
 String romaniaEnd = " pana acum ";
+String romaniaTheme = " Schimba Tema";
 
 //Countries
 String romania = "Romania";
@@ -153,6 +155,8 @@ String flagRThree = "r3";
 String flagFOne = "f1";
 String flagFTwo = "FV";
 
+//change theme
+String darkSwitcher = "darkSwitcher";
 
 String challenge_1 = "Challenge 1";
 String challenge_2 = "Challenge 2";

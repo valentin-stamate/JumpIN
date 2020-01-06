@@ -1,14 +1,15 @@
 boolean darkMode = false;
 
 void drawDarkModeButton(){
-  int x = 375, y = gameMenuSize / 2;
-  int radius = 20;
+  drawSubTitle(theme, width / 2, 650, 300, 60);
+  int x = 400, y = 750;
+  int radius = 70;
   noStroke();
 
   if(darkMode)
-    fill(20);
-  else
     fill(255);
+  else
+    fill(20);
 
   circle(x, y, radius);
 

@@ -8,7 +8,7 @@ String chinaFourthIns = "Zài zhǔ càidān zhōng, nín kěyǐ zhíjiē cóng j
 
 
 //France
-String franceFirstIns = "Au début du jeu, vous verrez une planche avec différents animaux:des lapins de différentes couleurs,\n  2 renards, mais aussi des champignons. \n Ceux-ci peuvent varier en fonction du niveau.";
+String franceFirstIns = "Au début du jeu, vous verrez une planche avec différents animaux:\n des lapins  de différentes couleurs, 2 renards, mais aussi des champignons. \n Ceux-ci peuvent varier en fonction du niveau.";
 String franceSecondIns = "Les objets qui peuvent être déplacés ne sont que des lapins et des renards. \n Les lapins ne peuvent sauter par-dessus les obstacles et les renards que \n verticalement et horizontalement selon leur direction de placement.";
 String franceThirdIns = "Pour gagner, vous devez mettre tous les lapins dans les terriers.";
 String franceFourthIns = "Dans le menu principal, vous pouvez démarrer le jeu directement à partir du niveau 1,\n mais vous pouvez sélectionner le niveau souhaité en appuyant sur le bouton\n \"Sélectionner niveau\".";

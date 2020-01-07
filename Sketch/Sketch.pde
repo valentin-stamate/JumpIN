@@ -52,6 +52,8 @@ void draw(){
     if(!levelSolving){
       drawSolve();
     }
+    
+    resetLevels = true;
 
   }else if(gameFinished){
     background(gameBkgColor);
@@ -81,8 +83,12 @@ void draw(){
     countRabbitsBegining();
     drawIntroAnimation();
     drawStartMenu();
-    resetTable();
-    emptyList();
+    if(resetLevels){
+      resetTable();
+      emptyList();
+      levelSolving = false;
+      resetLevels = false;
+    }
   }
 
   int oneSecond = 60;

@@ -137,12 +137,20 @@ void mousePressed(){
       lockedFox = true;
       xOffset = mouseX - coordonateFoxHJ;
       yOffset = mouseY - coordonateFoxHI;
+      if((coordonateFoxHJ - 25) / cellDistY == 0){
+         putDataInList("FH", fOneI, 1);
+      }else{
        putDataInList("FH", fOneI, (coordonateFoxHJ - 25) / cellDistY);
+      }
     }else if(egal(MouseFlag, flagFTwo) == true){
       lockedSecondFox = true;
       xOffset = mouseX - coordonateFoxVI;
       yOffset = mouseY - coordonateFoxVJ;
-      putDataInList("FV", fSecondI, ( coordonateFoxVJ - 25) / cellDistX);
+      if(( coordonateFoxVJ - 25) / cellDistX == 0){
+        putDataInList("FV", fSecondI, 1);
+      }else{
+        putDataInList("FV", fSecondI, ( coordonateFoxVJ - 25) / cellDistX);
+      }
     }
     //changeLanguage
     else if(egal(MouseFlag, romania) == true){

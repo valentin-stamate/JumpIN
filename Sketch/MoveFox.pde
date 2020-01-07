@@ -1,7 +1,7 @@
 void updateFoxPositions(int tmp){
    if(tmp > coordonateFoxHJ){
        int i =  (coordonateFoxHJ + 50 + 80)/cellDistX -1;
-       if(tableArray[fOneI -1][i] == "FH" && tableArray[fOneI -1][i-1] == "0"){
+       if(i < 4 && tableArray[fOneI -1][i] == "FH" && tableArray[fOneI -1][i-1] == "0"){
          tableArray[fOneI -1][i+1] = "0";
          tableArray[fOneI -1][i] = "FH";
          tableArray[fOneI -1][i-1] = "FH";
@@ -12,13 +12,13 @@ void updateFoxPositions(int tmp){
        fOneJ = i+1;
      }else{
        int i =  (coordonateFoxHJ + 50 + 80)/cellDistX - 1;
-       if(i >= 2 && tableArray[fOneI -1][i] == "FH" && tableArray[fOneI -1][i-2] == "FH"){
+       if(i >= 2 && tableArray[fOneI -1][i] == "0" && tableArray[fOneI -1][i-1]== "FH"){
          tableArray[fOneI -1][i-2] = "0";
          tableArray[fOneI -1][i-1] = "FH";
-         tableArray[fOneI -1][i] = "FH";
+         tableArray[fOneI -1][i]= "FH";
        }else{
-         tableArray[fOneI -1][i-1] = "FH";
          tableArray[fOneI -1][i] = "FH";
+         tableArray[fOneI -1][i-1] ="FH";
        }
         fOneJ = i+1;
      }
@@ -43,7 +43,7 @@ void updateSecondFoxPositions(int tmp){
              fSecondJ = i;
         //printArray();
      }else{
-       if(i > 1 && i <= 6 && tableArray[i][fSecondI] == "FV" && tableArray[i-2][fSecondI] == "FV"){
+       if(i > 1 && i <= 6 && tableArray[i][fSecondI] == "0" && tableArray[i-2][fSecondI] == "FV"){
          tableArray[i-2][fSecondI] = "0";
          tableArray[i-1][fSecondI] = "FV";
          tableArray[i][fSecondI] = "FV";
@@ -59,7 +59,6 @@ void updateSecondFoxPositions(int tmp){
 
 //muta vulpea in casutele in care ar trebui sa fie atunci cand se elibereaza mouse-ul
 void moveFox( int j){
-  println(j);
   if(j == obstacolStanga){
      j++;
   }else if(j == 5 -obstacolDreapta){

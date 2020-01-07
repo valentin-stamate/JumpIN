@@ -24,6 +24,7 @@ boolean gameFinished = false;
 boolean undoMoves = false;
 boolean instructions = false;
 boolean changeLevel = false;
+boolean resetLevels = false;
 
 boolean showVerticalFox = false;
 boolean showHorizontalFox = false;

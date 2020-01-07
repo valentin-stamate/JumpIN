@@ -1,7 +1,7 @@
 //muta vulpile
 void mouseDragged(){
  if(lockedFox){
-   if(((mouseX - xOffset > 150+cellDistX*obstacolStanga+ 20) &&(mouseX - xOffset < height -200 -cellDistX*obstacolDreapta))){
+   if(((mouseX - xOffset > 150+cellDistX*obstacolStanga+ 20) &&(mouseX - xOffset < height -150 -cellDistX*obstacolDreapta))){
      int tmp = coordonateFoxHJ;
      coordonateFoxHJ = mouseX - xOffset;
      //face update pozitiilor vulpii in matrice
@@ -9,7 +9,7 @@ void mouseDragged(){
    }
  }else if(lockedSecondFox){
    if(((mouseY - yOffset > 150+cellDistY*obstacolJos) &&(mouseY - yOffset < width-100 -cellDistY*obstacolSus))){
-    int tmp = coordonateFoxVJ;
+      int tmp = coordonateFoxVJ;
      coordonateFoxVJ = mouseY - yOffset;
      //face update pozitiilor vulpii in matrice
      updateSecondFoxPositions(tmp);
@@ -144,8 +144,6 @@ void mouseReleased(){
         gameStart = false;
       }
 
-
- afisareLista();
 
  lockedFox = false;
  lockedSecondFox = false;

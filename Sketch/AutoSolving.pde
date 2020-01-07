@@ -78,12 +78,19 @@ void autoSolve(String table[][], int challenge) {
 
     // get instant score
 
-    getInstantScore();
+    if( rabbitInsideHole(animal, newI, newJ) ){
+      score += 100;
+    }
 
 }
 
-boolean rabbitInsideHole(String rabbit){
-  if(tableArray[0][0].equals(rabbit) || tableArray[0][4].equals(rabbit) || tableArray[2][2].equals(rabbit) || tableArray[4][0].equals(rabbit) || tableArray[4][4].equals(rabbit)){
+boolean rabbitInsideHole(String animal, int i, int j){
+
+  if(egal(animal, "FV") || egal(animal, "FH")){
+    return false;
+  }
+
+  if( (i == 0 && (j == 0 || j == 4)) || (i == 2 && j == 2) || (i == 4 && (j == 0 || j == 4) ) ){
     return true;
   }
   return false;
@@ -111,15 +118,8 @@ String[] getStep(int challenge){
 
 }
 
-void getInstantScore(){
-  score = 0;
-  if(rabbitInsideHole("R1")){
-    score += 100;
-  }
-  if(rabbitInsideHole("R2")){
-    score += 100;
-  }
-  if(rabbitInsideHole("R3")){
-    score += 100;
-  }
+void resetAutoSolving(){
+  levelSolving = false;
+  initialState = true;
+  StepI = 0;
 }

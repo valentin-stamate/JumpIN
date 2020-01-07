@@ -2,8 +2,6 @@ import java.util.ArrayList;
 import java.util.List;
 import processing.sound.*;
 
-// TODO autosolve bug
-
 void setup(){
   size(800, 850);
   frameRate(60);
@@ -34,8 +32,9 @@ void draw(){
     background(gameBkgColor);
 
     drawTable();
-    drawFoxes();
+    
     drawPositions();
+    drawFoxes();
 
     drawGameMenu();
     drawGameButtons();
@@ -45,14 +44,14 @@ void draw(){
     checkSelected();
     drawNextMoves();
 
-    if(undo.size() > 0){
+    if(undo.size() > 0 && !levelSolving){
       drawUndo();
     }
 
     if(!levelSolving){
       drawSolve();
     }
-    
+
     resetLevels = true;
 
   }else if(gameFinished){
@@ -73,7 +72,7 @@ void draw(){
 
   } else if (selectLevel == true){
     drawSelectLevels();
-    
+
   } else if (instructions == true){
     drawInstructions();
 

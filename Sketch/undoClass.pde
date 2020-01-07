@@ -114,6 +114,13 @@ void pressedUndo(){
     updateSecondFoxPositions(coordonateFoxVJ);
   }
   undo.remove(undo.size() -1);
+
+  // pune adauga puncte cand se rezolva automat
+
+  if(levelSolving && rabbitInsideHole(animal, xPosition, yPosition) ){
+    score += 100;
+  }
+
 }
 
 void undoRabbit(int i, int j, String name){

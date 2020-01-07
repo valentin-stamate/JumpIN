@@ -311,6 +311,48 @@ void determinareNivel(int challenge){
   Challenge++;
 }
 
+void resetTable(){
+  switch(Challenge){
+    case 1:
+      println("Challenge 1 Selected");
+      setGameTable(challengeOneTable);
+      break;
+    case 2:
+      println("Challenge 2 Selected");
+      setGameTable(challengeTwoTable);
+      break;
+    case 3:
+      println("Challenge 3 Selected");
+      setGameTable(challengeThreeTable);
+      break;
+    case 4:
+      println("Challenge 4 Selected");
+      setGameTable(challengeFourTable);
+      break;
+    case 5:
+      println("Challenge 5 Selected");
+      setGameTable(challengeFiveTable);
+      break;
+    case 6:
+      println("Challenge 6 Selected");
+      setGameTable(challengeSixTable);
+      break;
+    case 7:
+      println("Challenge 7 Selected");
+      setGameTable(challengeSevenTable);
+      break;
+    case 8:
+      println("Challenge 8 Selected");
+      setGameTable(challengeEightTable);
+      break;
+    case 9:
+      println("Challenge 9 Selected");
+      setGameTable(challengeNineTable);
+      break;
+  }
+  score = 0;
+}
+
 void resetNextMoveArray(){
   for(int i = 0; i < 5; i++){
     for(int j = 0; j < 5; j++){

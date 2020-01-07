@@ -44,47 +44,65 @@ void mousePressed(){
       println("Challenge 1 Selected");
       setGameTable(challengeOneTable);
       Challenge = 1;
-      emptyList();
+      selectLevel = false;
+      gameStart = true;
+      countRabbitsBegining();
     } else if( egal(MouseFlag, challenge_2) == true){
       println("Challenge 2 Selected");
       setGameTable(challengeTwoTable);
       Challenge = 2;
-      emptyList();
+      selectLevel = false;
+      gameStart = true;
+      countRabbitsBegining();
     } else if( egal(MouseFlag, challenge_3) == true){
       println("Challenge 3 Selected");
       setGameTable(challengeThreeTable);
       Challenge = 3;
-      emptyList();
+      selectLevel = false;
+      gameStart = true;
+      countRabbitsBegining();
     } else if( egal(MouseFlag, challenge_4) == true){
       println("Challenge 4 Selected");
       setGameTable(challengeFourTable);
       Challenge = 4;
-      emptyList();
+      selectLevel = false;
+      gameStart = true;
+      countRabbitsBegining();
     } else if( egal(MouseFlag, challenge_5) == true){
       println("Challenge 5 Selected");
       setGameTable(challengeFiveTable);
       Challenge = 5;
-      emptyList();
+      selectLevel = false;
+      gameStart = true;
+      countRabbitsBegining();
     } else if( egal(MouseFlag, challenge_6) == true){
       println("Challenge 6 Selected");
       setGameTable(challengeSixTable);
       Challenge = 6;
-      emptyList();
+      selectLevel = false;
+      gameStart = true;
+      countRabbitsBegining();
     } else if( egal(MouseFlag, challenge_7) == true){
       println("Challenge 7 Selected");
       setGameTable(challengeSevenTable);
       Challenge = 7;
-      emptyList();
+      selectLevel = false;
+      gameStart = true;
+      countRabbitsBegining();
     } else if( egal(MouseFlag, challenge_8) == true){
       println("Challenge 8 Selected");
       setGameTable(challengeEightTable);
       Challenge = 8;
-      emptyList();
+      selectLevel = false;
+      gameStart = true;
+      countRabbitsBegining();
     } else if( egal(MouseFlag, challenge_9) == true){
       println("Challenge 9 Selected");
       setGameTable(challengeNineTable);
       Challenge = 9;
-      emptyList();
+      selectLevel = false;
+      gameStart = true;
+      countRabbitsBegining();
     }
 
     else if( egal(MouseFlag, nextLevel) == true){

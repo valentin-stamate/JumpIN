@@ -7,7 +7,7 @@ void drawDarkModeButton(){
   noStroke();
 
   if(darkMode)
-    fill(255);
+    fill(0, 128, 0);
   else
     fill(20);
 

@@ -1,5 +1,8 @@
 
 void setGameTable(String[][] challenge){
+
+  resetAutoSolving();
+
   for(int i = 4; i >= 0; i--){
     for(int j = 4; j >= 0; j--){
       tableArray[i][j] = challenge[i][j];

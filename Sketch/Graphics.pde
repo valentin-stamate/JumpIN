@@ -50,12 +50,27 @@ void drawTable(){
 // deseneza animalele
 
 void drawPositions(){
+  // deseneaza mai intai ciupercile ca sa nu se suprapuna cu iepurii
+  for(int i = 0; i < 5; i++){
+    for(int j = 0; j < 5; j++){
+      if( tableArray[i][j] == "M" ){
+        drawMushroom(j, i);
+      }
+    }
+  }
 
   for(int i = 0; i < 5; i++){
     for(int j = 0; j < 5; j++){
-       if( tableArray[i][j] == "M" ){
-        drawMushroom(j, i);
-      }else if( egal(tableArray[i][j], "R2") ){
+
+      if( egal(tableArray[i][j], "R1") ){
+        if(!lockedFirstRabbit){
+         iFirstRabbit = convertCoordToY(i);
+         jFirstRabbit = convertCoordToX(j);
+        }
+
+        drawRabbit(jFirstRabbit, iFirstRabbit, rabbitOrange, flagROne);
+      }
+      else if( egal(tableArray[i][j], "R2") ){
        if(!lockedSecondRabbit){
            iSecondRabbit = convertCoordToY(i);
            jSecondRabbit = convertCoordToX(j);
@@ -69,14 +84,7 @@ void drawPositions(){
         }
         drawRabbit(jThirdRabbit,iThirdRabbit, rabbitWhite, flagRThree);
       }
-      else if( egal(tableArray[i][j], "R1") ){
-        if(!lockedFirstRabbit){
-         iFirstRabbit = convertCoordToY(i);
-         jFirstRabbit = convertCoordToX(j);
-        }
 
-        drawRabbit(jFirstRabbit, iFirstRabbit, rabbitOrange, flagROne);
-      }
     }
   }
 

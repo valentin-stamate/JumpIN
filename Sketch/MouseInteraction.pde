@@ -20,6 +20,7 @@ void mousePressed(){
   if(mouseOver){
 
     if( egal(MouseFlag, startString) == true ){
+      resetAutoSolving();
       startButton();
     } else if( egal(MouseFlag, exitString) == true ){
       exitButton();

@@ -121,6 +121,10 @@ void mousePressed(){
       yOffset = mouseY - iFirstRabbit;
       iInitialFirstRabbit = convertCoordToI(iFirstRabbit);
       jInitialFirstRabbit = convertCoordToJ(jFirstRabbit);
+
+      // TODO
+      drawPossibleMoves(iInitialFirstRabbit, jInitialFirstRabbit);
+
     } else if( egal(MouseFlag, flagRTwo) ==true ){
       lockedSecondRabbit = true;
       xOffset = mouseX - jSecondRabbit;
@@ -128,12 +132,20 @@ void mousePressed(){
       iInitialSecondRabbit = convertCoordToI(iSecondRabbit);
       jInitialSecondRabbit = convertCoordToJ(jSecondRabbit);
       println(iInitialSecondRabbit + " _____++" + jInitialSecondRabbit);
+
+      // TODO
+      drawPossibleMoves(iInitialSecondRabbit, jInitialSecondRabbit);
+
     } else if( egal(MouseFlag, flagRThree) == true ){
       lockedThirdRabbit = true;
       xOffset = mouseX - jThirdRabbit;
       yOffset = mouseY - iThirdRabbit;
       iInitialThirdRabbit = convertCoordToI(iThirdRabbit);
       jInitialThirdRabbit = convertCoordToJ(jThirdRabbit);
+
+      // TODO
+      drawPossibleMoves(iInitialThirdRabbit, jInitialThirdRabbit);
+
     } else if( egal(MouseFlag, flagFOne) == true ){
       lockedFox = true;
       xOffset = mouseX - coordonateFoxHJ;

@@ -73,6 +73,8 @@ void printArray(){
 
 
 void mouseReleased(){
+  resetNextMoveArray();
+
  int i = 0, j = 0;
       if(lockedFirstRabbit){
           i = convertCoordToI(iFirstRabbit);
@@ -196,39 +198,83 @@ void checkSelected(){
 void drawPossibleMoves(int i, int j){
 
     // sus
-    int iN = i, jN = j;
+    int iN = i - 1, jN = j;
     while(iN > 0 && tableArray[iN][jN] != "0"){
       iN--;
     }
-    if(iN != i && iN != i - 1 && (tableArray[iN][jN] == "0" || tableArray[iN][jN] == "5") ){
-      drawPossibleMoveSquare(iN, jN);
+    if(iN != i - 1 && (tableArray[iN][jN] == "0" || tableArray[iN][jN].equals("5")) ){
+
+      nextMoveArray[iN][jN] = "P";
+    }
+    // pentru celula din mjloc
+    iN = i - 1; jN = j;
+
+    if(j == 2){
+        while(iN > 0 && !tableArray[iN][jN].equals("5") && !tableArray[iN][jN].equals("0")){
+          iN--;
+        }
+    }
+    if(i - 1 != iN){
       nextMoveArray[iN][jN] = "P";
     }
 
     // jos
-    iN = i; jN = j;
+    iN = i + 1; jN = j;
     while(iN < 4 && tableArray[iN][jN] != "0"){
       iN++;
     }
-    if(iN != i && iN != i + 1 && (tableArray[iN][jN] == "0" || tableArray[iN][jN] == "5") ){
+    if(iN != i + 1 && (tableArray[iN][jN] == "0" || tableArray[iN][jN].equals("5")) ){
+      nextMoveArray[iN][jN] = "P";
+    }
+    // pentru celula din mjloc
+    iN = i + 1; jN = j;
+
+    if(j == 2){
+        while(iN < 4 && !tableArray[iN][jN].equals("5") && !tableArray[iN][jN].equals("0")){
+          iN++;
+        }
+    }
+    if(i + 1 != iN){
       nextMoveArray[iN][jN] = "P";
     }
 
     // stanga
-    iN = i; jN = j;
-    while(jN > 0 && tableArray[iN][jN] != "0"){
+    iN = i; jN = j - 1;
+    while(jN > 0 && !tableArray[iN][jN].equals("0") && !tableArray[iN][jN].equals("5")){
       jN--;
     }
-    if(jN != j && jN != j - 1 &&  (tableArray[iN][jN] == "0" || tableArray[iN][jN] == "5") ){
+    if(jN != j - 1 &&  (tableArray[iN][jN] == "0" || tableArray[iN][jN].equals("5")) ){
+      nextMoveArray[iN][jN] = "P";
+    }
+    // pentru celula din mjloc
+    iN = i; jN = j - 1;
+
+    if(i == 2){
+        while(jN > 0 && !tableArray[iN][jN].equals("5") && !tableArray[iN][jN].equals("0")){
+          jN--;
+        }
+    }
+    if(j - 1 != jN){
       nextMoveArray[iN][jN] = "P";
     }
 
     // dreapta
-    iN = i; jN = j;
+    iN = i; jN = j + 1;
     while(jN < 4 && tableArray[iN][jN] != "0"){
       jN++;
     }
-    if(jN != j && jN != j + 1 && (tableArray[iN][jN] == "0" || tableArray[iN][jN] == "5") ){
+    if(jN != j + 1 && (tableArray[iN][jN] == "0" || tableArray[iN][jN].equals("5")) ){
+      nextMoveArray[iN][jN] = "P";
+    }
+    // pentru celula din mjloc
+    iN = i; jN = j + 1;
+
+    if(i == 2){
+        while(jN < 4 && !tableArray[iN][jN].equals("5") && !tableArray[iN][jN].equals("0")){
+          jN++;
+        }
+    }
+    if(j + 1 != jN){
       nextMoveArray[iN][jN] = "P";
     }
 

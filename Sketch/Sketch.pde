@@ -23,6 +23,11 @@ void setup(){
 
   setGameTable(challengeOneTable);
   Challenge = 1;
+
+  if(frameCount == 300){
+    drawPossibleMoves(2, 3);
+  }
+
 }
 
 
@@ -32,7 +37,8 @@ void draw(){
     background(gameBkgColor);
 
     drawTable();
-    
+    drawNextMoves();
+
     drawPositions();
     drawFoxes();
 
@@ -42,7 +48,6 @@ void draw(){
     drawTimer();
 
     checkSelected();
-    drawNextMoves();
 
     if(undo.size() > 0 && !levelSolving){
       drawUndo();
@@ -105,7 +110,7 @@ void draw(){
 
 
   if(frameCount == 300){
-    //setGameTable(challengeSixTable);
+    //drawPossibleMoves(2, 3);
   }
 
 }

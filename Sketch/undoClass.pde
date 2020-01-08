@@ -52,7 +52,8 @@ void pressedUndo(){
     }else {
       tableArray[xPosition][yPosition] = "R1";
       if(iesirePoz(iInitialFirstRabbit,jInitialFirstRabbit)){
-      tableArray[iInitialFirstRabbit][jInitialFirstRabbit] = "5";
+        tableArray[iInitialFirstRabbit][jInitialFirstRabbit] = "5";
+        score -= 100;
       }else{
         tableArray[iInitialFirstRabbit][jInitialFirstRabbit] = "0";
       }
@@ -74,7 +75,8 @@ void pressedUndo(){
     }else {
       tableArray[xPosition][yPosition] = "R2";
       if(iesirePoz(iInitialSecondRabbit,jInitialSecondRabbit)){
-      tableArray[iInitialSecondRabbit][jInitialSecondRabbit] = "5";
+        tableArray[iInitialSecondRabbit][jInitialSecondRabbit] = "5";
+        score -= 100;
       }else{
         tableArray[iInitialSecondRabbit][jInitialSecondRabbit] = "0";
       }
@@ -96,7 +98,8 @@ void pressedUndo(){
     }else {
       tableArray[xPosition][yPosition] = "R3";
       if(iesirePoz(iInitialThirdRabbit,jInitialThirdRabbit)){
-      tableArray[iInitialThirdRabbit][jInitialThirdRabbit] = "5";
+        tableArray[iInitialThirdRabbit][jInitialThirdRabbit] = "5";
+        score -= 100;
       }else{
         tableArray[iInitialThirdRabbit][jInitialThirdRabbit] = "0";
       }

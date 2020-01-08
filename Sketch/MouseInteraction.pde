@@ -121,7 +121,6 @@ void mousePressed(){
       yOffset = mouseY - iFirstRabbit;
       iInitialFirstRabbit = convertCoordToI(iFirstRabbit);
       jInitialFirstRabbit = convertCoordToJ(jFirstRabbit);
-
       // TODO
       drawPossibleMoves(iInitialFirstRabbit, jInitialFirstRabbit);
 
@@ -131,7 +130,6 @@ void mousePressed(){
       yOffset = mouseY - iSecondRabbit;
       iInitialSecondRabbit = convertCoordToI(iSecondRabbit);
       jInitialSecondRabbit = convertCoordToJ(jSecondRabbit);
-      println(iInitialSecondRabbit + " _____++" + jInitialSecondRabbit);
 
       // TODO
       drawPossibleMoves(iInitialSecondRabbit, jInitialSecondRabbit);

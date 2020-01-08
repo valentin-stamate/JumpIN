@@ -5,7 +5,7 @@ void updateFoxPositions(int tmp){
          tableArray[fOneI -1][i+1] = "0";
          tableArray[fOneI -1][i] = "FH";
          tableArray[fOneI -1][i-1] = "FH";
-       }else{
+       }else if(tableArray[fOneI -1][i -1]  == "0") {
          tableArray[fOneI -1][i-1] = "FH";
          tableArray[fOneI -1][i] = "FH";
        }
@@ -16,7 +16,7 @@ void updateFoxPositions(int tmp){
          tableArray[fOneI -1][i-2] = "0";
          tableArray[fOneI -1][i-1] = "FH";
          tableArray[fOneI -1][i]= "FH";
-       }else{
+       }else if(tableArray[fOneI -1][i -1]  == "0"){
          tableArray[fOneI -1][i] = "FH";
          tableArray[fOneI -1][i-1] ="FH";
        }
@@ -34,24 +34,26 @@ void updateSecondFoxPositions(int tmp){
           tableArray[i + 1][fSecondI] = "0";
            tableArray[i][fSecondI] = "FV";
            tableArray[i-1][fSecondI] = "FV";
+           fSecondJ = i;
          }else{
            if(tableArray[i-1][fSecondI] == "0"){
            tableArray[i][fSecondI] = "FV";
            tableArray[i-1][fSecondI] = "FV";
+            fSecondJ = i;
            }
          }
-             fSecondJ = i;
         //printArray();
      }else{
        if(i > 1 && i <= 6 && tableArray[i][fSecondI] == "0" && tableArray[i-2][fSecondI] == "FV"){
          tableArray[i-2][fSecondI] = "0";
          tableArray[i-1][fSecondI] = "FV";
          tableArray[i][fSecondI] = "FV";
-       }else{
+         fSecondJ = i;
+       }else if(tableArray[i - 1][fSecondI] == "0"){
         tableArray[i-1][fSecondI] = "FV";
          tableArray[i][fSecondI] = "FV";
+         fSecondJ = i;
        }
-        fSecondJ = i;
      }
      //printArray();
   }

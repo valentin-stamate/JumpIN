@@ -11,6 +11,7 @@ void mouseDragged(){
    if(((mouseY - yOffset > 150+cellDistY*obstacolJos) &&(mouseY - yOffset < width-100 -cellDistY*obstacolSus))){
       int tmp = coordonateFoxVJ;
      coordonateFoxVJ = mouseY - yOffset;
+     println(coordonateFoxVJ + " " + (150+cellDistY*obstacolJos));
      //face update pozitiilor vulpii in matrice
      updateSecondFoxPositions(tmp);
    }
@@ -50,6 +51,7 @@ boolean determinareCasutaObstacol(int i, int j, int dif){
 
 void determinareDirectie(){
    float directie = directieMouse();
+   println(directie + " !!!!!!!!!!!");
    if((directie < 0)){
        rabbitMoveUp = true;
    }else if(directie == 0){
@@ -79,15 +81,18 @@ void mouseReleased(){
       if(lockedFirstRabbit){
           i = convertCoordToI(iFirstRabbit);
           j = convertCoordToJ(jFirstRabbit);
-          println(i + " ________ " + j );
-          if(iesirePoz(i,j) && count >1 && tableArray[i][j] == "5" && (i != iInitialFirstRabbit || j != jInitialFirstRabbit) && !iesirePoz(iInitialFirstRabbit,jInitialFirstRabbit)){
+          println( i + " !!!!!!!! " + j + " !!! " + iInitialFirstRabbit + " " + jInitialFirstRabbit + " " + count );
+          if(iesirePoz(i,j) && (count > 1 || count < -1) && tableArray[i][j] == "5" && (i != iInitialFirstRabbit || j != jInitialFirstRabbit) && !iesirePoz(iInitialFirstRabbit,jInitialFirstRabbit)){
              tableArray[i][j] = "R1";
              tableArray[iInitialFirstRabbit][jInitialFirstRabbit] = "0";
              score+=100;
-          }else if((iesirePoz(iInitialFirstRabbit,jInitialFirstRabbit) && count > 1)  && (i != iInitialFirstRabbit || j != jInitialFirstRabbit)){
+          }else if((iesirePoz(iInitialFirstRabbit,jInitialFirstRabbit) && (count > 1 || count < -1))  && (i != iInitialFirstRabbit || j != jInitialFirstRabbit) && (determinareCasutaGoala(i, j))){
               tableArray[i][j] = "R1";
               tableArray[iInitialFirstRabbit][jInitialFirstRabbit] = "5";
-          }else if(count <1 || ((i < 5) && (j < 5) && (tableArray[i][j] != "0") && (tableArray[i][j] != "R1"))) {
+          }else if((determinareCasutaGoala(i, j) && (count != 0) )&& (i != iInitialFirstRabbit || j != jInitialFirstRabbit)){
+              tableArray[i][j] = "R1";
+              tableArray[iInitialFirstRabbit][ jInitialFirstRabbit]= "0";
+            }else if((count > 1 || count < -1) || ((i < 5) && (j < 5) && (tableArray[i][j] != "0") && (tableArray[i][j] != "R1"))) {
              i = iInitialFirstRabbit;
              j = jInitialFirstRabbit;
           }
@@ -97,14 +102,17 @@ void mouseReleased(){
       }else if(lockedSecondRabbit){
           i = convertCoordToI(iSecondRabbit);
           j = convertCoordToJ(jSecondRabbit);
-          if(iesirePoz(i,j) && count >1 && tableArray[i][j] == "5" && (i != iInitialSecondRabbit || j != jInitialSecondRabbit) && !iesirePoz(iInitialSecondRabbit,jInitialSecondRabbit)){
+          if(iesirePoz(i,j) && (count > 1 || count < -1) && tableArray[i][j] == "5" && (i != iInitialSecondRabbit || j != jInitialSecondRabbit) && !iesirePoz(iInitialSecondRabbit,jInitialSecondRabbit)){
              tableArray[i][j] = "R2";
              tableArray[iInitialSecondRabbit][jInitialSecondRabbit] = "0";
              score+=100;
-          }else if(iesirePoz(iInitialSecondRabbit,jInitialSecondRabbit) && count > 1  && (i != iInitialSecondRabbit || j != jInitialSecondRabbit)){
+          }else if((iesirePoz(iInitialSecondRabbit,jInitialSecondRabbit) && (count > 1 || count < -1))  && (i != iInitialSecondRabbit || j != jInitialSecondRabbit) && (determinareCasutaGoala(i, j))){
               tableArray[i][j] = "R2";
               tableArray[iInitialSecondRabbit][jInitialSecondRabbit] = "5";
-          }else if(count <1 || ((i < 5) && (j < 5) && (tableArray[i][j] != "0") && (tableArray[i][j] != "R2"))) {
+          }else if((determinareCasutaGoala(i, j)&& (count != 0))&& (i != iInitialSecondRabbit || j != jInitialSecondRabbit)){
+              tableArray[i][j] = "R2";
+              tableArray[iInitialSecondRabbit][ jInitialSecondRabbit]= "0";
+          }else if((count > 1 || count < -1) ||  ((i < 5) && (j < 5) && (tableArray[i][j] != "0") && (tableArray[i][j] != "R2"))) {
              i = iInitialSecondRabbit;
              j = jInitialSecondRabbit;
           }
@@ -114,14 +122,17 @@ void mouseReleased(){
       }else if(lockedThirdRabbit){
           i = convertCoordToI(iThirdRabbit);
           j = convertCoordToJ(jThirdRabbit);
-          if( count >1 &&  iesirePoz(i,j) && tableArray[i][j] == "5" && (i != iInitialThirdRabbit || j != jInitialThirdRabbit ) && !iesirePoz(iInitialThirdRabbit,jInitialThirdRabbit)){
+          if( (count > 1 || count < -1) && iesirePoz(i,j) && tableArray[i][j] == "5" && (i != iInitialThirdRabbit || j != jInitialThirdRabbit ) && !iesirePoz(iInitialThirdRabbit,jInitialThirdRabbit)){
              tableArray[i][j] = "R3";
              tableArray[iInitialThirdRabbit][jInitialThirdRabbit] = "0";
              score+=100;
-          }else if((count > 1 && iesirePoz(iInitialThirdRabbit,jInitialThirdRabbit)) && (i != iInitialThirdRabbit || j != jInitialThirdRabbit )){
+          }else if(((count > 1 || count < -1) && iesirePoz(iInitialThirdRabbit,jInitialThirdRabbit)) && (i != iInitialThirdRabbit || j != jInitialThirdRabbit )  && (determinareCasutaGoala(i, j))){
               tableArray[i][j] = "R3";
               tableArray[iInitialThirdRabbit][jInitialThirdRabbit] = "5";
-          }if(count <1 || ((i < 5) && (j < 5) && (tableArray[i][j] != "0") && (tableArray[i][j] != "R3"))) {
+          }else if((determinareCasutaGoala(i, j) && count != 0) && (i != iInitialThirdRabbit || j != jInitialThirdRabbit )){
+              tableArray[i][j] = "R3";
+              tableArray[iInitialThirdRabbit][ jInitialThirdRabbit]= "0";
+          }if((count > 1 || count < -1) || ((i < 5) && (j < 5) && (tableArray[i][j] != "0") && (tableArray[i][j] != "R3"))) {
              i = iInitialThirdRabbit;
              j = jInitialThirdRabbit;
           }
@@ -280,38 +291,48 @@ void drawPossibleMoves(int i, int j){
 
 }
 
-int determinareCasutaGoalaJos(int c, int j){
+int determinareCasutaGoalaJos(int c, int j, String caracter){
   for(int i = c; i >= 0; i--){
-    if(tableArray[i][j] =="0"){
-      return i;
+    if (i >= 0 && i < 4 && tableArray[i][j] == "0" && tableArray[i +1][j] == caracter){
+      return i +1;
+    }else if(tableArray[i][j] == "0"){
+     return i; 
     }
   }
   return 0;
 }
 
-int determinareCasutaGoalaSus(int c, int j){
+int determinareCasutaGoalaSus(int c, int j, String caracter){
   for(int i = c; i <= 4; i++){
-    println(i + " _____________ " + j + " " + tableArray[i][j]);
-    if(tableArray[i][j] == "0"){
-      return i;
+    if (i > 0 && i <= 4){
+      println(tableArray[i][j] + " !!!!!!!  " + tableArray[i - 1][j]);
+    }
+    if (i > 0 && i <= 4 && tableArray[i][j] == "0" && tableArray[i - 1][j] == caracter){
+      return i -1;
+    }else if(tableArray[i][j] == "0"){
+     return i; 
     }
   }
   return 4;
 }
 
-int determinareCasutaGoalaDreapta(int c, int j){
+int determinareCasutaGoalaDreapta(int c, int j, String caracter){
   for(int i = j; i <= 4; i++){
-    if(tableArray[c][i] =="0"){
-      return i;
+    if(i > 0 && i <= 4 && tableArray[c][i] =="0" && tableArray[c][i-1] == caracter){
+      return i-1;
+    }else if(tableArray[c][i] == "0"){
+     return i; 
     }
   }
   return 4;
 }
 
-int determinareCasutaGoalaStanga(int c, int j){
+int determinareCasutaGoalaStanga(int c, int j, String caracter){
   for(int i = j; i >= 0; i--){
-    if(tableArray[c][i] =="0"){
-      return i;
+     if(i >= 0 && i < 4 && tableArray[c][i] =="0" && tableArray[c][i+1] == caracter){
+      return i+1;
+    }else if(tableArray[c][i] == "0"){
+     return i; 
     }
   }
   return 0;

@@ -16,8 +16,8 @@ void setup(){
   imageMode(CENTER);
 
   backgroundMusic = new SoundFile(this, "./Music/bckMusic1.wav");
-  //backgroundMusic.loop();
-  //click = new SoundFile(this, "./Music/Click.mp3");
+  backgroundMusic.loop();
+  click = new SoundFile(this, "./Music/Click.mp3");
 
   countRabbitsBegining();
 

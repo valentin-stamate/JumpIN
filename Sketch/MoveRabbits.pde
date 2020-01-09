@@ -168,6 +168,10 @@ void moveThirdRabbit(){
         casutaGoalaJos = determinareCasutaGoalaSus(i,j,"R3");
         casutaGoalaDreapta = determinareCasutaGoalaDreapta(i,j,"R3");
         casutaGoalaStanga = determinareCasutaGoalaStanga(i,j,"R3");
+        println(casutaGoalaSus + " Sus");
+        println(casutaGoalaJos + " Jos");
+        println(casutaGoalaDreapta + " Dreapta");
+        println(casutaGoalaStanga + " Stanga");    
       }
    } 
 }

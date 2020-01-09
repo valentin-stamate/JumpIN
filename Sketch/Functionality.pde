@@ -225,7 +225,7 @@ void drawPossibleMoves(int i, int j){
           iN--;
         }
     }
-    if(i - 1 != iN){
+    if(i - 1 != iN && (tableArray[iN][jN] == "0" || tableArray[iN][jN].equals("5")) ){
       nextMoveArray[iN][jN] = "P";
     }
 
@@ -245,18 +245,19 @@ void drawPossibleMoves(int i, int j){
           iN++;
         }
     }
-    if(i + 1 != iN){
+    if(i + 1 != iN && (tableArray[iN][jN] == "0" || tableArray[iN][jN].equals("5")) ){
       nextMoveArray[iN][jN] = "P";
     }
 
     // stanga
     iN = i; jN = j - 1;
-    while(jN > 0 && !tableArray[iN][jN].equals("0") && !tableArray[iN][jN].equals("5")){
+    while(jN > 0 && !tableArray[iN][jN].equals("0")){
       jN--;
     }
     if(jN != j - 1 &&  (tableArray[iN][jN] == "0" || tableArray[iN][jN].equals("5")) ){
       nextMoveArray[iN][jN] = "P";
     }
+
     // pentru celula din mjloc
     iN = i; jN = j - 1;
 
@@ -265,9 +266,11 @@ void drawPossibleMoves(int i, int j){
           jN--;
         }
     }
-    if(j - 1 != jN){
+    if(j - 1 != jN && (tableArray[iN][jN] == "0" || tableArray[iN][jN].equals("5")) ){
       nextMoveArray[iN][jN] = "P";
     }
+
+
 
     // dreapta
     iN = i; jN = j + 1;
@@ -285,7 +288,7 @@ void drawPossibleMoves(int i, int j){
           jN++;
         }
     }
-    if(j + 1 != jN){
+    if(j + 1 != jN  && (tableArray[iN][jN] == "0" || tableArray[iN][jN].equals("5")) ){
       nextMoveArray[iN][jN] = "P";
     }
 
@@ -296,7 +299,7 @@ int determinareCasutaGoalaJos(int c, int j, String caracter){
     if (i >= 0 && i < 4 && tableArray[i][j] == "0" && tableArray[i +1][j] == caracter){
       return i +1;
     }else if(tableArray[i][j] == "0"){
-     return i; 
+     return i;
     }
   }
   return 0;
@@ -310,7 +313,7 @@ int determinareCasutaGoalaSus(int c, int j, String caracter){
     if (i > 0 && i <= 4 && tableArray[i][j] == "0" && tableArray[i - 1][j] == caracter){
       return i -1;
     }else if(tableArray[i][j] == "0"){
-     return i; 
+     return i;
     }
   }
   return 4;
@@ -321,7 +324,7 @@ int determinareCasutaGoalaDreapta(int c, int j, String caracter){
     if(i > 0 && i <= 4 && tableArray[c][i] =="0" && tableArray[c][i-1] == caracter){
       return i-1;
     }else if(tableArray[c][i] == "0"){
-     return i; 
+     return i;
     }
   }
   return 4;
@@ -332,7 +335,7 @@ int determinareCasutaGoalaStanga(int c, int j, String caracter){
      if(i >= 0 && i < 4 && tableArray[c][i] =="0" && tableArray[c][i+1] == caracter){
       return i+1;
     }else if(tableArray[c][i] == "0"){
-     return i; 
+     return i;
     }
   }
   return 0;

@@ -55,10 +55,13 @@ void initializeStrings(){
   challengeThirteenTable = new String[5][5];
   challengeFourteenTable = new String[5][5];
   challengeFifteenTable = new String[5][5];
+  challengeSixteenTable = new String[5][5];
+  challengeSeventeenTable = new String[5][5];
+  challengeEighteenTable = new String[5][5];
 
 }
 
-int levels = 15;
+int levels = 18;
 
 void loadFiles(){
   // levels
@@ -81,12 +84,17 @@ void loadFiles(){
     else if(i == 12) initializeLevel(challengeThirteenTable, cells);
     else if(i == 13) initializeLevel(challengeFourteenTable, cells);
     else if(i == 14) initializeLevel(challengeFifteenTable, cells);
+    else if(i == 15) initializeLevel(challengeSixteenTable, cells);
+    else if(i == 16) initializeLevel(challengeSeventeenTable, cells);
+    else if(i == 17) initializeLevel(challengeEighteenTable, cells);
+
   }
 
   for(int i = levels; i < 2 * levels; i++){
     String s = line[i];
     String[] steps = s.split(" ");
     int l = i - levels;
+
     if(l == 0) challengeOneSteps = steps;
     else if(l == 1) challengeTwoSteps = steps;
     else if(l == 2) challengeThreeSteps = steps;
@@ -102,8 +110,10 @@ void loadFiles(){
     else if(l == 12) challengeThirteenSteps = steps;
     else if(l == 13) challengeFourteenSteps = steps;
     else if(l == 14) challengeFifteenSteps = steps;
+    else if(l == 15) challengeSixteenSteps = steps;
+    else if(l == 16) challengeSeventeenSteps = steps;
+    else if(l == 17) challengeEighteenSteps = steps;
 
-    int h = challengeOneSteps.length;
 
   }
 
@@ -133,8 +143,6 @@ void loadFiles(){
   germanySecondIns = convertString(line[21]);
   germanyThirdIns = convertString(line[22]);
   germanyFourthIns = convertString(line[23]);
-
-  println(germanyThirdIns);
 
 }
 

@@ -109,32 +109,49 @@ void loadFiles(){
 
   // languages
   line = loadStrings("./data/Strings/Languages");
-  romaniaFirstIns = line[0];
-  romaniaSecondIns = line[1];
-  romaniaThirdIns = line[2];
-  romaniaThirdIns = line[3];
+  romaniaFirstIns = convertString(line[0]);
+  romaniaSecondIns = convertString(line[1]);
+  romaniaThirdIns = convertString(line[2]);
+  romaniaFourthIns = convertString(line[3]);
 
-  indiaFirstIns = line[5];
-  indiaSecondIns = line[6];
-  indiaThirdIns = line[7];
-  indiaThirdIns = line[8];
+  indiaFirstIns = convertString(line[5]);
+  indiaSecondIns = convertString(line[6]);
+  indiaThirdIns = convertString(line[7]);
+  indiaFourthIns = convertString(line[8]);
 
-  chinaFirstIns = line[10];
-  chinaSecondIns = line[11];
-  chinaThirdIns = line[12];
-  chinaThirdIns = line[13];
+  chinaFirstIns = convertString(line[10]);
+  chinaSecondIns = convertString(line[11]);
+  chinaThirdIns = convertString(line[12]);
+  chinaFourthIns = convertString(line[13]);
 
-  franceFirstIns = line[15];
-  franceSecondIns = line[16];
-  franceThirdIns = line[17];
-  franceThirdIns = line[18];
+  franceFirstIns = convertString(line[15]);
+  franceSecondIns = convertString(line[16]);
+  franceThirdIns = convertString(line[17]);
+  franceFourthIns = convertString(line[18]);
 
-  germanyFirstIns = line[20];
-  germanySecondIns = line[21];
-  germanyThirdIns = line[22];
-  germanyThirdIns = line[23];
+  germanyFirstIns = convertString(line[20]);
+  germanySecondIns = convertString(line[21]);
+  germanyThirdIns = convertString(line[22]);
+  germanyFourthIns = convertString(line[23]);
+
+  println(germanyThirdIns);
 
 }
+
+String convertString(String line){
+  String[] s = line.split("nL");
+  String ins = "";
+
+  for(int i = 0; i < s.length; i++){
+    ins += s[i];
+    if(i < s.length - 1){
+      ins += "\n";
+    }
+  }
+  return ins;
+
+}
+
 void initializeLevel(String[][] level, String[] cells){
   int sum = 0;
   for(String s : cells){

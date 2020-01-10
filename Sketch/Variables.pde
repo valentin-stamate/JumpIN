@@ -29,6 +29,8 @@ boolean resetLevels = false;
 boolean showVerticalFox = false;
 boolean showHorizontalFox = false;
 
+boolean randomLevelsIn = false;
+
 //Countries
 
 boolean romaniaClick = false;

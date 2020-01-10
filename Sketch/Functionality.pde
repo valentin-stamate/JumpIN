@@ -402,41 +402,45 @@ int determinareCasutaGoalaStanga(int c, int j, String caracter){
 }
 
 void determinareNivel(int challenge){
-  switch(challenge){
-    case 1:
-      println("Challenge 2 Selected");
-      setGameTable(challengeTwoTable);
-      break;
-    case 2:
-      println("Challenge 3 Selected");
-      setGameTable(challengeThreeTable);
-      break;
-    case 3:
-      println("Challenge 4 Selected");
-      setGameTable(challengeFourTable);
-      break;
-    case 4:
-      println("Challenge 5 Selected");
-      setGameTable(challengeFiveTable);
-      break;
-    case 5:
-      println("Challenge 6 Selected");
-      setGameTable(challengeSixTable);
-      break;
-    case 6:
-      println("Challenge 7 Selected");
-      setGameTable(challengeSevenTable);
-      break;
-    case 7:
-      println("Challenge 8 Selected");
-      setGameTable(challengeEightTable);
-      break;
-    case 8:
-      println("Challenge 9 Selected");
-      setGameTable(challengeNineTable);
-      break;
+  if(randomLevelsIn == false){
+    switch(challenge){
+      case 1:
+        println("Challenge 2 Selected");
+        setGameTable(challengeTwoTable);
+        break;
+      case 2:
+        println("Challenge 3 Selected");
+        setGameTable(challengeThreeTable);
+        break;
+      case 3:
+        println("Challenge 4 Selected");
+        setGameTable(challengeFourTable);
+        break;
+      case 4:
+        println("Challenge 5 Selected");
+        setGameTable(challengeFiveTable);
+        break;
+      case 5:
+        println("Challenge 6 Selected");
+        setGameTable(challengeSixTable);
+        break;
+      case 6:
+        println("Challenge 7 Selected");
+        setGameTable(challengeSevenTable);
+        break;
+      case 7:
+        println("Challenge 8 Selected");
+        setGameTable(challengeEightTable);
+        break;
+      case 8:
+        println("Challenge 9 Selected");
+        setGameTable(challengeNineTable);
+        break;
+    }
+    Challenge++;
+  }else{
+      pickRandomLevel();
   }
-  Challenge++;
 }
 
 void resetTable(){

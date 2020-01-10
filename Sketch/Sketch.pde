@@ -9,7 +9,6 @@ void setup(){
 
   initializeStrings();
   loadFiles();
-
   loadAssets();
 
   InitializeIntroAnimation();
@@ -65,13 +64,23 @@ void draw(){
     resetLevels = true;
 
   }else if(gameFinished){
+    println(Challenge + " Challenge");
     background(gameBkgColor);
     text(winningLevel + score + end,height/2, 200);
-    if(Challenge < 9){
+    if(randomLevelsIn == false){
+      if(Challenge < 9){
+        drawButton(300,350, 150,100,normalBtnColor2, optionsExitString);
+        drawButton(500,350, 150,100,normalBtnColor2, nextLevel);
+      }else if(Challenge == 9){
+         drawButton(425,350, 150,100,normalBtnColor2, optionsExitString);
+      }
+    }else{ 
+     if(randomLevels.size() >= 1){
       drawButton(300,350, 150,100,normalBtnColor2, optionsExitString);
-      drawButton(500,350, 150,100,normalBtnColor2, nextLevel);
-    }else if(Challenge == 9){
-       drawButton(425,350, 150,100,normalBtnColor2, optionsExitString);
+        drawButton(500,350, 150,100,normalBtnColor2, nextLevel);
+     }else if(randomLevels.size() == 0){
+         drawButton(425,350, 150,100,normalBtnColor2, optionsExitString);
+     }
     }
   }else if (options == true){
     background(gameBkgColor);

@@ -108,6 +108,7 @@ void mousePressed(){
       gameStart = true;
       countRabbitsBegining();
     } else if(MouseFlag.equals(randomLevel)){
+      randomLevelsIn = true;
       pickRandomLevel();
       selectLevel = false;
       gameStart = true;

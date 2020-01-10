@@ -20,9 +20,9 @@ String movesString = "Mutari";
 String nextLevel = "Nivelul Urmator ";
 String end = " pana acum ";
 String theme = " Schimba Tema ";
+String randomLevel = "Nivel Aleatoriu";
 
 //China
-
 String chinaStartString = "Tiáomù";
 String chinaLevelString = "Děngjí xuǎnzé";
 String chinaExitString = "Chǎnliàng";
@@ -44,8 +44,9 @@ String chinaMovesString = "Moves";
 String chinaNextLevel = "Xià yījí ";
 String chinaEnd = " dào mùqián wéizhǐ ";
 String chinaTheme = " Gǎibiàn zhǔtí";
-//France
+String chinaRandomLevel = "Suíjī jíbié";
 
+//France
 String franceStartString = "Entrée";
 String franceSelectLevelString = "Sélectionnez le niveau";
 String franceExitString = "Sortie";
@@ -67,9 +68,9 @@ String franceMovesString = "Moves";
 String franceNextLevel = "Le niveau suivant ";
 String franceEnd = " jusqu'ici ";
 String franceTheme = " Changer de Thème";
+String franceRandomLevel = "Niveau Aléatoire";
 
 //Germany
-
 String germanyStartString = "Eintrag";
 String germanySelectLevelString = "Wählen Sie Level";
 String germanyExitString = "Ausgang";
@@ -91,9 +92,9 @@ String germanyMovesString = "Moves";
 String germanyNextLevel = "Das nächste Level";
 String germanyEnd = " soweit ";
 String germanyTheme = " Thema wechseln";
+String germanyRandomLevel = "Zufälliges Level";
 
 //India
-
 String indiaStartString = "Pravishti";
 String indiaSelectLevelString = "Star ka chayan karen";
 String indiaExitString = "Utpaadan";
@@ -115,9 +116,9 @@ String indiaMovesString = "Moves";
 String indiaNextLevel = "Agale star";
 String indiaEnd = " ab tak ";
 String indiaTheme = " Vishay Badalen";
+String indiaRandomLevel = "Yaadrchchhik Star";
 
 //Romania
-
 String romaniaStartString = "Intrare";
 String romaniaSelectLevelString = "Selectare Nivel";
 String romaniaExitString = "Iesire";
@@ -139,6 +140,7 @@ String romaniaMovesString = "Moves";
 String romaniaNextLevel = "Nivelul urmator";
 String romaniaEnd = " pana acum ";
 String romaniaTheme = " Schimba Tema";
+String romaniaRandomLevel = "Nivel Aleatoriu";
 
 //Countries
 String romania = "Romania";

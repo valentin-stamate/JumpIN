@@ -21,7 +21,10 @@ void mousePressed(){
 
     if(MouseFlag.equals(startString)){
       resetAutoSolving();
+      pickRandomLevel();
+
       startButton();
+
     } else if(MouseFlag.equals(exitString)){
       exitButton();
     } else if(MouseFlag.equals(optionsString)){
@@ -101,6 +104,11 @@ void mousePressed(){
       println("Challenge 9 Selected");
       setGameTable(challengeNineTable);
       Challenge = 9;
+      selectLevel = false;
+      gameStart = true;
+      countRabbitsBegining();
+    } else if(MouseFlag.equals(randomLevel)){
+      pickRandomLevel();
       selectLevel = false;
       gameStart = true;
       countRabbitsBegining();

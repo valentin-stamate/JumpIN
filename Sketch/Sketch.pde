@@ -24,13 +24,13 @@ void setup(){
   click = new SoundFile(this, "./Music/Click.mp3");
 
 
-  setGameTable(challengeOneTable);
-  Challenge = 1;
-  
+  setGameTable(challengeFifteenTable);
+  Challenge = 15;
+
   countRabbitsBegining();
 
   if(frameCount == 300){
-    drawPossibleMoves(2, 3);
+    //drawPossibleMoves(2, 3);
   }
 
 }

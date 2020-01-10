@@ -114,9 +114,21 @@ String[] getStep(int challenge){
     return challengeSevenSteps;
   if (challenge == 8)
     return challengeEightSteps;
+  if (challenge == 9)
+    return challengeNineSteps;
+  if (challenge == 10)
+    return challengeTenSteps;
+  if (challenge == 11)
+    return challengeElevenSteps;
+  if (challenge == 12)
+    return challengeTwelveSteps;
+  if (challenge == 13)
+    return challengeThirteenSteps;
+  if (challenge == 14)
+    return challengeFourteenSteps;
 
 
-  return challengeNineSteps;
+  return challengeFifteenSteps;
 
 }
 

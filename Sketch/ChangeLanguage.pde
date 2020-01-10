@@ -24,6 +24,7 @@ void changeRomaniaLanguage(){
    nextLevel = romaniaNextLevel;
    end = romaniaEnd;
    theme = romaniaTheme;
+   randomLevel = romaniaRandomLevel;
 }
 
 void changeIndiaLanguage(){
@@ -52,6 +53,7 @@ void changeIndiaLanguage(){
    nextLevel = indiaNextLevel;
    end = indiaEnd;
    theme = indiaTheme;
+   randomLevel = indiaRandomLevel;
 }
 
 void changeFranceLanguage(){
@@ -80,6 +82,7 @@ void changeFranceLanguage(){
    nextLevel = franceNextLevel;
    end = franceEnd;
    theme = franceTheme;
+   randomLevel = franceRandomLevel;
 }
 
 void changeGermanyLanguage(){
@@ -108,6 +111,7 @@ void changeGermanyLanguage(){
    nextLevel = germanyNextLevel;
    end = germanyEnd;
    theme = germanyTheme;
+   randomLevel = germanyRandomLevel;
 }
 
 void changeChinaLanguage(){
@@ -136,4 +140,5 @@ void changeChinaLanguage(){
    nextLevel = chinaNextLevel;
    end = chinaEnd;
    theme = chinaTheme;
+   randomLevel = chinaRandomLevel;
 }

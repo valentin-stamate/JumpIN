@@ -1,3 +1,5 @@
+import java.util.Random;
+
 //muta vulpile
 void mouseDragged(){
  if(lockedFox){
@@ -218,6 +220,50 @@ void checkSelected(){
   }
 }
 
+
+ArrayList<LevelNode> randomLevels = new ArrayList<LevelNode>();
+void pickRandomLevel(){
+  if(randomLevels.size() == 0){
+    initializeLevelList();
+  }
+
+  Random r = new Random();
+  int randomIndex = Math.abs(r.nextInt()) % randomLevels.size();
+  LevelNode selected = randomLevels.get(randomIndex);
+  randomLevels.remove(selected);
+
+  Challenge = selected.challengeNumber;
+  setGameTable(selected.challenge);
+
+}
+
+void initializeLevelList(){
+  randomLevels.add(new LevelNode(challengeSixTable, 6));
+  randomLevels.add(new LevelNode(challengeThreeTable, 3));
+  randomLevels.add(new LevelNode(challengeTwelveTable, 12));
+  randomLevels.add(new LevelNode(challengeFiveTable, 5));
+  randomLevels.add(new LevelNode(challengeFourTable, 4));
+  randomLevels.add(new LevelNode(challengeElevenTable, 11));
+  randomLevels.add(new LevelNode(challengeTwoTable, 2));
+  randomLevels.add(new LevelNode(challengeFifteenTable, 15));
+  randomLevels.add(new LevelNode(challengeSevenTable, 7));
+  randomLevels.add(new LevelNode(challengeEightTable, 8));
+  randomLevels.add(new LevelNode(challengeOneTable, 1));
+  randomLevels.add(new LevelNode(challengeTenTable, 10));
+  randomLevels.add(new LevelNode(challengeFourteenTable, 14));
+  randomLevels.add(new LevelNode(challengeThirteenTable, 13));
+  randomLevels.add(new LevelNode(challengeNineTable, 9));
+}
+
+
+class LevelNode{
+  String[][] challenge;
+  int challengeNumber;
+  LevelNode(String[][] ch, int n){
+    challenge = ch;
+    challengeNumber = n;
+  }
+}
 
 // verifica pe toate directiile cand e posibile o nutare
 void drawPossibleMoves(int i, int j){

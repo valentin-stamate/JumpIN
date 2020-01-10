@@ -158,6 +158,8 @@ void drawSelectLevels(){
   drawLevel(ch_8, 2, 3, scale, challenge_8);
   drawLevel(ch_9, 3, 3, scale, challenge_9);
 
+  drawButton(width / 2, 760, 170, 60, normalBtnColor2, randomLevel);
+
   drawButtonIesire();
 
 }

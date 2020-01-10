@@ -36,10 +36,10 @@ void pressedUndo(){
   String animal = undo.get(undo.size()-1).getAnimal();
   int xPosition = undo.get(undo.size()-1).getxPosition();
   int yPosition = undo.get(undo.size()-1).getyPosition();
-  if(animal == "R1"){
+  if( animal.equals("R1") ){
    for(int i = 0; i < 5; i++){
      for(int j = 0; j < 5; j++){
-       if(tableArray[i][j] == "R1"){
+       if( tableArray[i][j].equals("R1") ){
          iInitialFirstRabbit = i;
          jInitialFirstRabbit = j;
        }
@@ -59,10 +59,10 @@ void pressedUndo(){
       }
     }
     undoRabbit(xPosition, yPosition, "R1");
-  }else if(animal == "R2"){
+  }else if( animal.equals("R2") ){
    for(int i = 0; i < 5; i++){
      for(int j = 0; j < 5; j++){
-       if(tableArray[i][j] == "R2"){
+       if( tableArray[i][j].equals("R2") ){
          iInitialSecondRabbit = i;
          jInitialSecondRabbit = j;
        }
@@ -82,10 +82,10 @@ void pressedUndo(){
       }
     }
     undoRabbit(xPosition, yPosition, "R2");
-  }else if(animal == "R3"){
+  }else if( animal.equals("R3") ){
    for(int i = 0; i < 5; i++){
      for(int j = 0; j < 5; j++){
-       if(tableArray[i][j] == "R3"){
+       if( tableArray[i][j].equals("R3") ){
          iInitialThirdRabbit = i;
          jInitialThirdRabbit = j;
        }
@@ -105,12 +105,12 @@ void pressedUndo(){
       }
     }
     undoRabbit(xPosition, yPosition, "R3");
-  }else if(animal == "FH"){
+  }else if( animal.equals("FH") ){
     tableArray[fOneI-1][fOneJ -2] = "0";
     tableArray[fOneI-1][fOneJ -1] = "0";
     undoFox(yPosition);
     updateFoxPositions(coordonateFoxHJ);
-  }else if(animal == "FV"){
+  }else if( animal.equals("FV") ){
     tableArray[fSecondJ-1][fSecondI] = "0";
     tableArray[fSecondJ][fSecondI] = "0";
     undoSecondFox(yPosition);
@@ -140,13 +140,13 @@ void undoRabbit(int i, int j, String name){
   if(iesirePoz(i,j)){
        score += 100;
    }
-  if(name == "R1"){
+  if(name.equals("R1") ){
       iFirstRabbit = pozitieI;
       jFirstRabbit = pozitieJ;
-  }else if(name == "R2"){
+  }else if(name.equals("R2")){
       iSecondRabbit = pozitieI;
       jSecondRabbit = pozitieJ;
-  }else if(name == "R3"){
+  }else if(name.equals("R3")){
      iThirdRabbit = pozitieI;
      jThirdRabbit = pozitieJ;
   }

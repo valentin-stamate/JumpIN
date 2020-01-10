@@ -7,7 +7,11 @@ void setup(){
   frameRate(60);
   background(gameMenuColor);
 
+  initializeStrings();
+  loadFiles();
+
   loadAssets();
+
   InitializeIntroAnimation();
 
   rectMode(CENTER);
@@ -19,10 +23,11 @@ void setup(){
   backgroundMusic.loop();
   click = new SoundFile(this, "./Music/Click.mp3");
 
-  countRabbitsBegining();
 
   setGameTable(challengeOneTable);
   Challenge = 1;
+  
+  countRabbitsBegining();
 
   if(frameCount == 300){
     drawPossibleMoves(2, 3);

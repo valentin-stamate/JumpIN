@@ -14,12 +14,12 @@ void setGameTable(String[][] challenge){
 
   for(int i = 4; i >= 0; i--){
     for(int j = 4; j >= 0; j--){
-      if(tableArray[i][j] == "FV" && !foxVerticalMoved){
+      if(tableArray[i][j].equals("FV") && !foxVerticalMoved){
         moveFoxVertical(i, j);
         foxVerticalMoved = true;
       }
 
-      if(tableArray[i][j] == "FH" && !foxHorizontalMoved){
+      if(tableArray[i][j].equals("FH") && !foxHorizontalMoved){
         moveFoxHorizontal(i, j);
         foxHorizontalMoved = true;
       }

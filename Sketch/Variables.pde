@@ -54,7 +54,7 @@ boolean levelSolving = false;
 
 boolean ROraneSelected = false;
 
-String MouseFlag;
+String MouseFlag = "";
 
 // --== VARIABILE DE JOC ==--
 int gameMenuSize = 50;

@@ -10,7 +10,7 @@ void checkMouseOver(int x, int y, int bWidth, int bHeight, String s){
     return;
   }
   // daca ultimul flag este egal cu textul butonului atunci setez flag la false
-  if(MouseFlag == s){
+  if(MouseFlag.equals(s) ){
     mouseOver = false;
   }
 }
@@ -19,85 +19,85 @@ void mousePressed(){
    click.play();
   if(mouseOver){
 
-    if( egal(MouseFlag, startString) == true ){
+    if(MouseFlag.equals(startString)){
       resetAutoSolving();
       startButton();
-    } else if( egal(MouseFlag, exitString) == true ){
+    } else if(MouseFlag.equals(exitString)){
       exitButton();
-    } else if( egal(MouseFlag, optionsString) == true ){
+    } else if(MouseFlag.equals(optionsString)){
      enterOptionButton();
-    } else if(egal(MouseFlag, optionsExitString) == true){
+    } else if(MouseFlag.equals(optionsExitString)){
       exitOptionButton();
-    } else if(egal(MouseFlag, quitString) == true){
+    } else if(MouseFlag.equals(quitString)){
        quitButton();
-    } else if( egal(MouseFlag, selectLevelString) == true ){
+    } else if(MouseFlag.equals(selectLevelString)){
       enterSelectLevel();
-    } else if( egal(MouseFlag, instructionString) == true ){
+    } else if(MouseFlag.equals(instructionString)){
       enterInstructions();
-    } if( egal(MouseFlag, undoString) == true ){
+    } if(MouseFlag.equals(undoString)){
       pressedUndo();
-    } else if( egal(MouseFlag, solveString) == true ){
+    } else if(MouseFlag.equals(solveString)){
       println("Solving");
       levelSolving = true;
     }
     // level selectin
-    else if( egal(MouseFlag, challenge_1) == true){
+    else if(MouseFlag.equals(challenge_1)){
       println("Challenge 1 Selected");
       setGameTable(challengeOneTable);
       Challenge = 1;
       selectLevel = false;
       gameStart = true;
       countRabbitsBegining();
-    } else if( egal(MouseFlag, challenge_2) == true){
+    } else if(MouseFlag.equals(challenge_2)){
       println("Challenge 2 Selected");
       setGameTable(challengeTwoTable);
       Challenge = 2;
       selectLevel = false;
       gameStart = true;
       countRabbitsBegining();
-    } else if( egal(MouseFlag, challenge_3) == true){
+    } else if(MouseFlag.equals(challenge_3)){
       println("Challenge 3 Selected");
       setGameTable(challengeThreeTable);
       Challenge = 3;
       selectLevel = false;
       gameStart = true;
       countRabbitsBegining();
-    } else if( egal(MouseFlag, challenge_4) == true){
+    } else if( MouseFlag.equals(challenge_4)){
       println("Challenge 4 Selected");
       setGameTable(challengeFourTable);
       Challenge = 4;
       selectLevel = false;
       gameStart = true;
       countRabbitsBegining();
-    } else if( egal(MouseFlag, challenge_5) == true){
+    } else if(MouseFlag.equals(challenge_5)){
       println("Challenge 5 Selected");
       setGameTable(challengeFiveTable);
       Challenge = 5;
       selectLevel = false;
       gameStart = true;
       countRabbitsBegining();
-    } else if( egal(MouseFlag, challenge_6) == true){
+    } else if(MouseFlag.equals(challenge_6)){
       println("Challenge 6 Selected");
       setGameTable(challengeSixTable);
       Challenge = 6;
       selectLevel = false;
       gameStart = true;
       countRabbitsBegining();
-    } else if( egal(MouseFlag, challenge_7) == true){
+    } else if(MouseFlag.equals(challenge_7)){
       println("Challenge 7 Selected");
       setGameTable(challengeSevenTable);
       Challenge = 7;
       selectLevel = false;
       gameStart = true;
       countRabbitsBegining();
-    } else if( egal(MouseFlag, challenge_8) == true){
+    } else if(MouseFlag.equals(challenge_8)){
       println("Challenge 8 Selected");
       setGameTable(challengeEightTable);
       Challenge = 8;
       selectLevel = false;
       gameStart = true;
       countRabbitsBegining();
-    } else if( egal(MouseFlag, challenge_9) == true){
+    } else if(MouseFlag.equals(challenge_9)){
       println("Challenge 9 Selected");
       setGameTable(challengeNineTable);
       Challenge = 9;
@@ -106,7 +106,7 @@ void mousePressed(){
       countRabbitsBegining();
     }
 
-    else if( egal(MouseFlag, nextLevel) == true){
+    else if(MouseFlag.equals(nextLevel)){
       gameStart  = true;
       gameFinished = false;
       score = 0;
@@ -115,7 +115,7 @@ void mousePressed(){
       countRabbitsBegining();
     }
     //animals
-    else if( egal(MouseFlag, flagROne) == true ){
+    else if(MouseFlag.equals(flagROne)){
       lockedFirstRabbit = true;
       xOffset = mouseX - jFirstRabbit;
       yOffset = mouseY - iFirstRabbit;
@@ -124,7 +124,7 @@ void mousePressed(){
       // TODO
       drawPossibleMoves(iInitialFirstRabbit, jInitialFirstRabbit);
 
-    } else if( egal(MouseFlag, flagRTwo) ==true ){
+    } else if(MouseFlag.equals(flagRTwo)){
       lockedSecondRabbit = true;
       xOffset = mouseX - jSecondRabbit;
       yOffset = mouseY - iSecondRabbit;
@@ -134,7 +134,7 @@ void mousePressed(){
       // TODO
       drawPossibleMoves(iInitialSecondRabbit, jInitialSecondRabbit);
 
-    } else if( egal(MouseFlag, flagRThree) == true ){
+    } else if(MouseFlag.equals(flagRThree)){
       lockedThirdRabbit = true;
       xOffset = mouseX - jThirdRabbit;
       yOffset = mouseY - iThirdRabbit;
@@ -144,7 +144,7 @@ void mousePressed(){
       // TODO
       drawPossibleMoves(iInitialThirdRabbit, jInitialThirdRabbit);
 
-    } else if( egal(MouseFlag, flagFOne) == true ){
+    } else if(MouseFlag.equals(flagFOne)){
       lockedFox = true;
       xOffset = mouseX - coordonateFoxHJ;
       yOffset = mouseY - coordonateFoxHI;
@@ -153,7 +153,7 @@ void mousePressed(){
       }else{
        putDataInList("FH", fOneI, (coordonateFoxHJ - 25) / cellDistY);
       }
-    }else if(egal(MouseFlag, flagFTwo) == true){
+    }else if(MouseFlag.equals(flagFTwo)){
       lockedSecondFox = true;
       xOffset = mouseX - coordonateFoxVI;
       yOffset = mouseY - coordonateFoxVJ;
@@ -164,29 +164,29 @@ void mousePressed(){
       }
     }
     //changeLanguage
-    else if(egal(MouseFlag, romania) == true){
+    else if(MouseFlag.equals(romania)){
       changeRomaniaLanguage();
-    } else if(egal(MouseFlag, india) == true){
+    } else if(MouseFlag.equals(india)){
       changeIndiaLanguage();
-    } else if(egal(MouseFlag, china) == true){
+    } else if(MouseFlag.equals(china)){
       changeChinaLanguage();
-    } else if(egal(MouseFlag, france) == true){
+    } else if(MouseFlag.equals(france)){
      changeFranceLanguage();
-    } else if(egal(MouseFlag, germany) == true){
+    } else if(MouseFlag.equals(germany)){
      changeGermanyLanguage();
-    } else if( egal(MouseFlag, firstMusic) == true ){
+    } else if(MouseFlag.equals(firstMusic)){
       backgroundMusic.stop();
       backgroundMusic = new SoundFile(this, "./Music/bckMusic1.wav");
       backgroundMusic.loop();
-    } else if( egal(MouseFlag, secondMusic) == true ){
+    } else if(MouseFlag.equals(secondMusic)){
       backgroundMusic.stop();
       backgroundMusic = new SoundFile(this, "./Music/bckMusic2.wav");
       backgroundMusic.loop();
-    } else if( egal(MouseFlag, noSoundString) == true ){
+    } else if(MouseFlag.equals(noSoundString)){
       backgroundMusic.stop();
     }
     // dark button
-    else if( egal(MouseFlag, darkSwitcher) == true ){
+    else if(MouseFlag.equals(darkSwitcher)){
       darkMode = !darkMode;
       if(darkMode){
         changeToDark();

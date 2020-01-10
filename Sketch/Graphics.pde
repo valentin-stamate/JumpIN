@@ -53,7 +53,7 @@ void drawPositions(){
   // deseneaza mai intai ciupercile ca sa nu se suprapuna cu iepurii
   for(int i = 0; i < 5; i++){
     for(int j = 0; j < 5; j++){
-      if( tableArray[i][j] == "M" ){
+      if( tableArray[i][j].equals("M") ){
         drawMushroom(j, i);
       }
     }
@@ -62,7 +62,7 @@ void drawPositions(){
   for(int i = 0; i < 5; i++){
     for(int j = 0; j < 5; j++){
 
-      if( egal(tableArray[i][j], "R1") ){
+      if( tableArray[i][j].equals("R1") ){
         if(!lockedFirstRabbit){
          iFirstRabbit = convertCoordToY(i);
          jFirstRabbit = convertCoordToX(j);
@@ -70,14 +70,14 @@ void drawPositions(){
 
         drawRabbit(jFirstRabbit, iFirstRabbit, rabbitOrange, flagROne);
       }
-      else if( egal(tableArray[i][j], "R2") ){
+      else if( tableArray[i][j].equals("R2") ){
        if(!lockedSecondRabbit){
            iSecondRabbit = convertCoordToY(i);
            jSecondRabbit = convertCoordToX(j);
         }
         drawRabbit(jSecondRabbit, iSecondRabbit, rabbitGrey, flagRTwo);
       }
-      else if( egal(tableArray[i][j], "R3") ){
+      else if( tableArray[i][j].equals("R3") ){
         if(!lockedThirdRabbit){
            iThirdRabbit = convertCoordToY(i);
            jThirdRabbit = convertCoordToX(j);
@@ -219,7 +219,7 @@ void drawNextMoves(){
 void drawPossibleMoveSquare(int i, int j){
 
   fill( color(57,73,171, 60) );
-  if(tableArray[i][j] == "5")
+  if( tableArray[i][j].equals("5") )
     fill(color(142,36,170, 60));
 
   noStroke();

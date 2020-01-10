@@ -86,7 +86,7 @@ void autoSolve(String table[][], int challenge) {
 
 boolean rabbitInsideHole(String animal, int i, int j){
 
-  if(egal(animal, "FV") || egal(animal, "FH")){
+  if(animal.equals("FV") || animal.equals("FH")){
     return false;
   }
 
@@ -97,6 +97,7 @@ boolean rabbitInsideHole(String animal, int i, int j){
 }
 
 String[] getStep(int challenge){
+
   if (challenge == 1)
     return challengeOneSteps;
   if (challenge == 2)
@@ -113,6 +114,7 @@ String[] getStep(int challenge){
     return challengeSevenSteps;
   if (challenge == 8)
     return challengeEightSteps;
+
 
   return challengeNineSteps;
 

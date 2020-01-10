@@ -22,7 +22,7 @@ void mousePressed(){
     if(MouseFlag.equals(startString)){
       resetAutoSolving();
       pickRandomLevel();
-
+      println(challengeSixteenSteps);
       startButton();
 
     } else if(MouseFlag.equals(exitString)){

@@ -7,7 +7,7 @@ void drawDarkModeButton(){
   noStroke();
 
   if(darkMode)
-    fill(0, 128, 0);
+    fill(tableBkgColorNormal);
   else
     fill(20);
 

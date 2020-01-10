@@ -18,6 +18,7 @@ void autoSolve(String table[][], int challenge) {
       if(StepI < steps.length){
         String step = steps[StepI];
         makeStep(step);
+        println(step);
         StepI++;
       } else {
         levelSolving = false;
@@ -126,9 +127,18 @@ String[] getStep(int challenge){
     return challengeThirteenSteps;
   if (challenge == 14)
     return challengeFourteenSteps;
+  if (challenge == 15)
+    return challengeFifteenSteps;
+  if (challenge == 16)
+    return challengeSixteenSteps;
+  if (challenge == 17)
+    return challengeSeventeenSteps;
+  if (challenge == 18)
+    return challengeEighteenSteps;
+  if (challenge == 19)
+    return challengeNineteenSteps;
 
-
-  return challengeFifteenSteps;
+  return challengeTwentySteps;
 
 }
 

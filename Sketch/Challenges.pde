@@ -69,6 +69,55 @@ static String challengeOneTable[][] = {
     { "0", "0", "R3", "FV", "M" },
     { "5", "0", "R2", "FV", "5" }
   };
+  
+  static String challengeTenTable[][] = {
+    { "5", "0", "0", "0", "5" },
+    { "0", "0", "0", "0", "0" },
+    { "0", "0", "5", "R1", "0" },
+    { "0", "M", "M", "0", "0" },
+    { "5", "0", "0", "M", "R2" }
+  };
+  
+   static String challengeElevenTable[][] = {
+    { "5", "0", "0", "0", "5" },
+    { "0", "0", "0", "0", "0" },
+    { "R3", "R2", "5", "0", "R1" },
+    { "0", "M", "0", "0", "0" },
+    { "5", "0", "M", "M", "5" }
+  };
+  
+  static String challengeTwelveTable[][] = {
+    { "R3", "M", "0", "R2", "5" },
+    { "0", "0", "M", "0", "0" },
+    { "0", "0", "5", "0", "R1" },
+    { "0", "0", "0", "M", "0" },
+    { "5", "0", "0", "0", "5" }
+  };
+  
+  static String challengeThirteenTable[][] = {
+    { "5", "0", "M", "FV", "5" },
+    { "0", "0", "0", "FV", "0" },
+    { "0", "0", "M", "0", "0" },
+    { "0", "0", "M", "0", "R1" },
+    { "5", "0", "0", "0", "5" }
+  };
+  
+  static String challengeFourteenTable[][] = {
+    { "5", "R1", "0", "0", "5" },
+    { "0", "0", "0", "0", "0" },
+    { "M", "0", "M", "0", "0" },
+    { "0", "FV", "M", "0", "0" },
+    { "5", "FV", "0", "0", "5" }
+  };
+  
+  static String challengeFifteenTable[][] = {
+    { "5", "M", "0", "0", "5" },
+    { "FH", "FH", "0", "R2", "0" },
+    { "0", "0", "R1", "0", "0" },
+    { "0", "M", "0", "0", "0" },
+    { "5", "0", "0", "0", "5" }
+  };
+
 
 
   // PASI DE REZOLVARE
@@ -106,4 +155,28 @@ static String challengeOneTable[][] = {
 
   String[] challengeNineSteps = {
     "R212", "FV13", "R214", "R244", "R312", "R314", "R204", "R344"
+  };
+  
+    String[] challengeTenSteps = {
+    "R242", "R222", "R121", "R141", "R242", "R144", "R222"
+  };
+  
+  String[] challengeElevenSteps = {
+    "R323", "R122", "R241", "R244", "R321", "R341", "R240", "R344"
+  };
+  
+  String[] challengeTwelveSteps = {
+    "R302", "R200", "R332", "R234", "R144", "R332", "R302", "R322"
+  };
+  
+  String[] challengeThirteenSteps = {
+    "FV43", "R131", "FV23", "R133", "R103", "R101", "FV13", "R104"
+  };
+  
+  String[] challengeFourteenSteps = {
+    "FV21", "R131", "FV23", "R133", "FV31", "R130", "R110", "FV21", "R112", "R142", "FV41", "R140"
+  };
+  
+   String[] challengeFifteenSteps = {
+    "FH12", "R102", "R100", "R210", "R120", "R230", "R140", "R232", "R202", "R200"
   };

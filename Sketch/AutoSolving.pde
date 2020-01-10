@@ -133,8 +133,12 @@ String[] getStep(int challenge){
     return challengeSixteenSteps;
   if (challenge == 17)
     return challengeSeventeenSteps;
+  if (challenge == 18)
+    return challengeEighteenSteps;
+  if (challenge == 19)
+    return challengeNineteenSteps;
 
-  return challengeEighteenSteps;
+  return challengeTwentySteps;
 
 }
 

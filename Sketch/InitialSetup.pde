@@ -58,10 +58,12 @@ void initializeStrings(){
   challengeSixteenTable = new String[5][5];
   challengeSeventeenTable = new String[5][5];
   challengeEighteenTable = new String[5][5];
+  challengeNineteenTable = new String[5][5];
+  challengeTwentyTable = new String[5][5];
 
 }
 
-int levels = 18;
+int levels = 20;
 
 void loadFiles(){
   // levels
@@ -87,6 +89,8 @@ void loadFiles(){
     else if(i == 15) initializeLevel(challengeSixteenTable, cells);
     else if(i == 16) initializeLevel(challengeSeventeenTable, cells);
     else if(i == 17) initializeLevel(challengeEighteenTable, cells);
+    else if(i == 18) initializeLevel(challengeNineteenTable, cells);
+    else if(i == 19) initializeLevel(challengeTwentyTable, cells);
 
   }
 
@@ -113,6 +117,8 @@ void loadFiles(){
     else if(l == 15) challengeSixteenSteps = steps;
     else if(l == 16) challengeSeventeenSteps = steps;
     else if(l == 17) challengeEighteenSteps = steps;
+    else if(l == 18) challengeNineteenSteps = steps;
+    else if(l == 19) challengeTwentySteps = steps;
 
 
   }

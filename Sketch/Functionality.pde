@@ -243,9 +243,11 @@ void initializeLevelList(){
   randomLevels.add(new LevelNode(challengeTwelveTable, 12));
   randomLevels.add(new LevelNode(challengeFiveTable, 5));
   randomLevels.add(new LevelNode(challengeFourTable, 4));
+  randomLevels.add(new LevelNode(challengeNineteenTable, 19));
   randomLevels.add(new LevelNode(challengeElevenTable, 11));
   randomLevels.add(new LevelNode(challengeTwoTable, 2));
   randomLevels.add(new LevelNode(challengeFifteenTable, 15));
+  randomLevels.add(new LevelNode(challengeTwentyTable, 20));
   randomLevels.add(new LevelNode(challengeEighteenTable, 18));
   randomLevels.add(new LevelNode(challengeSevenTable, 7));
   randomLevels.add(new LevelNode(challengeEightTable, 8));

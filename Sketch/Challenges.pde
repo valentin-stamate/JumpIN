@@ -16,6 +16,8 @@ String[][] challengeFifteenTable;
 String[][] challengeSixteenTable;
 String[][] challengeSeventeenTable;
 String[][] challengeEighteenTable;
+String[][] challengeNineteenTable;
+String[][] challengeTwentyTable;
 
 String[] challengeOneSteps;
 String[] challengeTwoSteps;
@@ -35,3 +37,5 @@ String[] challengeFifteenSteps;
 String[] challengeSixteenSteps;
 String[] challengeSeventeenSteps;
 String[] challengeEighteenSteps;
+String[] challengeNineteenSteps;
+String[] challengeTwentySteps;

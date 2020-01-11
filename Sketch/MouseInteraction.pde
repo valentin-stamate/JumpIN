@@ -20,11 +20,7 @@ void mousePressed(){
   if(mouseOver){
 
     if(MouseFlag.equals(startString)){
-      resetAutoSolving();
-      pickRandomLevel();
-      println(challengeSixteenSteps);
       startButton();
-
     } else if(MouseFlag.equals(exitString)){
       exitButton();
     } else if(MouseFlag.equals(optionsString)){
@@ -118,7 +114,6 @@ void mousePressed(){
     else if(MouseFlag.equals(nextLevel)){
       gameStart  = true;
       gameFinished = false;
-      score = 0;
       emptyList();
       determinareNivel(Challenge);
       countRabbitsBegining();

@@ -23,8 +23,8 @@ void setup(){
   click = new SoundFile(this, "./Music/Click.mp3");
 
 
-  setGameTable(challengeFifteenTable);
-  Challenge = 15;
+  setGameTable(challengeSixTable);
+  Challenge = 6;
 
   countRabbitsBegining();
 

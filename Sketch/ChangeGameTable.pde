@@ -40,7 +40,7 @@ void moveFoxVertical(int i, int j){
 
 void moveFoxHorizontal(int i, int j){
   coordonateFoxHI = convertCoordToY(i) + 8;
-  coordonateFoxHJ =  convertCoordToX(j) - 80;
+  coordonateFoxHJ =  convertCoordToX(j) - 70;
   fOneI = i + 1;
   fOneJ = j + 1;
 }

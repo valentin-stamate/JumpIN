@@ -159,6 +159,7 @@ void undoFox( int j){
   }else if(j == 5 -obstacolDreapta){
      j--;
   }
+  println(j);
   int pozitieJ = cellDistX * (j) + 30;
   coordonateFoxHJ = pozitieJ;
 }

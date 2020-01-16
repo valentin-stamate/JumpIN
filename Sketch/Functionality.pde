@@ -155,9 +155,9 @@ void mouseReleased(){
             putDataInList("R3", iInitialThirdRabbit, jInitialThirdRabbit);
           }
       }else if(lockedFox){
-        j = (coordonateFoxHJ - 25) / cellDistY;
+        j =(coordonateFoxHJ + 50 + 80)/cellDistX -1;;
       }else if(lockedSecondFox){
-        i = ( coordonateFoxVJ - 25) / cellDistX;
+        i =(coordonateFoxVJ + 50 + 80)/cellDistX-1;
       }
       if((lockedFirstRabbit) || (lockedSecondRabbit) ||(lockedThirdRabbit)){
         moveRabbit(i,j);
